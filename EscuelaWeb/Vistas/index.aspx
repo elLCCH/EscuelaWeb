@@ -15,6 +15,7 @@
 <header>
             <div class="encabezado">
                 <p class="titulo">UNIDAD EDUCATIVA "CARLOS BELTRAN MORALES - NO ES COLEGIO"</p>
+                <p>sfsfsfsfsf</p>
             </div>
 </header>
 
