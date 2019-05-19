@@ -1,0 +1,58 @@
+﻿@charset "utf-8";
+
+.titulo {
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgba(255, 255, 255, 0.781);
+    padding-top: 2.5%;
+    padding-bottom: 5%;
+    color: #000000;
+}
+/*FONDO*/
+body {
+    background: url(../img/fondoescolar.jpg);
+    background-repeat: repeat;
+    background-size: auto;
+}
+
+.encabezado {
+    /*background-image: url("../IMAGENES/encabezado.jpg");*/
+    background: url(../img/encabezado.jpg);
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    background-repeat: repeat;
+    color: #000000;
+}
+
+.barraMenu {
+    position: relative;
+    top: 5px;
+}
+
+    .barraMenu nav {
+        background: #1867A2;
+        overflow: hidden;
+    }
+
+        .barraMenu nav ul {
+            list-style: none;
+        }
+
+            .barraMenu nav ul li {
+                float: left;
+                position: relative;
+                bottom: 7px;
+            }
+
+                .barraMenu nav ul li a {
+                    padding: 5px 20px;
+                    display: block;
+                    color: white;
+                    text-decoration: none;
+                }
+
+                    .barraMenu nav ul li a:hover {
+                        background: #75ACEC;
+                    }
