@@ -11,7 +11,7 @@ namespace EscuelaWeb.Vistas.ingreso
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
@@ -23,6 +23,11 @@ namespace EscuelaWeb.Vistas.ingreso
         protected void lbtnCuenta_Click(object sender, EventArgs e)
         {
             Response.Redirect("../CuentaPerfil/frmCuentaBSecretaria.aspx");
+        }
+
+        protected void lbtnAlumnos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../Acciones/SecretarioAcciones/Alumnos.aspx");
         }
     }
 }
