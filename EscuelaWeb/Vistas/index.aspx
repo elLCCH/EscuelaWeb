@@ -14,7 +14,7 @@
 <!--CABECERA-->
 <header>
             <div class="encabezado">
-                <p class="titulo">UNIDAD EDUCATIVA "CARLOS BELTRAN MORALES"</p>
+                <p class="titulo">UNIDAD EDUCATIVA "CARLOS BELTRAN MORALES - NO ES COLEGIO"</p>
             </div>
 </header>
 
