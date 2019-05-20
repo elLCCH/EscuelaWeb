@@ -7,31 +7,23 @@
     color: rgba(255, 255, 255, 0.781);
     padding-top: 2.5%;
     padding-bottom: 5%;
+    color: #000000;
 }
 /*FONDO*/
 body {
-    background: url(../img/fondodelapices.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: url(../../img/fondoescolar.jpg);
+    background-repeat: repeat;
+    background-size: auto;
 }
 
 .encabezado {
-    background: url(../img/lapices.PNG);
-    /*background-color: #002147;*/
-    height: 100px;
-    margin: 0;
-    padding: 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.fondo {
     /*background-image: url("../IMAGENES/encabezado.jpg");*/
-    background-color: #002147;
+    background: url(../../img/encabezado.jpg);
     height: 100px;
     margin: 0;
     padding: 0;
     background-repeat: repeat;
+    color: #000000;
 }
 
 .barraMenu {
@@ -40,7 +32,7 @@ body {
 }
 
     .barraMenu nav {
-        background: #2287D0;
+        background: #1867A2;
         overflow: hidden;
     }
 
@@ -64,21 +56,3 @@ body {
                     .barraMenu nav ul li a:hover {
                         background: #75ACEC;
                     }
-
-.Mision {
-    position: relative;
-    top: 12px;
-    left: 10%;
-    width: 70%;
-    float: left;
-    background: rgb(92, 169, 228);
-}
-
-.Vision {
-    position: relative;
-    top: 20px;
-    left: 10%;
-    width: 70%;
-    float: left;
-    background: rgb(92, 169, 228);
-}

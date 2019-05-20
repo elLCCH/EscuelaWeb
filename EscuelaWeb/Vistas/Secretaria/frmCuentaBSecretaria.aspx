@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta charset="utf-8">
 <title>Bienvenido Secretario</title>
-<link rel="stylesheet" href="../../css/CuentaBSecretaria.css">
+<link rel="stylesheet" href="../../css/Secretaria/CuentaBSecretaria.css">
 </head>
 <body>
     <!--ENCABEZADO-->

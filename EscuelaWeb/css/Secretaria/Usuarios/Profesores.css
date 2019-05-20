@@ -17,7 +17,7 @@
 }
 
 .encabezado {
-    background: url(../../img/lapices.PNG);
+    background: url(../../../img/lapices.PNG);
     /*background-color: #002147;*/
     height: 100px;
     margin: 0;
@@ -149,7 +149,7 @@ a {
     padding: 20px;
     background-color: #ff6a00;
     width: 407px;
-    height: 462px;
+    height: 434px;
     float: left;
     margin: 0 0 0 25px;
 }
@@ -159,7 +159,8 @@ a {
     margin-bottom: 10px; /*HACE Q SE JUNTE TODA LA CAJA*/
     padding: 3px;
     float: left;
-    }
+    width: 190px;
+}
 
 .texto {
     width: 150px;

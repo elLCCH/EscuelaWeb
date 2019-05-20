@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8">
     <title>Gestion Profesores</title>
-    <link rel="stylesheet" href="../../../css/SecretarioAcciones/Profesores.css">
+    <link rel="stylesheet" href="../../../css/Secretaria/Usuarios/Profesores.css">
     
 </head>
 <body onLoad="startclock()">

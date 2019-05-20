@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8">
      <title>Bienvenido Interesado</title>
-     <link rel="stylesheet" href="../../css/BProfesor.css">
+     <link rel="stylesheet" href="../../css/Profesor/BProfesor.css">
 </head>
 <body>
 <!--ENCABEZADO-->
