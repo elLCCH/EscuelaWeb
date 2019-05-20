@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<!--CABECERA prueaba lis-->
+<!--CABECERA prueaba lis gdffdg-->
 <header>
             <div class="encabezado">
                 <p class="titulo">UNIDAD EDUCATIVA "CARLOS BELTRAN MORALES - NO ES COLEGIO"</p>
