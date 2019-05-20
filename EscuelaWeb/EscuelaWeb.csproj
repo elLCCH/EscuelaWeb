@@ -181,16 +181,16 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Vistas\Acciones\SecretarioAcciones\Administrativos.aspx" />
-    <Content Include="Vistas\Acciones\SecretarioAcciones\Alumnos.aspx" />
-    <Content Include="Vistas\Acciones\SecretarioAcciones\Profesores.aspx" />
-    <Content Include="Vistas\CuentaPerfil\frmCuentaBSecretaria.aspx" />
+    <Content Include="Vistas\Secretaria\Usuarios\Administrativos.aspx" />
+    <Content Include="Vistas\Secretaria\Usuarios\Alumnos.aspx" />
+    <Content Include="Vistas\Secretaria\Usuarios\Profesores.aspx" />
+    <Content Include="Vistas\Secretaria\frmCuentaBSecretaria.aspx" />
     <Content Include="Vistas\Extras\MisionVision.html" />
     <Content Include="Vistas\Extras\ReglamentoInterno.html" />
     <Content Include="Vistas\index.aspx" />
-    <Content Include="Vistas\ingreso\frmBInteresado.aspx" />
-    <Content Include="Vistas\ingreso\frmBProfesor.aspx" />
-    <Content Include="Vistas\ingreso\frmBSecretaria.aspx" />
+    <Content Include="Vistas\Interesado\frmBInteresado.aspx" />
+    <Content Include="Vistas\Profesor\frmBProfesor.aspx" />
+    <Content Include="Vistas\Secretaria\frmBSecretaria.aspx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
@@ -244,32 +244,32 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Acciones\SecretarioAcciones\Administrativos.aspx.cs">
+    <Compile Include="Vistas\Secretaria\Usuarios\Administrativos.aspx.cs">
       <DependentUpon>Administrativos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas\Acciones\SecretarioAcciones\Administrativos.aspx.designer.cs">
+    <Compile Include="Vistas\Secretaria\Usuarios\Administrativos.aspx.designer.cs">
       <DependentUpon>Administrativos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Acciones\SecretarioAcciones\Alumnos.aspx.cs">
+    <Compile Include="Vistas\Secretaria\Usuarios\Alumnos.aspx.cs">
       <DependentUpon>Alumnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas\Acciones\SecretarioAcciones\Alumnos.aspx.designer.cs">
+    <Compile Include="Vistas\Secretaria\Usuarios\Alumnos.aspx.designer.cs">
       <DependentUpon>Alumnos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Acciones\SecretarioAcciones\Profesores.aspx.cs">
+    <Compile Include="Vistas\Secretaria\Usuarios\Profesores.aspx.cs">
       <DependentUpon>Profesores.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas\Acciones\SecretarioAcciones\Profesores.aspx.designer.cs">
+    <Compile Include="Vistas\Secretaria\Usuarios\Profesores.aspx.designer.cs">
       <DependentUpon>Profesores.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\CuentaPerfil\frmCuentaBSecretaria.aspx.cs">
+    <Compile Include="Vistas\Secretaria\frmCuentaBSecretaria.aspx.cs">
       <DependentUpon>frmCuentaBSecretaria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas\CuentaPerfil\frmCuentaBSecretaria.aspx.designer.cs">
+    <Compile Include="Vistas\Secretaria\frmCuentaBSecretaria.aspx.designer.cs">
       <DependentUpon>frmCuentaBSecretaria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\index.aspx.cs">
@@ -279,25 +279,25 @@
     <Compile Include="Vistas\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\ingreso\frmBInteresado.aspx.cs">
+    <Compile Include="Vistas\Interesado\frmBInteresado.aspx.cs">
       <DependentUpon>frmBInteresado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas\ingreso\frmBInteresado.aspx.designer.cs">
+    <Compile Include="Vistas\Interesado\frmBInteresado.aspx.designer.cs">
       <DependentUpon>frmBInteresado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\ingreso\frmBProfesor.aspx.cs">
+    <Compile Include="Vistas\Profesor\frmBProfesor.aspx.cs">
       <DependentUpon>frmBProfesor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas\ingreso\frmBProfesor.aspx.designer.cs">
+    <Compile Include="Vistas\Profesor\frmBProfesor.aspx.designer.cs">
       <DependentUpon>frmBProfesor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\ingreso\frmBSecretaria.aspx.cs">
+    <Compile Include="Vistas\Secretaria\frmBSecretaria.aspx.cs">
       <DependentUpon>frmBSecretaria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas\ingreso\frmBSecretaria.aspx.designer.cs">
+    <Compile Include="Vistas\Secretaria\frmBSecretaria.aspx.designer.cs">
       <DependentUpon>frmBSecretaria.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
