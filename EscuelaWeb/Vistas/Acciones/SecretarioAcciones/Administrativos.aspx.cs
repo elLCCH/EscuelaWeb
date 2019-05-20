@@ -13,5 +13,35 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
         {
 
         }
+
+        protected void lbtnInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../../ingreso/frmBSecretaria.aspx");
+        }
+
+        protected void lbtnCuenta_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../../CuentaPerfil/frmCuentaBSecretaria.aspx");
+        }
+        
+        protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../../Index.aspx");
+        }
+
+        protected void lbtnAlumnos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../SecretarioAcciones/Alumnos.aspx");
+        }
+
+        protected void lbtnProfesores_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../SecretarioAcciones/Profesores.aspx");
+        }
+
+        protected void lbtnAdministrativo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../SecretarioAcciones/Administrativos.aspx");
+        }
     }
 }

@@ -29,5 +29,20 @@ namespace EscuelaWeb.Vistas.ingreso
         {
             Response.Redirect("../Acciones/SecretarioAcciones/Alumnos.aspx");
         }
+
+        protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../Index.aspx");
+        }
+
+        protected void lbtnProfesores_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../Acciones/SecretarioAcciones/Profesores.aspx");
+        }
+
+        protected void lbtnAdministrativo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../Acciones/SecretarioAcciones/Administrativos.aspx");
+        }
     }
 }

@@ -40,13 +40,13 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones {
         protected global::System.Web.UI.WebControls.LinkButton lbtnCuenta;
         
         /// <summary>
-        /// Control lbtnAvisos.
+        /// Control lbtnCerrarSesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnAvisos;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnCerrarSesion;
         
         /// <summary>
         /// Control lbtnUsuarios.
@@ -83,6 +83,15 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtnAdministrativo;
+        
+        /// <summary>
+        /// Control lbtnAvisos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnAvisos;
         
         /// <summary>
         /// Control RELOJLABEL.
