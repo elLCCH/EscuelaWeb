@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Alumnos.aspx.cs" Inherits="EscuelaWeb.Vistas.Acciones.SecretarioAcciones.Usuarios" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Profesores.aspx.cs" Inherits="EscuelaWeb.Vistas.Acciones.SecretarioAcciones.Profesores" %>
 
 <!DOCTYPE html>
 
@@ -6,12 +6,12 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8">
-    <title>Bienvenido Secretario</title>
-    <link rel="stylesheet" href="../../../css/SecretarioAcciones/Alumnos.css">
+    <title>Gestion Profesores</title>
+    <link rel="stylesheet" href="../../../css/SecretarioAcciones/Profesores.css">
     
 </head>
 <body onLoad="startclock()">
-    
+
     <!--ENCABEZADO-->
     <header>
         <div class="encabezado">
@@ -25,24 +25,16 @@
         <div class="contenedorMenu">
             <!--MENU IZQUIERDO-->
             <div class="left">
-                
-                    <%--<td class="auto-style1">--%>
-
                     <!--este es el menu la parte izq CON TABLA PRIMERA CELDA-->
                     <ul class="Menu">
-
-
-                        <%--<li><a href="#">Cuenta</a></li>--%>
                         <li><asp:LinkButton ID="lbtnInicio" runat="server">Inicio</asp:LinkButton></li>
                         <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cuenta</asp:LinkButton></li>
-                        <li><asp:LinkButton ID="lbtnAvisos" runat="server">Avisos</asp:LinkButton></li>
                             <li><asp:LinkButton ID="lbtnUsuarios" runat="server">Usuarios</asp:LinkButton></li>
                             <li><asp:LinkButton ID="lbtnAlumnos" runat="server" CssClass="parteNegra">Alumnos</asp:LinkButton></li>
                             <li><asp:LinkButton ID="lbtnProfesores" runat="server" CssClass="parteNegra">Profesores</asp:LinkButton></li>
                             <li><asp:LinkButton ID="lbtnAdministrativo" runat="server" CssClass="parteNegra">Administrativo</asp:LinkButton></li>
-                        
+                        <li><asp:LinkButton ID="lbtnAvisos" runat="server">Avisos</asp:LinkButton></li>
                       </ul>
-                    
                 </div>
         </div>
         
@@ -51,7 +43,7 @@
         <div class="ParteDerecha">
             <br />
             <div class="Reloj"><asp:Label id="RELOJLABEL" runat="server" /></div>
-            <div style="font-size:40px; width:auto; text-align:center;">ESTUDIANTES</div>
+            <div style="font-size:40px; width:auto; text-align:center;">PROFESORES</div>
             <%--RELOJ--%>
 <SCRIPT Language="JavaScript">
                 var timerID = null;

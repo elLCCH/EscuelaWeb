@@ -119,7 +119,9 @@
     <Content Include="css\login1.css" />
     <Content Include="css\MisionVision.css" />
     <Content Include="css\ReglamentoInterno.css" />
+    <Content Include="css\SecretarioAcciones\Administrativos.css" />
     <Content Include="css\SecretarioAcciones\Alumnos.css" />
+    <Content Include="css\SecretarioAcciones\Profesores.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -179,7 +181,9 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Vistas\Acciones\SecretarioAcciones\Administrativos.aspx" />
     <Content Include="Vistas\Acciones\SecretarioAcciones\Alumnos.aspx" />
+    <Content Include="Vistas\Acciones\SecretarioAcciones\Profesores.aspx" />
     <Content Include="Vistas\CuentaPerfil\frmCuentaBSecretaria.aspx" />
     <Content Include="Vistas\Extras\MisionVision.html" />
     <Content Include="Vistas\Extras\ReglamentoInterno.html" />
@@ -240,12 +244,26 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Acciones\SecretarioAcciones\Administrativos.aspx.cs">
+      <DependentUpon>Administrativos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Acciones\SecretarioAcciones\Administrativos.aspx.designer.cs">
+      <DependentUpon>Administrativos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Acciones\SecretarioAcciones\Alumnos.aspx.cs">
       <DependentUpon>Alumnos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vistas\Acciones\SecretarioAcciones\Alumnos.aspx.designer.cs">
       <DependentUpon>Alumnos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Acciones\SecretarioAcciones\Profesores.aspx.cs">
+      <DependentUpon>Profesores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Acciones\SecretarioAcciones\Profesores.aspx.designer.cs">
+      <DependentUpon>Profesores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\CuentaPerfil\frmCuentaBSecretaria.aspx.cs">
       <DependentUpon>frmCuentaBSecretaria.aspx</DependentUpon>

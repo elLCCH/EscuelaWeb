@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Alumnos.aspx.cs" Inherits="EscuelaWeb.Vistas.Acciones.SecretarioAcciones.Usuarios" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Administrativos.aspx.cs" Inherits="EscuelaWeb.Vistas.Acciones.SecretarioAcciones.Administrativos" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8">
     <title>Bienvenido Secretario</title>
-    <link rel="stylesheet" href="../../../css/SecretarioAcciones/Alumnos.css">
+    <link rel="stylesheet" href="../../../css/SecretarioAcciones/Administrativos.css">
     
 </head>
 <body onLoad="startclock()">
@@ -51,7 +51,7 @@
         <div class="ParteDerecha">
             <br />
             <div class="Reloj"><asp:Label id="RELOJLABEL" runat="server" /></div>
-            <div style="font-size:40px; width:auto; text-align:center;">ESTUDIANTES</div>
+            <div style="font-size:40px; width:auto; text-align:center;">ADMINISTRATIVOS</div>
             <%--RELOJ--%>
 <SCRIPT Language="JavaScript">
                 var timerID = null;
@@ -112,6 +112,12 @@
                         <br />
                         <div Class="texto"><asp:Label ID="Label8" runat="server" Text="CELULAR:" CssClass="texto"></asp:Label></div>
                         <asp:TextBox ID="txtCelular" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                       <div Class="texto"><asp:Label ID="Label10" runat="server" Text="OCUPACION:" CssClass="texto"></asp:Label></div>
+                       <asp:ListBox ID="txtbOcupacion" runat="server" CssClass="CajaTexto" Height="55px" Width="134px">
+                           <asp:ListItem>Secretario</asp:ListItem>
+                           <asp:ListItem>Director</asp:ListItem>
+                       </asp:ListBox>
+
                        <div style="height: 37px" class="boton">
                         <asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="btnizq"/>
                        </div>
