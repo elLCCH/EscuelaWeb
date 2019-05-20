@@ -13,11 +13,11 @@
     padding-top: 2.5%;
     padding-bottom: 5%;
     margin: 0;
-    text-align:center;
+    text-align: center;
 }
 
 .encabezado {
-    background: url(../img/lapices.PNG);
+    background: url(../../img/lapices.PNG);
     /*background-color: #002147;*/
     height: 100px;
     margin: 0;
@@ -98,15 +98,15 @@ a {
         background: #424242;
         color: #ffffff;
     }
+
         .contenedorMenu .left .Menu li .parteNegra:hover {
             background: rgba(19, 159, 235, 0.644);
             color: aliceblue;
         }
-        
 
-        .cerrarsesion {
-            float: right;
-        }
+.cerrarsesion {
+    float: right;
+}
 
 .PrincipalWeb {
     float: left;
@@ -121,7 +121,7 @@ a {
 }
 /*PARTE DERECHA*/
 .ParteDerecha {
-    width: 81%;
+    width: 100%;
 }
 
 .Bienvenido {
@@ -130,6 +130,72 @@ a {
     margin-right: auto;
     height: 324px;
 }
-#RELOJLABEL{
-    font-size:30px;
+
+#RELOJLABEL {
+    font-size: 30px;
+}
+
+.tablaUsuarios {
+    height: 294px;
+    width: 60%;
+    padding: 25px;
+}
+
+.AgregarModificar {
+    width: 40%;
+}
+/*CAJA AGREGAR MODIFICAR*/
+.CRUD_ALUMNOS {
+    padding: 20px;
+    background-color: #ff6a00;
+    width: 407px;
+    height: 434px;
+    float: left;
+    margin: 0 0 0 25px;
+}
+
+
+.CajaTexto {
+    margin-bottom: 10px; /*HACE Q SE JUNTE TODA LA CAJA*/
+    padding: 3px;
+    float: left;
+    width: 190px;
+}
+
+.texto {
+    width: 150px;
+    float: left;
+    height: 22px;
+}
+
+.imagen {
+    margin: 20px;
+    width: 150px;
+    height: 150px;
+    background: url(../img/man-user.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btnder {
+    /*float: right;*/
+    font-size: 20px;
+}
+
+.btnizq {
+    font-size: 20px;
+    /*float:left;*/
+}
+
+.leftOpciones {
+    width: 97%;
+    height: 347px;
+}
+
+.boton {
+    width: 167px;
+    margin: 5px 0 0 0;
+    float: left;
 }
