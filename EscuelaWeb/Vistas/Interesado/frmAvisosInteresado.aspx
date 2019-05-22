@@ -41,7 +41,7 @@
         
         <div class="ParteDerecha">
             <div class="avisos">
-                <h1 style="text-align:center;">AVISOS</h1>
+                <h1 style="text-align:center; color:#000000;">AVISOS</h1>
                 <h1>AVISOS PROFESOR</h1>
                 <asp:ListBox ID="lboxAvisosProfesor" runat="server"  Width="80%"></asp:ListBox>
             </div>
