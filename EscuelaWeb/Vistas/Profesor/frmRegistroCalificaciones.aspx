@@ -42,9 +42,9 @@
                 <asp:ListBox ID="lboxLista" runat="server" style="float:left;"></asp:ListBox>
                 <div>
                     <asp:Label ID="lblalumno" runat="server" Text="no hay est. seleccionado:" CssClass="separacion"></asp:Label>
-                    <asp:Label ID="Label1" runat="server" Text="seleccione año actual:" CssClass="separacion"></asp:Label>
-                    <asp:Label ID="Label2" runat="server" Text=". seleccione bimestre actual:" CssClass="separacion"></asp:Label>
-                    <asp:Label ID="Label3" runat="server" Text=". seleccione Materia:" CssClass="separacion"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text="Seleccione año:" CssClass="separacion"></asp:Label>
+                    <asp:Label ID="Label2" runat="server" Text="Seleccione bimestre:" CssClass="separacion"></asp:Label>
+                    <asp:Label ID="Label3" runat="server" Text="Seleccione Materia:" CssClass="separacion"></asp:Label>
                     <asp:Label ID="Label4" runat="server" Text="Introduzca la Calificacion" CssClass="separacion"></asp:Label>
                 </div>
                 <div>
