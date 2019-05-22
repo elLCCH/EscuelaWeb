@@ -11,7 +11,7 @@
 </head>
 <body onLoad="startclock()">
     
-    <!--ENCABEZADO-->
+    <!--ENCABEZADO adri-->
     <header>
         <div class="encabezado">
             <p class="titulo">UNIDAD EDUCATIVA "CARLOS BELTRAN MORALES"</p>
