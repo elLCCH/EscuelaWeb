@@ -114,12 +114,10 @@
     <Content Include="Content\Site.css" />
     <Content Include="css\Interesado\AvisosInteresado.css" />
     <Content Include="css\Interesado\BInteresado.css" />
-    <Content Include="css\Interesado\calificaciones\CuartoBimestre.css" />
-    <Content Include="css\Interesado\calificaciones\PrimerBimestre.css" />
-    <Content Include="css\Interesado\calificaciones\SegundoBimestre.css" />
-    <Content Include="css\Interesado\calificaciones\TercerBimestre.css" />
-    <Content Include="css\Interesado\CuentaInteresado.css" />
+    <Content Include="css\Profesor\Avisos\RealizarAvisoMiCursoProfesor.css" />
+    <Content Include="css\Profesor\Avisos\VerAvisoGeneralProfesor.css" />
     <Content Include="css\Profesor\BProfesor.css" />
+    <Content Include="css\Profesor\CuentaProfesor.css" />
     <Content Include="css\Profesor\RegistroCalificaciones.css" />
     <Content Include="css\Secretaria\BSecretaria.css" />
     <Content Include="css\Secretaria\CuentaBSecretaria.css" />
@@ -158,6 +156,7 @@
     <Content Include="img\man-user.png" />
     <Content Include="img\ministerio1.png" />
     <Content Include="img\miniterio.jpg" />
+    <Content Include="img\urdaibai-desde-magunas-700x467.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -188,12 +187,10 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Vistas\Interesado\calificaciones\frmCuartoBimestre.aspx" />
-    <Content Include="Vistas\Interesado\calificaciones\frmPrimerBimestre.aspx" />
-    <Content Include="Vistas\Interesado\calificaciones\frmSegundoBimestre.aspx" />
-    <Content Include="Vistas\Interesado\calificaciones\frmTercerBimestre.aspx" />
     <Content Include="Vistas\Interesado\frmAvisosInteresado.aspx" />
-    <Content Include="Vistas\Interesado\frmCuentaInteresado.aspx" />
+    <Content Include="Vistas\Profesor\Avisos\frmRealizarAvisoMiCursoProfesor.aspx" />
+    <Content Include="Vistas\Profesor\Avisos\frmVerAvisoGeneralProfesor.aspx" />
+    <Content Include="Vistas\Profesor\frmCuentaProfesor.aspx" />
     <Content Include="Vistas\Profesor\frmRegistroCalificaciones.aspx" />
     <Content Include="Vistas\Secretaria\Usuarios\Administrativos.aspx" />
     <Content Include="Vistas\Secretaria\Usuarios\Alumnos.aspx" />
@@ -258,34 +255,6 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Interesado\calificaciones\frmCuartoBimestre.aspx.cs">
-      <DependentUpon>frmCuartoBimestre.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\Interesado\calificaciones\frmCuartoBimestre.aspx.designer.cs">
-      <DependentUpon>frmCuartoBimestre.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\Interesado\calificaciones\frmPrimerBimestre.aspx.cs">
-      <DependentUpon>frmPrimerBimestre.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\Interesado\calificaciones\frmPrimerBimestre.aspx.designer.cs">
-      <DependentUpon>frmPrimerBimestre.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\Interesado\calificaciones\frmSegundoBimestre.aspx.cs">
-      <DependentUpon>frmSegundoBimestre.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\Interesado\calificaciones\frmSegundoBimestre.aspx.designer.cs">
-      <DependentUpon>frmSegundoBimestre.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\Interesado\calificaciones\frmTercerBimestre.aspx.cs">
-      <DependentUpon>frmTercerBimestre.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\Interesado\calificaciones\frmTercerBimestre.aspx.designer.cs">
-      <DependentUpon>frmTercerBimestre.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Vistas\Interesado\frmAvisosInteresado.aspx.cs">
       <DependentUpon>frmAvisosInteresado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -293,12 +262,26 @@
     <Compile Include="Vistas\Interesado\frmAvisosInteresado.aspx.designer.cs">
       <DependentUpon>frmAvisosInteresado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Interesado\frmCuentaInteresado.aspx.cs">
-      <DependentUpon>frmCuentaInteresado.aspx</DependentUpon>
+    <Compile Include="Vistas\Profesor\Avisos\frmRealizarAvisoMiCursoProfesor.aspx.cs">
+      <DependentUpon>frmRealizarAvisoMiCursoProfesor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Vistas\Interesado\frmCuentaInteresado.aspx.designer.cs">
-      <DependentUpon>frmCuentaInteresado.aspx</DependentUpon>
+    <Compile Include="Vistas\Profesor\Avisos\frmRealizarAvisoMiCursoProfesor.aspx.designer.cs">
+      <DependentUpon>frmRealizarAvisoMiCursoProfesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Profesor\Avisos\frmVerAvisoGeneralProfesor.aspx.cs">
+      <DependentUpon>frmVerAvisoGeneralProfesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Profesor\Avisos\frmVerAvisoGeneralProfesor.aspx.designer.cs">
+      <DependentUpon>frmVerAvisoGeneralProfesor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Profesor\frmCuentaProfesor.aspx.cs">
+      <DependentUpon>frmCuentaProfesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Profesor\frmCuentaProfesor.aspx.designer.cs">
+      <DependentUpon>frmCuentaProfesor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Profesor\frmRegistroCalificaciones.aspx.cs">
       <DependentUpon>frmRegistroCalificaciones.aspx</DependentUpon>

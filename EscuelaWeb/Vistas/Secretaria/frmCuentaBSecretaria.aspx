@@ -39,8 +39,7 @@
       </div>  
         <!--PARTE   DERECHA DEL MENU IZQ-->
         
-        <div class="ParteDerecha">
-            
+        <div class="ParteDerecha">    
             <div class="DatosPersonales">
                 <div class="imagen"></div>
                 <div Class="texto"><asp:Label ID="Label1" runat="server" Text="NOMBRE:" ></asp:Label></div>
@@ -55,13 +54,7 @@
                 <br />
                 <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar Cambios" Height="37px" Width="187px" />
             </div>
-            
-
-
         </div>
-    
-        
-
 </form>  
 
 </body>

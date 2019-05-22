@@ -19,11 +19,21 @@
     background-size: cover;
     text-align: center;
 }
+/*.Membrete {
+    background-color: #002147;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}*/
 body {
-    background: url(../../img/fondodelapices.jpg);
+    background: url(../img/fondodelapices.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
+/*body {
+    font-family: 'Lucida Sans';
+    line-height: 18px;
+}*/
 
 a {
     text-decoration: none;
@@ -101,23 +111,7 @@ a {
     margin: 0px 20px 0px 0px;
     width: 200px;
 }
-/*PARTE DERECHA*/
+
 .ParteDerecha {
-    width: auto;
-}
-.separacion{
-    margin-top:auto;
-    margin-bottom:auto;
-    margin-right:20px;
-    width:150px;
-}
-.colorDerecha{
-    background-color:rgba(88, 96, 101, 0.87);
-    color:#2287D0;
-    font-size:18px;
-}
-.tabla{
-    margin-left:auto;
-    margin-right:auto;
-    background-color:rgba(64, 62, 62, 0.83);
+    width: 1000px;
 }

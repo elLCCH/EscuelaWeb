@@ -19,11 +19,62 @@
     background-size: cover;
     text-align: center;
 }
+/*.Membrete {
+    background-color: #002147;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}*/
+/*BARRA CERRAR SESION Y CUENTA*/
+.Salir {
+    background: #3264db;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    top: 5px;
+}
+
+.Navegacion {
+    margin: 10px auto;
+    background: #3264db;
+    width: 100%;
+    height: 50px;
+}
+
+    .Navegacion ul {
+        list-style: none;
+        float: right;
+    }
+
+.menuCuenta > li {
+    /*position:relative;*/
+    display: inline-block;
+}
+
+    .menuCuenta > li a {
+        display: block;
+        padding: 5px 10px;
+        text-decoration: none;
+    }
+
+.menuCuenta li a:hover {
+    color: #CE7D35;
+    transition: all .3s;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
 body {
-    background: url(../../img/fondodelapices.jpg);
+    background: url(../img/fondodelapices.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
+/*body {
+    font-family: 'Lucida Sans';
+    line-height: 18px;
+}*/
 
 a {
     text-decoration: none;
@@ -101,23 +152,22 @@ a {
     margin: 0px 20px 0px 0px;
     width: 200px;
 }
-/*PARTE DERECHA*/
+
 .ParteDerecha {
-    width: auto;
+    width: 1000px;
 }
-.separacion{
-    margin-top:auto;
-    margin-bottom:auto;
-    margin-right:20px;
-    width:150px;
+
+.RealizarAviso {
+    background-color: #ff6a00;
+    padding: 50px;
+    width: 474px;
+    height: auto;
+    float: left;
+    margin: 20px 50px;
+    position: relative;
+    left: 30%;
 }
-.colorDerecha{
-    background-color:rgba(88, 96, 101, 0.87);
-    color:#2287D0;
-    font-size:18px;
-}
-.tabla{
-    margin-left:auto;
-    margin-right:auto;
-    background-color:rgba(64, 62, 62, 0.83);
+h1 {
+    position: relative;
+    left: 50%;
 }
