@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace EscuelaWeb.Vistas {
+namespace EscuelaWeb.Vistas.Interesado.calificaciones {
     
     
-    public partial class frmBInteresado {
+    public partial class frmPrimerBimestre {
         
         /// <summary>
         /// Control form1.
@@ -76,21 +76,12 @@ namespace EscuelaWeb.Vistas {
         protected global::System.Web.UI.WebControls.LinkButton lbtnCuartoB;
         
         /// <summary>
-        /// Control RELOJLABEL.
+        /// Control GridView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label RELOJLABEL;
-        
-        /// <summary>
-        /// Control Calendario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendario;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

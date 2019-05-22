@@ -1,0 +1,113 @@
+﻿@charset "utf-8";
+
+.titulo {
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffffff;
+    padding-top: 2.5%;
+    padding-bottom: 5%;
+    margin: 0;
+}
+
+.encabezado {
+    background: url(../../../img/lapices.PNG);
+    /*background-color: #002147;*/
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+
+body {
+    background: url(../../../img/lapices.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.btnMenu {
+    display: block;
+    padding: 20px;
+    background: #2287D0;
+    color: aliceblue;
+}
+
+
+
+/*MENU IZQ*/
+.contenedorMenu {
+    min-width: 200px;
+    /*display: inline-block;*/ /*HACE Q SE ESE MENU TRNSPASE LOS OTROS MENUS*/
+    line-height: 18px;
+    width: auto;
+    height: auto;
+}
+
+    .contenedorMenu .Menu {
+        width: 100%;
+    }
+
+    .contenedorMenu ul {
+        list-style: none;
+    }
+
+    .contenedorMenu .Menu li a {
+        color: #494949;
+        display: block;
+        padding: 25px 10px;
+        background: #E9E9E9;
+    }
+
+        .contenedorMenu .Menu li a:hover {
+            background: rgba(19, 159, 235, 0.644);
+            color: aliceblue;
+        }
+
+
+    .contenedorMenu .Menu ul {
+        /*display: none;*/
+    }
+
+    .contenedorMenu .left .Menu li .parteNegra {
+        background: #424242;
+        color: #E9E9E9;
+    }
+
+    .contenedorMenu * {
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+.cerrarsesion {
+    float: right;
+}
+
+.PrincipalWeb {
+    float: left;
+    display: block;
+}
+
+.left {
+    float: left;
+    height: auto;
+    margin: 0px 20px 0px 0px;
+    width: 250px;
+}
+
+.ParteDerecha {
+    width: 77%;
+}
+
+.tabla {
+    margin-left: auto;
+    margin-right: auto;
+}

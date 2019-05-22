@@ -10,7 +10,7 @@
      <link rel="stylesheet" href="../../css/Interesado/BInteresado.css">
     
 </head>
-<body>
+<body onLoad="startclock()">
 <!--ENCABEZADO-->
 <header>
             <div class="encabezado">
@@ -41,9 +41,53 @@
         <!--PARTE   DERECHA DEL MENU IZQ-->
         
         <div class="ParteDerecha">
-            
-        </div>
+            <br />
+            <div class="Reloj"><asp:Label id="RELOJLABEL" runat="server" /></div>
+            <div style="font-size:40px; width:auto; text-align:center;">BIENVENIDO ALUMNO</div>
+            <div class="Bienvenido">
+                
+                <asp:Calendar ID="Calendario" runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="314px" NextPrevFormat="ShortMonth" Width="397px">
+                    <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
+                    <DayStyle BackColor="#CCCCCC" />
+                    <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
+                    <OtherMonthDayStyle ForeColor="#999999" />
+                    <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                    <TitleStyle BackColor="#333399" BorderStyle="Solid" Font-Bold="True" Font-Size="12pt" ForeColor="White" Height="12pt" />
+                    <TodayDayStyle BackColor="#999999" ForeColor="White" />
+                </asp:Calendar>
 
+                <%--RELOJ--%>
+                <SCRIPT Language="JavaScript">
+                    var timerID = null;
+                    var timerRunning = false;
+                    function stopclock() {
+                        if (timerRunning)
+                            clearTimeout(timerID);
+                        timerRunning = false;
+                    }
+                    function showtime() {
+                        var now = new Date();
+                        var hours = now.getHours();
+                        var minutes = now.getMinutes();
+                        var seconds = now.getSeconds();
+                        var timeValue = "" + ((hours > 12) ? hours - 12 : hours)
+
+                        if (timeValue == "0") timeValue = 12;
+                        timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+                        timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+                        timeValue += (hours >= 12) ? " P.M." : " A.M."
+                        document.getElementById('RELOJLABEL').innerText = timeValue;
+
+                        timerID = setTimeout("showtime()", 1000);
+                        timerRunning = true;
+                    }
+                    function startclock() {
+                        stopclock();
+                        showtime();
+                    }
+                </SCRIPT>
+                
+            </div>
 
 </form>    
 </body>
