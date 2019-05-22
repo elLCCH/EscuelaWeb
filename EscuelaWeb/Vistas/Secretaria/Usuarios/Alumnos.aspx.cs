@@ -16,12 +16,12 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../../ingreso/frmBSecretaria.aspx");
+            Response.Redirect("../frmBSecretaria.aspx");
         }
 
         protected void lbtnCuenta_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../../CuentaPerfil/frmCuentaBSecretaria.aspx");
+            Response.Redirect("../frmCuentaBSecretaria.aspx");
         }
 
         protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
@@ -31,17 +31,27 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
 
         protected void lbtnAlumnos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../SecretarioAcciones/Alumnos.aspx");
+            Response.Redirect("Alumnos.aspx");
         }
 
         protected void lbtnProfesores_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../SecretarioAcciones/Profesores.aspx");
+            Response.Redirect("Profesores.aspx");
         }
 
         protected void lbtnAdministrativo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../SecretarioAcciones/Administrativos.aspx");
+            Response.Redirect("Administrativos.aspx");
+        }
+
+        protected void lbtnUsuarios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lbtnAvisos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../frmAvisosSecretaria.aspx");
         }
     }
 }

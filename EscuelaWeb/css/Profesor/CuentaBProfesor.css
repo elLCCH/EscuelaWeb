@@ -10,6 +10,7 @@
     margin: 0;
 }
 
+
 .encabezado {
     background: url(../../img/lapices.PNG);
     /*background-color: #002147;*/
@@ -46,9 +47,9 @@ a {
     min-width: 200px;
     /*display: inline-block;*/ /*HACE Q SE ESE MENU TRNSPASE LOS OTROS MENUS*/
     line-height: 18px;
-    width: 206px;
-    height: auto;
-    float:left;
+    width: 246px;
+    height: 800px;
+    float: left;
 }
 
     .contenedorMenu .Menu {
@@ -81,6 +82,11 @@ a {
         color: #E9E9E9;
     }
 
+        .contenedorMenu .left .Menu li .parteNegra:hover {
+            background: rgba(19, 159, 235, 0.644);
+            color: aliceblue;
+        }
+
     .contenedorMenu * {
         margin: 0;
         padding: 0;
@@ -103,15 +109,51 @@ a {
     margin: 0px 20px 0px 0px;
     width: 250px;
 }
-/*PARTE DERECHA*/
+
 .ParteDerecha {
-    width: 80%;
-    margin-left:25%;
-    
+    width: 82%;
+    height: auto;
+    padding: 0 0 0 10px;
 }
-    /*AVISOS*/
-.avisos {
-    padding: 30px;
-    background: rgba(79, 166, 199, 0.91);
-    color: #ffffff;
+/*CAJA CUENTA*/
+.DatosPersonales {
+    /*background-color: #ff6a00;
+    height: 350px;
+    width: 500px;*/
+    padding: 50px;
+    background-color: #ff6a00;
+    width: 400px;
+    height: auto;
+    float: left;
+    /*margin-left: 10px;
+    margin-right: 20%;*/
+    margin: 20px 0 0 50px;
+}
+
+.CajaTexto {
+    margin-bottom: 20px; /*HACE Q SE JUNTE TODA LA CAJA*/
+    width: 50%;
+    padding: 6px;
+    float: left;
+}
+
+.texto {
+    width: 150px;
+    float: left;
+}
+
+.imagen {
+    margin: 20px;
+    width: 150px;
+    height: 150px;
+    background: url(../../img/man-user.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#btnGuardarCambios {
+    float: right;
+    font-size: 20px;
 }

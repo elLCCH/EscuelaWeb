@@ -114,8 +114,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="css\Interesado\AvisosInteresado.css" />
     <Content Include="css\Interesado\BInteresado.css" />
+    <Content Include="css\Interesado\CuentaBInteresado.css" />
     <Content Include="css\Profesor\BProfesor.css" />
+    <Content Include="css\Profesor\CuentaBProfesor.css" />
     <Content Include="css\Profesor\RegistroCalificaciones.css" />
+    <Content Include="css\Secretaria\AvisosSecretaria.css" />
     <Content Include="css\Secretaria\BSecretaria.css" />
     <Content Include="css\Secretaria\CuentaBSecretaria.css" />
     <Content Include="css\login1.css" />
@@ -184,7 +187,10 @@
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Vistas\Interesado\frmAvisosInteresado.aspx" />
+    <Content Include="Vistas\Interesado\frmCuentaBInteresado.aspx" />
+    <Content Include="Vistas\Profesor\frmCuentaBProfesor.aspx" />
     <Content Include="Vistas\Profesor\frmRegistroCalificaciones.aspx" />
+    <Content Include="Vistas\Secretaria\frmAvisosSecretaria.aspx" />
     <Content Include="Vistas\Secretaria\Usuarios\Administrativos.aspx" />
     <Content Include="Vistas\Secretaria\Usuarios\Alumnos.aspx" />
     <Content Include="Vistas\Secretaria\Usuarios\Profesores.aspx" />
@@ -255,12 +261,33 @@
     <Compile Include="Vistas\Interesado\frmAvisosInteresado.aspx.designer.cs">
       <DependentUpon>frmAvisosInteresado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Interesado\frmCuentaBInteresado.aspx.cs">
+      <DependentUpon>frmCuentaBInteresado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Interesado\frmCuentaBInteresado.aspx.designer.cs">
+      <DependentUpon>frmCuentaBInteresado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Profesor\frmCuentaBProfesor.aspx.cs">
+      <DependentUpon>frmCuentaBProfesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Profesor\frmCuentaBProfesor.aspx.designer.cs">
+      <DependentUpon>frmCuentaBProfesor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Profesor\frmRegistroCalificaciones.aspx.cs">
       <DependentUpon>frmRegistroCalificaciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vistas\Profesor\frmRegistroCalificaciones.aspx.designer.cs">
       <DependentUpon>frmRegistroCalificaciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Secretaria\frmAvisosSecretaria.aspx.cs">
+      <DependentUpon>frmAvisosSecretaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Secretaria\frmAvisosSecretaria.aspx.designer.cs">
+      <DependentUpon>frmAvisosSecretaria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Secretaria\Usuarios\Administrativos.aspx.cs">
       <DependentUpon>Administrativos.aspx</DependentUpon>

@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
+namespace EscuelaWeb.Vistas.Secretaria
 {
-    public partial class Administrativos : System.Web.UI.Page
+    public partial class frmAvisosSecretaria : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,37 +16,37 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../frmBSecretaria.aspx");
+            Response.Redirect("frmBSecretaria.aspx");
         }
 
         protected void lbtnCuenta_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../frmCuentaBSecretaria.aspx");
-        }
-        
-        protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("../../Index.aspx");
+            Response.Redirect("frmCuentaBSecretaria.aspx");
         }
 
         protected void lbtnAlumnos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Alumnos.aspx");
+            Response.Redirect("Usuarios/Alumnos.aspx");
         }
 
         protected void lbtnProfesores_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Profesores.aspx");
+            Response.Redirect("Usuarios/Profesores.aspx");
         }
 
         protected void lbtnAdministrativo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Administrativos.aspx");
+            Response.Redirect("Usuarios/Administrativos.aspx");
         }
 
         protected void lbtnAvisos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../frmAvisosSecretaria.aspx");
+            Response.Redirect("frmAvisosSecretaria.aspx");
+        }
+
+        protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../index.aspx");
         }
     }
 }

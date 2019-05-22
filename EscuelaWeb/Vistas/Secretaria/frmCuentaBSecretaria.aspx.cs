@@ -16,12 +16,37 @@ namespace EscuelaWeb.Vistas.CuentaPerfil
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../ingreso/frmBSecretaria.aspx");
+            Response.Redirect("frmBSecretaria.aspx");
         }
 
         protected void lbtnCuenta_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../CuentaPerfil/frmCuentaBSecretaria.aspx");
+            Response.Redirect("frmCuentaBSecretaria.aspx");
+        }
+
+        protected void lbtnAlumnos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Usuarios/Alumnos.aspx");
+        }
+
+        protected void lbtnProfesores_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Usuarios/Profesores.aspx");
+        }
+
+        protected void lbtnAdministrativo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Usuarios/Administrativos.aspx");
+        }
+
+        protected void lbtnAvisos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmAvisosSecretaria.aspx");
+        }
+
+        protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../index.aspx");
         }
     }
 }

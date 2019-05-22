@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace EscuelaWeb.Vistas {
+namespace EscuelaWeb.Vistas.Secretaria {
     
     
-    public partial class frmBProfesor {
+    public partial class frmAvisosSecretaria {
         
         /// <summary>
         /// Control form1.
@@ -49,13 +49,40 @@ namespace EscuelaWeb.Vistas {
         protected global::System.Web.UI.WebControls.LinkButton lbtnCerrarSesion;
         
         /// <summary>
-        /// Control lbtnRegCalificaciones.
+        /// Control lbtnUsuarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnRegCalificaciones;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnUsuarios;
+        
+        /// <summary>
+        /// Control lbtnAlumnos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnAlumnos;
+        
+        /// <summary>
+        /// Control lbtnProfesores.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnProfesores;
+        
+        /// <summary>
+        /// Control lbtnAdministrativo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnAdministrativo;
         
         /// <summary>
         /// Control lbtnAvisos.
@@ -65,5 +92,14 @@ namespace EscuelaWeb.Vistas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtnAvisos;
+        
+        /// <summary>
+        /// Control lboxAvisosProfesor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox lboxAvisosProfesor;
     }
 }
