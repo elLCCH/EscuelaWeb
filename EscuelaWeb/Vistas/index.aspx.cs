@@ -16,7 +16,7 @@ namespace EscuelaWeb.Vistas
 
         protected void btnIniciar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ingreso/frmBSecretaria.aspx");
+            Response.Redirect("");
         }
     }
 }

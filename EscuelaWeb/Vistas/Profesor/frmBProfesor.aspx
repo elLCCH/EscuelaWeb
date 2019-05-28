@@ -7,9 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8"/>
      <title>Profesor</title>
-     <link rel="stylesheet" href="../../css/Profesor/BProfesor.css"/>
+     <!--<link rel="stylesheet" href="../../css/Profesor/BProfesor.css"/>-->
+     <link rel="stylesheet" href="../../css/Profesor/CuentaProfesor.css"/>
 </head>
-<body>
+<body onload="startclock()">
 <!--ENCABEZADO-->
 <header>
    <div class="encabezado">
@@ -48,14 +49,12 @@
             <div class ="Saludo">
                 <div style="font-size:40px; width:auto; text-align:center;">BIENVENIDO PROFESOR</div>
             <div class="Bienvenido">
-                
                 <center>
                     <div class="fecha">
                         <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                        <asp:Label ID="RELOJLABEL" runat="server" Text="Label"></asp:Label>
                    </div>
                 </center>  
-                
-
                 <%--RELOJ--%>
                 <script lang ="JavaScript">
                     var timerID = null;

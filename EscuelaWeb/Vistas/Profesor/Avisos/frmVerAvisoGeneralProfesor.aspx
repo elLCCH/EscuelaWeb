@@ -7,12 +7,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8"/>
     <title>Profesor</title>
-    <link rel="stylesheet" href="../../../css/Profesor/Avisos/VerAvisoGeneralProfesor.css"/>
+    <!--<link rel="stylesheet" href="../../../css/Profesor/Avisos/VerAvisoGeneralProfesor.css"/>-->
+    <link rel="stylesheet" href="../../../css/Profesor/CuentaProfesor.css"/>
 </head>
 <body>
     <header>
             <div class="encabezado"><p class="titulo">UNIDAD EDUCATIVA "CARLOS BELTRAN MORALES"</p></div>
     </header>
+    <nav class ="Navegacion">
+        <ul class ="menuCuenta">
+            <li><a href="#">Cuenta</a>
+                <ul class="subMenu">
+                  <li><a href="#">Gestion de usuario</a></li>
+                  <li><a href="../index.aspx">Cerrar Sesion</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav> 
     <form id="form1" runat="server">   
     <div class="contenedorMenu">
         <!--MENU IZQUIERDO-->

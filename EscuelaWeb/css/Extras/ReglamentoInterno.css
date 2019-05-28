@@ -17,8 +17,7 @@ body {
 }
 
 .encabezado {
-    /*background-image: url("../IMAGENES/encabezado.jpg");*/
-    background: url(../../img/encabezado.jpg);
+    
     height: 100px;
     margin: 0;
     padding: 0;

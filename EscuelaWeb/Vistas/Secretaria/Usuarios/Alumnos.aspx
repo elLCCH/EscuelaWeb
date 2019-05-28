@@ -7,10 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8">
     <title>Bienvenido Secretario</title>
-    <link rel="stylesheet" href="../../../css/Secretaria/Usuarios/Alumnos.css">
+    <link rel="stylesheet" href="../../../css/Secretaria/BSecretaria.css"/>
     
 </head>
-<body onLoad="startclock()">
+<body onload="startclock()">
     
     <!--ENCABEZADO-->
     <header>
@@ -18,8 +18,16 @@
             <p class="titulo">UNIDAD EDUCATIVA "CARLOS BELTRAN MORALES"</p>
         </div>
     </header>
-
-
+    <nav class ="Navegacion">
+        <ul class ="menuCuenta">
+            <li><a href="#">Cuenta</a>
+                <ul class="subMenu">
+                  <li><a href="#">Gestion de usuario</a></li>
+                  <li><a href="../index.aspx">Cerrar Sesion</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav> 
     <form id="form1" runat="server">
         <!--LA PARTE DE PRINCIPAL Y MENU IZQ-->
         <div class="contenedorMenu">
@@ -50,7 +58,6 @@
 
         <div class="ParteDerecha">
             <br />
-            <div class="Reloj"><asp:Label id="RELOJLABEL" runat="server" /></div>
             <div style="font-size:40px; width:auto; text-align:center;">ESTUDIANTES</div>
             <%--RELOJ--%>
 <SCRIPT Language="JavaScript">

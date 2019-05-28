@@ -73,7 +73,7 @@ body {
     margin: 0;
     padding: 0;
 }*/
-
+/*LOGIN*/
 .titulo_iniciar_sesion {
     font-size: 20px;
     font-weight: bolder;
@@ -140,4 +140,23 @@ label {
 .ckbox-theme input[type=checkbox]:checked + label::after {
     border-color: #1867A2;
     background-color: #2287D0;
+}
+/*MISION VISION*/
+
+.Mision {
+    position: relative;
+    top: 12px;
+    left: 10%;
+    width: 70%;
+    float: left;
+    background: rgb(92, 169, 228);
+}
+
+.Vision {
+    position: relative;
+    top: 20px;
+    left: 10%;
+    width: 70%;
+    float: left;
+    background: rgb(92, 169, 228);
 }

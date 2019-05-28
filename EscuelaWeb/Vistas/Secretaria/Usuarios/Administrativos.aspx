@@ -7,10 +7,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8">
     <title>Bienvenido Secretario</title>
-    <link rel="stylesheet" href="../../../css/Secretaria/Usuarios/Administrativos.css">
+    <link rel="stylesheet" href="../../../css/Secretaria/BSecretaria.css">
     
 </head>
-<body onLoad="startclock()">
+<body onload="startclock()">
     
     <!--ENCABEZADO-->
     <header>
@@ -18,8 +18,16 @@
             <p class="titulo">UNIDAD EDUCATIVA "CARLOS BELTRAN MORALES"</p>
         </div>
     </header>
-
-
+    <nav class ="Navegacion">
+        <ul class ="menuCuenta">
+            <li><a href="#">Cuenta</a>
+                <ul class="subMenu">
+                  <li><a href="#">Gestion de usuario</a></li>
+                  <li><a href="../index.aspx">Cerrar Sesion</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav> 
     <form id="form1" runat="server">
         <!--LA PARTE DE PRINCIPAL Y MENU IZQ-->
         <div class="contenedorMenu">
@@ -40,7 +48,7 @@
                             <li><asp:LinkButton ID="lbtnAlumnos" runat="server" CssClass="parteNegra" OnClick="lbtnAlumnos_Click">Alumnos</asp:LinkButton></li>
                             <li><asp:LinkButton ID="lbtnProfesores" runat="server" CssClass="parteNegra" OnClick="lbtnProfesores_Click">Profesores</asp:LinkButton></li>
                             <li><asp:LinkButton ID="lbtnAdministrativo" runat="server" CssClass="parteNegra" OnClick="lbtnAdministrativo_Click">Administrativo</asp:LinkButton></li>
-                        <li><asp:LinkButton ID="lbtnAvisos" runat="server" OnClick="lbtnAvisos_Click">Avisos</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="lbtnAvisos" runat="server" OnClick="lbtnAvisos_Click" Height="18px" Width="231px">Avisos</asp:LinkButton></li>
                       </ul>
                     
                 </div>
@@ -50,7 +58,6 @@
 
         <div class="ParteDerecha">
             <br />
-            <div class="Reloj"><asp:Label id="RELOJLABEL" runat="server" /></div>
             <div style="font-size:40px; width:auto; text-align:center;">ADMINISTRATIVOS</div>
             <%--RELOJ--%>
 <SCRIPT Language="JavaScript">

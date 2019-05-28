@@ -5,20 +5,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
      <title>Bienvenido Interesado</title>
-     <link rel="stylesheet" href="../../css/Interesado/BInteresado.css">
+     <link rel="stylesheet" href="../../css/Interesado/BInteresado.css"/>
     
 </head>
-<body onLoad="startclock()">
+<body onload="startclock()">
 <!--ENCABEZADO-->
 <header>
             <div class="encabezado">
                 <p class="titulo">UNIDAD EDUCATIVA "CARLOS BELTRAN MORALES"</p>
             </div>
 </header>
-    
-
+<nav class ="Navegacion">
+        <ul class ="menuCuenta">
+            <li><a href="#">Cuenta</a>
+                <ul class="subMenu">
+                  <li><a href="#">Gestion de usuario</a></li>
+                  <li><a href="../index.aspx">Cerrar Sesion</a></li>
+                </ul>
+            </li>
+        </ul>
+ </nav>    
 <form id="form1" runat="server">   
         <!--LA PARTE DE PRINCIPAL Y MENU IZQ-->
     <div class="contenedorMenu">
