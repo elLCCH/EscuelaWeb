@@ -69,7 +69,7 @@ a {
 /*SUBMENU CUENTA*/
 .subMenu {
     /*position:absolute;*/
-    background: #333333;
+    background:#1b9ce6;
     /*width:130%;*/
     visibility: hidden;
     opacity: 0;
@@ -79,7 +79,7 @@ a {
     .subMenu li a {
         display: block;
         padding: 15px;
-        color: #fff;
+        color: #0c0b0b;
         text-decoration: none;
     }
 

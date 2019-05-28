@@ -10,14 +10,14 @@
 }
 /*FONDO*/
 body {
-    background: url(../../img/fondodelapices.jpg);
+    
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .encabezado {
-    background: url(../../img/lapices.PNG);
-    /*background-color: #002147;*/
+    
+    background-color: #002147;
     height: 100px;
     margin: 0;
     padding: 0;

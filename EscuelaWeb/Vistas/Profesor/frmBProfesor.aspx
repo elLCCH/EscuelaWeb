@@ -9,7 +9,7 @@
      <title>Profesor</title>
      <link rel="stylesheet" href="../../css/Profesor/BProfesor.css"/>
 </head>
-<body>
+<body onload="startclock()">
 <!--ENCABEZADO-->
 <header>
    <div class="encabezado">
@@ -51,6 +51,7 @@
                 <center>
                     <div class="fecha">
                         <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+<asp:Label ID="RELOJLABEL" runat="server" Text="Label"></asp:Label>
                    </div>
                 </center>  
                 

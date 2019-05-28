@@ -66,6 +66,31 @@ a {
     text-decoration: none;
     color: aliceblue;
 }
+/*SUBMENU CUENTA*/
+.subMenu {
+    /*position:absolute;*/
+    background: #1b9ce6;
+    /*width:130%;*/
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+    .subMenu li a {
+        display: block;
+        padding: 15px;
+        color: #0c0b0b;
+        text-decoration: none;
+    }
+
+.menuCuenta ul li:hover > ul {
+    display: block;
+}
+
+.menuCuenta li:hover .subMenu {
+    visibility: visible;
+    opacity: 1;
+}
 body {
     background: url(../img/fondodelapices.jpg);
     background-repeat: no-repeat;

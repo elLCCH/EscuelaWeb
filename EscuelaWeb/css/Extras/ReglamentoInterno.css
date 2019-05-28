@@ -7,18 +7,19 @@
     color: rgba(255, 255, 255, 0.781);
     padding-top: 2.5%;
     padding-bottom: 5%;
-    color: #000000;
+
 }
 /*FONDO*/
 body {
-    background: url(../../img/fondoescolar.jpg);
+    /*background: url(../../img/fondoescolar.jpg);*/
     background-repeat: repeat;
     background-size: auto;
 }
 
 .encabezado {
     /*background-image: url("../IMAGENES/encabezado.jpg");*/
-    background: url(../../img/encabezado.jpg);
+    /*background: url(../../img/encabezado.jpg);*/
+    background-color: #002147;
     height: 100px;
     margin: 0;
     padding: 0;
