@@ -22,15 +22,6 @@ namespace EscuelaWeb.Vistas.ingreso {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control lbtnInicio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnInicio;
-        
-        /// <summary>
         /// Control lbtnCuenta.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace EscuelaWeb.Vistas.ingreso {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtnCerrarSesion;
+        
+        /// <summary>
+        /// Control lbtnInicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnInicio;
         
         /// <summary>
         /// Control lbtnUsuarios.

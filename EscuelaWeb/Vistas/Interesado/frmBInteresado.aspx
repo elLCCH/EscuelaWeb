@@ -51,7 +51,7 @@
         <div class="ParteDerecha">
             <br />
             <div class="Reloj"><asp:Label id="RELOJLABEL" runat="server" /></div>
-            <div style="font-size:40px; width:auto; text-align:center;">BIENVENIDO ALUMNO</div>
+            <div style="font-size:40px; width:auto; text-align:center;">BIENVENIDO INTERESADO</div>
             <div class="Bienvenido">
                 
                 <asp:Calendar ID="Calendario" runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="314px" NextPrevFormat="ShortMonth" Width="397px">
@@ -65,7 +65,7 @@
                 </asp:Calendar>
 
                 <%--RELOJ--%>
-                <SCRIPT Language="JavaScript">
+                <SCRIPT lang="JavaScript">
                     var timerID = null;
                     var timerRunning = false;
                     function stopclock() {
@@ -96,7 +96,7 @@
                 </SCRIPT>
                 
             </div>
-
+            </div>
 </form>    
 </body>
 </html>
