@@ -7,7 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8"/>
      <title>Profesor</title>
-     <link rel="stylesheet" href="../../css/Profesor/BProfesor.css"/>
+     <!--<link rel="stylesheet" href="../../css/Profesor/BProfesor.css"/>-->
+     <link rel="stylesheet" href="../../css/Profesor/CuentaProfesor.css"/>
 </head>
 <body onload="startclock()">
 <!--ENCABEZADO-->
@@ -37,6 +38,7 @@
             <ul class="Menu">
             <li><asp:LinkButton ID="lbtnInicio" runat="server" OnClick="lbtnInicio_Click">Inicio</asp:LinkButton></li>
             <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cuenta</asp:LinkButton></li>
+            <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server">Cerrar Sesion</asp:LinkButton></li>
             <li><asp:LinkButton ID="lbtnRegCalificaciones" runat="server" >Registrar Calificaciones</asp:LinkButton></li>
             <li><asp:LinkButton ID="lbtnAvisos" runat="server" CssClass="avisos">Avisos</asp:LinkButton></li>
             </ul>
@@ -47,15 +49,12 @@
             <div class ="Saludo">
                 <div style="font-size:40px; width:auto; text-align:center;">BIENVENIDO PROFESOR</div>
             <div class="Bienvenido">
-                
                 <center>
                     <div class="fecha">
                         <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
-<asp:Label ID="RELOJLABEL" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="RELOJLABEL" runat="server" Text="Label"></asp:Label>
                    </div>
                 </center>  
-                
-
                 <%--RELOJ--%>
                 <script lang ="JavaScript">
                     var timerID = null;

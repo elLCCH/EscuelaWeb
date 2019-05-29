@@ -16,33 +16,37 @@ namespace EscuelaWeb.Vistas.ingreso
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../ingreso/frmBSecretaria.aspx");
+            Response.Redirect("frmBSecretaria.aspx");
 
         }
 
-        protected void lbtnCuenta_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("../CuentaPerfil/frmCuentaBSecretaria.aspx");
-        }
+
 
         protected void lbtnAlumnos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../Acciones/SecretarioAcciones/Alumnos.aspx");
+            Response.Redirect("Usuarios/Alumnos.aspx");
         }
 
-        protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("../Index.aspx");
-        }
+
 
         protected void lbtnProfesores_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../Acciones/SecretarioAcciones/Profesores.aspx");
+            Response.Redirect("Usuarios/Profesores.aspx");
         }
 
         protected void lbtnAdministrativo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../Acciones/SecretarioAcciones/Administrativos.aspx");
+            Response.Redirect("Usuarios/Administrativos.aspx");
+        }
+
+        protected void lbtnAvisos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmAvisosSecretaria.aspx");
+        }
+
+        protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

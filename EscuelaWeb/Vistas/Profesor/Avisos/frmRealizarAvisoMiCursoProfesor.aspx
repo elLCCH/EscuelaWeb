@@ -7,7 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8"/>
     <title>Profesor</title>
-    <link rel="stylesheet" href="../../../css/Profesor/Avisos/RealizarAvisoMiCursoProfesor.css"/>
+    <!--<link rel="stylesheet" href="../../../css/Profesor/Avisos/RealizarAvisoMiCursoProfesor.css"/>-->
+    <link rel="stylesheet" href="../../../css/Profesor/CuentaProfesor.css"/>
 </head>
 <body>
     <header>
@@ -22,7 +23,7 @@
                 </ul>
             </li>
         </ul>
-    </nav>
+    </nav> 
 <form id="form1" runat="server">   
     <div class="contenedorMenu">
         <!--MENU IZQUIERDO-->
@@ -39,8 +40,8 @@
     </div>     
         <!--PARTE   DERECHA DEL MENU IZQ-->
         <div class="ParteDerecha">
-            <h1>REALIZAR AVISO</h1>
             <div class="RealizarAviso">
+                <h1>REALIZAR AVISO</h1>
                 <asp:Label ID="lblTitlulo" runat="server" Text="Titulo:"></asp:Label>
                 <asp:TextBox ID="txtTitulo" runat="server" Width="475px"></asp:TextBox>
                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion:"></asp:Label>

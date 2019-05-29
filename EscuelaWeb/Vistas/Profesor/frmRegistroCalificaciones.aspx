@@ -7,7 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8">
      <title>Bienvenido Interesado</title>
-     <link rel="stylesheet" href="../../css/Profesor/RegistroCalificaciones.css">
+     <!--<link rel="stylesheet" href="../../css/Profesor/RegistroCalificaciones.css">-->
+     <link rel="stylesheet" href="../../css/Profesor/CuentaProfesor.css"/>
 </head>
 <body>
     <!--ENCABEZADO-->
@@ -16,8 +17,16 @@
                 <p class="titulo">UNIDAD EDUCATIVA "CARLOS BELTRAN MORALES"</p>
             </div>
 </header>
-    
-
+<nav class ="Navegacion">
+        <ul class ="menuCuenta">
+            <li><a href="#">Cuenta</a>
+                <ul class="subMenu">
+                  <li><a href="#">Gestion de usuario</a></li>
+                  <li><a href="../index.aspx">Cerrar Sesion</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>   
 <form id="form1" runat="server">   
         <!--LA PARTE DE PRINCIPAL Y MENU IZQ-->
     <div class="contenedorMenu">
@@ -25,7 +34,7 @@
         <div class="left">  
             <!--este es el menu la parte izq CON TABLA PRIMERA CELDA-->
             <ul class="Menu">
-            <!--<li><asp:LinkButton ID="lbtnInicio" runat="server" OnClick="lbtnInicio_Click">Inicio</asp:LinkButton></li>-->
+            <li><asp:LinkButton ID="lbtnInicio" runat="server">Inicio</asp:LinkButton></li>
             <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cuenta</asp:LinkButton></li>
             <li><asp:LinkButton ID="lbtnRegCalificaciones" runat="server" >Registrar Calificaciones</asp:LinkButton></li>
             <li><asp:LinkButton ID="lbtnAvisos" runat="server" CssClass="avisos">Avisos</asp:LinkButton></li>

@@ -167,16 +167,6 @@ a {
     height: 22px;
 }
 
-.imagen {
-    margin: 20px;
-    width: 150px;
-    height: 150px;
-    background: url(../img/man-user.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .btnder {
     /*float: right;*/
