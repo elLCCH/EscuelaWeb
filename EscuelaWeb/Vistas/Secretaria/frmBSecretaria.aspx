@@ -24,7 +24,7 @@
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
                   <%--<li><a href="#">Gestion de usuario</a></li>--%>
-                  <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cambiar contraseña</asp:LinkButton></li>
+                  <li><asp:LinkButton ID="lbtnCuenta" runat="server" OnClick="lbtnCuenta_Click">Cambiar contraseña</asp:LinkButton></li>
                   <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click">Salir</asp:LinkButton></li>
                   <%--<li><a href="../index.aspx">Cerrar Sesion</a></li>--%>
                 </ul>
@@ -49,7 +49,6 @@
                         <li><asp:LinkButton ID="lbtnAlumnos" runat="server" CssClass="parteNegra" OnClick="lbtnAlumnos_Click">Alumnos</asp:LinkButton></li>
                         <li><asp:LinkButton ID="lbtnProfesores" runat="server" CssClass="parteNegra" OnClick="lbtnProfesores_Click">Profesores</asp:LinkButton></li>
                         <li><asp:LinkButton ID="lbtnAdministrativo" runat="server" CssClass="parteNegra" OnClick="lbtnAdministrativo_Click">Administrativo</asp:LinkButton></li>
-                        <li><asp:LinkButton ID="lbtnAvisos" runat="server" OnClick="lbtnAvisos_Click">Avisos</asp:LinkButton></li>
                       </ul>
                     
                 </div>
@@ -72,7 +71,7 @@
                     <TitleStyle BackColor="#333399" BorderStyle="Solid" Font-Bold="True" Font-Size="12pt" ForeColor="White" Height="12pt" />
                     <TodayDayStyle BackColor="#999999" ForeColor="White" />
                 </asp:Calendar>
-                        <asp:Label ID="RELOJLABEL" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="RELOJLABEL" runat="server" Text="Label" ForeColor="White"></asp:Label>
                    </div>
                 </center>
                 <%--RELOJ--%>

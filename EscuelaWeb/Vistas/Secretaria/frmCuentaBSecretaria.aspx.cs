@@ -48,5 +48,10 @@ namespace EscuelaWeb.Vistas.CuentaPerfil
         {
             Response.Redirect("../index.aspx");
         }
+
+        protected void lbtnCuenta_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("frmCuentaBSecretaria.aspx");
+        }
     }
 }

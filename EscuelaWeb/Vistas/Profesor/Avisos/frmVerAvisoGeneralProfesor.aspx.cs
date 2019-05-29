@@ -13,5 +13,25 @@ namespace EscuelaWeb.Vistas.Profesor.Avisos
         {
 
         }
+
+        protected void lbtnInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../frmBProfesor.aspx");
+        }
+
+        protected void lbtnRegCalificaciones_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../frmRegistroCalificaciones.aspx");
+        }
+
+        protected void lbtnVerAvisosG_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmRealizarAvisoMiCursoProfesor.aspx");
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmRealizarAvisoMiCursoProfesor.aspx");
+        }
     }
 }

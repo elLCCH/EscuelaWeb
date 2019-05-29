@@ -58,22 +58,13 @@ namespace EscuelaWeb.Vistas.Profesor {
         protected global::System.Web.UI.WebControls.LinkButton lbtnVerAvisosG;
         
         /// <summary>
-        /// Control LinkButton1.
+        /// Control lbtnRealizarAviso.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
-        
-        /// <summary>
-        /// Control lboxLista.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lboxLista;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnRealizarAviso;
         
         /// <summary>
         /// Control lblalumno.
