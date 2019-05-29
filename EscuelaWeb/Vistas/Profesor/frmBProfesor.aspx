@@ -22,8 +22,8 @@
         <ul class ="menuCuenta">
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
-                  <li><a href="#">Gestion de usuario</a></li>
-                  <li><a href="../index.aspx">Cerrar Sesion</a></li>
+                  <li><a href="#">Cambiar contraseña</a></li>
+                  <li><a href="../index.aspx">Salir</a></li>
                 </ul>
             </li>
         </ul>
@@ -36,11 +36,11 @@
         <div class="left">  
             <!--este es el menu la parte izq CON TABLA PRIMERA CELDA-->
             <ul class="Menu">
-            <li><asp:LinkButton ID="lbtnInicio" runat="server" OnClick="lbtnInicio_Click">Inicio</asp:LinkButton></li>
-            <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cuenta</asp:LinkButton></li>
-            <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server">Cerrar Sesion</asp:LinkButton></li>
-            <li><asp:LinkButton ID="lbtnRegCalificaciones" runat="server" >Registrar Calificaciones</asp:LinkButton></li>
-            <li><asp:LinkButton ID="lbtnAvisos" runat="server" CssClass="avisos">Avisos</asp:LinkButton></li>
+           <li><asp:LinkButton ID="lbtnInicio" runat="server" >Inicio</asp:LinkButton></li>
+               <li><asp:LinkButton ID="lbtnRegCalificaciones" runat="server" >Registrar Calificaciones</asp:LinkButton></li>
+               <li><asp:LinkButton ID="lbtnAvisos" runat="server">Avisos</asp:LinkButton></li>   
+               <li><asp:LinkButton ID="lbtnVerAvisosG" runat="server" CssClass="avisos">Ver Generales</asp:LinkButton></li>
+               <li><asp:LinkButton ID="LinkButton1" runat="server" CssClass="avisos">Realizar aviso</asp:LinkButton></li>
             </ul>
         </div>
     </div>     
@@ -51,10 +51,18 @@
             <div class="Bienvenido">
                 <center>
                     <div class="fecha">
-                        <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                        <asp:Calendar ID="Calendario" runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="255px" NextPrevFormat="ShortMonth" Width="309px">
+                    <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
+                    <DayStyle BackColor="#CCCCCC" />
+                    <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
+                    <OtherMonthDayStyle ForeColor="#999999" />
+                    <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                    <TitleStyle BackColor="#333399" BorderStyle="Solid" Font-Bold="True" Font-Size="12pt" ForeColor="White" Height="12pt" />
+                    <TodayDayStyle BackColor="#999999" ForeColor="White" />
+                </asp:Calendar>
                         <asp:Label ID="RELOJLABEL" runat="server" Text="Label"></asp:Label>
                    </div>
-                </center>  
+                </center>
                 <%--RELOJ--%>
                 <script lang ="JavaScript">
                     var timerID = null;

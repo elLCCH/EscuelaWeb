@@ -22,8 +22,8 @@
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
                   <%--<li><a href="#">Gestion de usuario</a></li>--%>
-                  <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cuenta</asp:LinkButton></li>
-                  <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click">Cerrar Sesion</asp:LinkButton></li>
+                  <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cambiar contraseña</asp:LinkButton></li>
+                  <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click">Salir</asp:LinkButton></li>
                   <%--<li><a href="../index.aspx">Cerrar Sesion</a></li>--%>
                 </ul>
             </li>

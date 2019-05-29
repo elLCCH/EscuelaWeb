@@ -24,8 +24,8 @@
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
                   <%--<li><a href="#">Gestion de usuario</a></li>--%>
-                  <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cuenta</asp:LinkButton></li>
-                  <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click">Cerrar Sesion</asp:LinkButton></li>
+                  <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cambiar contraseña</asp:LinkButton></li>
+                  <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click">Salir</asp:LinkButton></li>
                   <%--<li><a href="../index.aspx">Cerrar Sesion</a></li>--%>
                 </ul>
             </li>
@@ -58,12 +58,12 @@
         <!--PARTE   DERECHA DEL MENU IZQ-->
 
         <div class="ParteDerecha">
-            <br />
-            <div class="Reloj"><asp:Label id="RELOJLABEL" runat="server" /></div>
-            <div style="font-size:40px; width:auto; text-align:center;">BIENVENIDO SECRETARIO</div>
+            <div class ="Saludo">
+                <div style="font-size:40px; width:auto; text-align:center;">BIENVENIDO SECRETARIA</div>
             <div class="Bienvenido">
-                
-                <asp:Calendar ID="Calendario" runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="255px" NextPrevFormat="ShortMonth" Width="309px">
+                <center>
+                    <div class="fecha">
+                        <asp:Calendar ID="Calendario" runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="255px" NextPrevFormat="ShortMonth" Width="309px">
                     <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
                     <DayStyle BackColor="#CCCCCC" />
                     <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
@@ -72,9 +72,11 @@
                     <TitleStyle BackColor="#333399" BorderStyle="Solid" Font-Bold="True" Font-Size="12pt" ForeColor="White" Height="12pt" />
                     <TodayDayStyle BackColor="#999999" ForeColor="White" />
                 </asp:Calendar>
-
+                        <asp:Label ID="RELOJLABEL" runat="server" Text="Label"></asp:Label>
+                   </div>
+                </center>
                 <%--RELOJ--%>
-                <SCRIPT lang="JavaScript">
+                <script lang ="JavaScript">
                     var timerID = null;
                     var timerRunning = false;
                     function stopclock() {
@@ -102,11 +104,9 @@
                         stopclock();
                         showtime();
                     }
-                </SCRIPT>
-                
+                </script>
             </div>
-            
-
+            </div>
         </div>
     </form>
 </body>

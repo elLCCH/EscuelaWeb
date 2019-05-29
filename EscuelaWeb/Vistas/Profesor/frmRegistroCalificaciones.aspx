@@ -21,8 +21,8 @@
         <ul class ="menuCuenta">
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
-                  <li><a href="#">Gestion de usuario</a></li>
-                  <li><a href="../index.aspx">Cerrar Sesion</a></li>
+                  <li><a href="#">Cambiar contraseña</a></li>
+                  <li><a href="../index.aspx">Salir</a></li>
                 </ul>
             </li>
         </ul>
@@ -34,10 +34,11 @@
         <div class="left">  
             <!--este es el menu la parte izq CON TABLA PRIMERA CELDA-->
             <ul class="Menu">
-            <li><asp:LinkButton ID="lbtnInicio" runat="server">Inicio</asp:LinkButton></li>
-            <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cuenta</asp:LinkButton></li>
-            <li><asp:LinkButton ID="lbtnRegCalificaciones" runat="server" >Registrar Calificaciones</asp:LinkButton></li>
-            <li><asp:LinkButton ID="lbtnAvisos" runat="server" CssClass="avisos">Avisos</asp:LinkButton></li>
+            <li><asp:LinkButton ID="lbtnInicio" runat="server" >Inicio</asp:LinkButton></li>
+               <li><asp:LinkButton ID="lbtnRegCalificaciones" runat="server" >Registrar Calificaciones</asp:LinkButton></li>
+               <li><asp:LinkButton ID="lbtnAvisos" runat="server">Avisos</asp:LinkButton></li>   
+               <li><asp:LinkButton ID="lbtnVerAvisosG" runat="server" CssClass="avisos">Ver Generales</asp:LinkButton></li>
+               <li><asp:LinkButton ID="LinkButton1" runat="server" CssClass="avisos">Realizar aviso</asp:LinkButton></li>
             </ul>
         </div>
         

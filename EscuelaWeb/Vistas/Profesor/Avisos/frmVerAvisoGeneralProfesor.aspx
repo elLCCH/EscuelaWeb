@@ -31,9 +31,10 @@
             <!--ELEMENTOS DEL MENU IZQUIERDO-->
             <ul class="Menu">
                <li><asp:LinkButton ID="lbtnInicio" runat="server" >Inicio</asp:LinkButton></li>
-               <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cuenta</asp:LinkButton></li>
                <li><asp:LinkButton ID="lbtnRegCalificaciones" runat="server" >Registrar Calificaciones</asp:LinkButton></li>
-               <li><asp:LinkButton ID="lbtnAvisos" runat="server" CssClass="avisos">Avisos</asp:LinkButton></li>
+               <li><asp:LinkButton ID="lbtnAvisos" runat="server">Avisos</asp:LinkButton></li>   
+               <li><asp:LinkButton ID="lbtnVerAvisosG" runat="server" CssClass="avisos">Ver Generales</asp:LinkButton></li>
+               <li><asp:LinkButton ID="LinkButton1" runat="server" CssClass="avisos">Realizar aviso</asp:LinkButton></li>
             </ul>
         </div> 
     </div>     
