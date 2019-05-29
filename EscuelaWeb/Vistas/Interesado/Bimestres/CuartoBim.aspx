@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmAvisosInteresado.aspx.cs" Inherits="EscuelaWeb.Vistas.Interesado.frmAvisosInteresado" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CuartoBim.aspx.cs" Inherits="EscuelaWeb.Vistas.Interesado.Bimestres.CuartoBim" %>
 
 <!DOCTYPE html>
 
@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8">
      <title>Bienvenido Interesado</title>
-     <link rel="stylesheet" href="../../css/Interesado/BInteresado.css">
+     <link rel="stylesheet" href="../../../css/Interesado/BInteresado.css">
     
 </head>
 <body>
@@ -48,13 +48,8 @@
         
         <div class="ParteDerecha">
             
-            <div class="avisos">
-                <h2>AVISOS DIRECTOR Y PROFESOR</h2>
-                <%--<asp:ListBox ID="lboxAvisosDirector" runat="server"  Width="80%"></asp:ListBox>--%>
-                <div style="margin-left:auto; margin-right:auto;"><asp:GridView ID="dvgDirector" runat="server"></asp:GridView></div>
-                
-            </div>
+
         </div>
-</form>    
+</form>  
 </body>
 </html>
