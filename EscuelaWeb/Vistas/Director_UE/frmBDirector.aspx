@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmBSecretaria.aspx.cs" Inherits="EscuelaWeb.Vistas.ingreso.frmBSecretaria" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmBDirector.aspx.cs" Inherits="EscuelaWeb.Vistas.Director_UE.frmBDirector" %>
 
 <!DOCTYPE html>
 
@@ -6,12 +6,10 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8"/>
-    <title>Bienvenido Secretario</title>
-    <link rel="stylesheet" href="../../css/Secretaria/BSecretaria.css"/>
-    
+    <title>Bienvenido Director</title>
+    <link rel="stylesheet" href="../../css/BDirector.css"/>
 </head>
 <body onload="startclock()">
-    
     <!--ENCABEZADO-->
     <header>
         <div class="encabezado">
@@ -23,10 +21,10 @@
         <ul class ="menuCuenta">
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
-                  <%--<li><a href="#">Gestion de usuario</a></li>--%>
+                    <%--<li><a href="#">Gestion de usuario</a></li>--%>
                   <li><asp:LinkButton ID="lbtnCuenta" runat="server" OnClick="lbtnCuenta_Click">Cambiar contraseña</asp:LinkButton></li>
                   <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click">Salir</asp:LinkButton></li>
-                  <%--<li><a href="../index.aspx">Cerrar Sesion</a></li>--%>
+                      <%--<li><a href="../index.aspx">Cerrar Sesion</a></li>--%>
                 </ul>
             </li>
         </ul>
@@ -41,14 +39,11 @@
 
                     <!--este es el menu la parte izq CON TABLA PRIMERA CELDA-->
                     <ul class="Menu">
-
-
                         <%--<li><a href="#">Cuenta</a></li>--%>
-                        <li><asp:LinkButton ID="lbtnInicio" runat="server" OnClick="lbtnInicio_Click">Inicio</asp:LinkButton></li>
-                        <li><asp:LinkButton ID="lbtnUsuarios" runat="server">Usuarios</asp:LinkButton></li>
-                        <li><asp:LinkButton ID="lbtnAlumnos" runat="server" CssClass="parteNegra" OnClick="lbtnAlumnos_Click">Alumnos</asp:LinkButton></li>
-                        <li><asp:LinkButton ID="lbtnProfesores" runat="server" CssClass="parteNegra" OnClick="lbtnProfesores_Click">Profesores</asp:LinkButton></li>
-                        <li><asp:LinkButton ID="lbtnAdministrativo" runat="server" CssClass="parteNegra" OnClick="lbtnAdministrativo_Click">Administrativo</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="lbtnInicio" runat="server">Inicio</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="lbtnAvisos" runat="server">Avisos</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="lbtnRealizarAvisos" runat="server" CssClass="parteNegra" OnClick="lbtnRealizarAvisos_Click">RealizarAviso</asp:LinkButton></li>
+                        <li><asp:LinkButton ID="lbtnVerAvisos" runat="server" CssClass="parteNegra" OnClick="lbtnVerAvisos_Click">Ver Avisos</asp:LinkButton></li>
                       </ul>
                     
                 </div>
@@ -58,7 +53,7 @@
 
         <div class="ParteDerecha">
             <div class ="Saludo">
-                <div style="font-size:40px; width:auto; text-align:center;">BIENVENIDO SECRETARIA</div>
+                <div style="font-size:40px; width:auto; text-align:center;">BIENVENIDO DIRECTOR</div>
             <div class="Bienvenido">
                 <center>
                     <div class="fecha">
