@@ -13,5 +13,44 @@ namespace EscuelaWeb.Vistas.Interesado.Bimestres
         {
 
         }
+
+
+
+
+
+        protected void lbtnSegundoB_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SegundoBim.aspx");
+        }
+
+        protected void lbtnTerceroB_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("TercerBim.aspx");
+        }
+
+        protected void lbtnCuartoB_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CuartoBim.aspx");
+        }
+
+        protected void lbtnAvisos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../frmAvisosInteresado.aspx");
+        }
+
+        protected void lbtnPrimerB_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("PrimerBim.aspx");
+        }
+
+        protected void lbtnInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../frmBInteresado.aspx");
+        }
+
+        protected void lbtnAvisos_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("../frmAvisosInteresado.aspx");
+        }
     }
 }
