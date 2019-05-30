@@ -22,6 +22,15 @@ namespace EscuelaWeb.Vistas.Interesado.Bimestres {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Control lbtnInicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnInicio;
+        
+        /// <summary>
         /// Control lbtnCalificaciones.
         /// </summary>
         /// <remarks>
@@ -65,5 +74,14 @@ namespace EscuelaWeb.Vistas.Interesado.Bimestres {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtnCuartoB;
+        
+        /// <summary>
+        /// Control lbtnAvisos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnAvisos;
     }
 }

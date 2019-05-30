@@ -190,6 +190,7 @@
     <Content Include="Vistas\Interesado\Bimestres\SegundoBim.aspx" />
     <Content Include="Vistas\Interesado\Bimestres\TercerBim.aspx" />
     <Content Include="Vistas\Interesado\frmAvisosInteresado.aspx" />
+    <Content Include="Vistas\Interesado\frmCuentaBInteresado.aspx" />
     <Content Include="Vistas\Profesor\Avisos\frmRealizarAvisoMiCursoProfesor.aspx" />
     <Content Include="Vistas\Profesor\Avisos\frmVerAvisoGeneralProfesor.aspx" />
     <Content Include="Vistas\Profesor\frmCuentaProfesor.aspx" />
@@ -291,6 +292,13 @@
     </Compile>
     <Compile Include="Vistas\Interesado\frmAvisosInteresado.aspx.designer.cs">
       <DependentUpon>frmAvisosInteresado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Interesado\frmCuentaBInteresado.aspx.cs">
+      <DependentUpon>frmCuentaBInteresado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Interesado\frmCuentaBInteresado.aspx.designer.cs">
+      <DependentUpon>frmCuentaBInteresado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Profesor\Avisos\frmRealizarAvisoMiCursoProfesor.aspx.cs">
       <DependentUpon>frmRealizarAvisoMiCursoProfesor.aspx</DependentUpon>

@@ -18,6 +18,8 @@ namespace EscuelaWeb.Vistas
             if (cbValidar.Checked==true)
             {
                 Response.Redirect("Secretaria/frmBSecretaria.aspx");
+                //Response.Redirect("Profesor/frmBProfesor.aspx");
+                //Response.Redirect("Interesado/frmBInteresado.aspx");
             }
             
         }

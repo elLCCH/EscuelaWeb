@@ -26,12 +26,12 @@ namespace EscuelaWeb.Vistas
 
         protected void lbtnVerAvisosG_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Avisos/frmRealizarAvisoMiCursoProfesor.aspx");
+            Response.Redirect("Avisos/frmVerAvisoGeneralProfesor.aspx");
         }
 
         protected void lbtnRealizaravisos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Avisos/frmVerAvisoGeneralProfesor.aspx");
+            Response.Redirect("Avisos/frmRealizarAvisoMiCursoProfesor.aspx");
         }
     }
 }
