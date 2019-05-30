@@ -112,6 +112,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\BDirector.css" />
     <Content Include="css\index.css" />
     <Content Include="css\Interesado\BInteresado.css" />
     <Content Include="css\Profesor\Avisos\RealizarAvisoMiCursoProfesor.css" />
@@ -185,6 +186,10 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Vistas\Director_UE\frmBDirector.aspx" />
+    <Content Include="Vistas\Director_UE\frmCuentaDirector.aspx" />
+    <Content Include="Vistas\Director_UE\Avisos\frmRealizarAvisoDirector.aspx" />
+    <Content Include="Vistas\Director_UE\Avisos\frmVerAvisosDirector.aspx" />
     <Content Include="Vistas\Interesado\frmAvisosInteresado.aspx" />
     <Content Include="Vistas\Profesor\Avisos\frmRealizarAvisoMiCursoProfesor.aspx" />
     <Content Include="Vistas\Profesor\Avisos\frmVerAvisoGeneralProfesor.aspx" />
@@ -252,6 +257,34 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Director_UE\frmBDirector.aspx.cs">
+      <DependentUpon>frmBDirector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Director_UE\frmBDirector.aspx.designer.cs">
+      <DependentUpon>frmBDirector.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Director_UE\frmCuentaDirector.aspx.cs">
+      <DependentUpon>frmCuentaDirector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Director_UE\frmCuentaDirector.aspx.designer.cs">
+      <DependentUpon>frmCuentaDirector.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Director_UE\Avisos\frmRealizarAvisoDirector.aspx.cs">
+      <DependentUpon>frmRealizarAvisoDirector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Director_UE\Avisos\frmRealizarAvisoDirector.aspx.designer.cs">
+      <DependentUpon>frmRealizarAvisoDirector.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Director_UE\Avisos\frmVerAvisosDirector.aspx.cs">
+      <DependentUpon>frmVerAvisosDirector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Director_UE\Avisos\frmVerAvisosDirector.aspx.designer.cs">
+      <DependentUpon>frmVerAvisosDirector.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Interesado\frmAvisosInteresado.aspx.cs">
       <DependentUpon>frmAvisosInteresado.aspx</DependentUpon>
