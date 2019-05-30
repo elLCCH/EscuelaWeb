@@ -85,13 +85,13 @@ namespace EscuelaWeb.Vistas.ingreso {
         protected global::System.Web.UI.WebControls.LinkButton lbtnAdministrativo;
         
         /// <summary>
-        /// Control lbtnAvisos.
+        /// Control Calendario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnAvisos;
+        protected global::System.Web.UI.WebControls.Calendar Calendario;
         
         /// <summary>
         /// Control RELOJLABEL.
@@ -101,14 +101,5 @@ namespace EscuelaWeb.Vistas.ingreso {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label RELOJLABEL;
-        
-        /// <summary>
-        /// Control Calendario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendario;
     }
 }

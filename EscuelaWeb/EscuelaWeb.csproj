@@ -113,7 +113,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="css\index.css" />
-    <Content Include="css\Interesado\AvisosInteresado.css" />
     <Content Include="css\Interesado\BInteresado.css" />
     <Content Include="css\Profesor\Avisos\RealizarAvisoMiCursoProfesor.css" />
     <Content Include="css\Profesor\Avisos\VerAvisoGeneralProfesor.css" />
@@ -123,8 +122,6 @@
     <Content Include="css\Secretaria\BSecretaria.css" />
     <Content Include="css\Secretaria\CuentaBSecretaria.css" />
     <Content Include="css\login1.css" />
-    <Content Include="css\Extras\MisionVision.css" />
-    <Content Include="css\Extras\ReglamentoInterno.css" />
     <Content Include="css\Secretaria\Usuarios\Administrativos.css" />
     <Content Include="css\Secretaria\Usuarios\Alumnos.css" />
     <Content Include="css\Secretaria\Usuarios\Profesores.css" />

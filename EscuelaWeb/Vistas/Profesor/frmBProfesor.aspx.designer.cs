@@ -31,24 +31,6 @@ namespace EscuelaWeb.Vistas {
         protected global::System.Web.UI.WebControls.LinkButton lbtnInicio;
         
         /// <summary>
-        /// Control lbtnCuenta.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnCuenta;
-        
-        /// <summary>
-        /// Control lbtnCerrarSesion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnCerrarSesion;
-        
-        /// <summary>
         /// Control lbtnRegCalificaciones.
         /// </summary>
         /// <remarks>
@@ -65,6 +47,24 @@ namespace EscuelaWeb.Vistas {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtnAvisos;
+        
+        /// <summary>
+        /// Control lbtnVerAvisosG.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnVerAvisosG;
+        
+        /// <summary>
+        /// Control lbtnRealizaravisos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnRealizaravisos;
         
         /// <summary>
         /// Control Calendario.

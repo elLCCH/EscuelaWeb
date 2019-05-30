@@ -16,7 +16,22 @@ namespace EscuelaWeb.Vistas
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../ingreso/frmBSecretaria.aspx");
+            Response.Redirect("frmBProfesor.aspx");
+        }
+
+        protected void lbtnRegCalificaciones_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmRegistroCalificaciones.aspx");
+        }
+
+        protected void lbtnVerAvisosG_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Avisos/frmRealizarAvisoMiCursoProfesor.aspx");
+        }
+
+        protected void lbtnRealizaravisos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Avisos/frmVerAvisoGeneralProfesor.aspx");
         }
     }
 }

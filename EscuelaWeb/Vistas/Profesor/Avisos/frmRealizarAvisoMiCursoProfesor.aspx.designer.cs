@@ -31,15 +31,6 @@ namespace EscuelaWeb.Vistas.Profesor.Avisos {
         protected global::System.Web.UI.WebControls.LinkButton lbtnInicio;
         
         /// <summary>
-        /// Control lbtnCuenta.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnCuenta;
-        
-        /// <summary>
         /// Control lbtnRegCalificaciones.
         /// </summary>
         /// <remarks>
@@ -56,6 +47,24 @@ namespace EscuelaWeb.Vistas.Profesor.Avisos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtnAvisos;
+        
+        /// <summary>
+        /// Control lbtnVerAvisosG.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnVerAvisosG;
+        
+        /// <summary>
+        /// Control LinkButton1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
         
         /// <summary>
         /// Control lblTitlulo.

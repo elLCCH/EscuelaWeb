@@ -21,8 +21,8 @@
         <ul class ="menuCuenta">
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
-                  <li><a href="#">Gestion de usuario</a></li>
-                  <li><a href="../index.aspx">Cerrar Sesion</a></li>
+                  <li><a href="frmCuentaProfesor.aspx">Cambiar contraseña</a></li>
+                  <li><a href="../index.aspx">Salir</a></li>
                 </ul>
             </li>
         </ul>
@@ -34,10 +34,11 @@
         <div class="left">  
             <!--este es el menu la parte izq CON TABLA PRIMERA CELDA-->
             <ul class="Menu">
-            <li><asp:LinkButton ID="lbtnInicio" runat="server">Inicio</asp:LinkButton></li>
-            <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cuenta</asp:LinkButton></li>
-            <li><asp:LinkButton ID="lbtnRegCalificaciones" runat="server" >Registrar Calificaciones</asp:LinkButton></li>
-            <li><asp:LinkButton ID="lbtnAvisos" runat="server" CssClass="avisos">Avisos</asp:LinkButton></li>
+            <li><asp:LinkButton ID="lbtnInicio" runat="server" OnClick="lbtnInicio_Click" >Inicio</asp:LinkButton></li>
+               <li><asp:LinkButton ID="lbtnRegCalificaciones" runat="server" OnClick="lbtnRegCalificaciones_Click" >Registrar Calificaciones</asp:LinkButton></li>
+               <li><asp:LinkButton ID="lbtnAvisos" runat="server">Avisos</asp:LinkButton></li>   
+               <li><asp:LinkButton ID="lbtnVerAvisosG" runat="server" CssClass="avisos" OnClick="lbtnVerAvisosG_Click">Ver Generales</asp:LinkButton></li>
+               <li><asp:LinkButton ID="lbtnRealizarAviso" runat="server" CssClass="avisos" OnClick="lbtnRealizarAviso_Click">Realizar aviso</asp:LinkButton></li>
             </ul>
         </div>
         
@@ -48,7 +49,6 @@
         
         <div class="ParteDerecha">
             <div style="width:auto;">
-                <asp:ListBox ID="lboxLista" runat="server" style="float:left;"></asp:ListBox>
                 <div>
                     <asp:Label ID="lblalumno" runat="server" Text="no hay est. seleccionado:" CssClass="separacion"></asp:Label>
                     <asp:Label ID="Label1" runat="server" Text="Seleccione año:" CssClass="separacion"></asp:Label>
@@ -68,7 +68,7 @@
 
             <div class="tabla">
                 <div style="margin-left:auto; margin-right:auto;">
-                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                <asp:GridView ID="GridView1" runat="server" Width="204px"></asp:GridView>
                 </div>
             </div>
             

@@ -22,8 +22,8 @@
         <ul class ="menuCuenta">
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
-                  <li><a href="#">Gestion de usuario</a></li>
-                  <li><a href="../index.aspx">Cerrar Sesion</a></li>
+                  <li><a href="frmCuentaProfesor.aspx">Cambiar contraseña</a></li>
+                  <li><a href="../index.aspx">Salir</a></li>
                 </ul>
             </li>
         </ul>
@@ -36,11 +36,12 @@
         <div class="left">  
             <!--este es el menu la parte izq CON TABLA PRIMERA CELDA-->
             <ul class="Menu">
-            <li><asp:LinkButton ID="lbtnInicio" runat="server" OnClick="lbtnInicio_Click">Inicio</asp:LinkButton></li>
-            <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cuenta</asp:LinkButton></li>
-            <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server">Cerrar Sesion</asp:LinkButton></li>
-            <li><asp:LinkButton ID="lbtnRegCalificaciones" runat="server" >Registrar Calificaciones</asp:LinkButton></li>
-            <li><asp:LinkButton ID="lbtnAvisos" runat="server" CssClass="avisos">Avisos</asp:LinkButton></li>
+               <li>  <asp:LinkButton ID="lbtnInicio" runat="server" >Inicio</asp:LinkButton>
+               </li>
+               <li><asp:LinkButton ID="lbtnRegCalificaciones" runat="server" OnClick="lbtnRegCalificaciones_Click" >Registrar Calificaciones</asp:LinkButton></li>
+               <li><asp:LinkButton ID="lbtnAvisos" runat="server">Avisos</asp:LinkButton></li>   
+               <li><asp:LinkButton ID="lbtnVerAvisosG" runat="server" CssClass="avisos" OnClick="lbtnVerAvisosG_Click">Ver Generales</asp:LinkButton></li>
+               <li><asp:LinkButton ID="lbtnRealizaravisos" runat="server" CssClass="avisos" OnClick="lbtnRealizaravisos_Click">Realizar aviso</asp:LinkButton></li>
             </ul>
         </div>
     </div>     
@@ -62,7 +63,7 @@
                 </asp:Calendar>
                         <asp:Label ID="RELOJLABEL" runat="server" Text="Label"></asp:Label>
                    </div>
-                </center>  
+                </center>
                 <%--RELOJ--%>
                 <script lang ="JavaScript">
                     var timerID = null;
