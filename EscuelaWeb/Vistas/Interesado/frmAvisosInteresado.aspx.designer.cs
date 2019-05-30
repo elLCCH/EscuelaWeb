@@ -22,6 +22,15 @@ namespace EscuelaWeb.Vistas.Interesado {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Control lbtnCerrarSesion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnCerrarSesion;
+        
+        /// <summary>
         /// Control lbtnInicio.
         /// </summary>
         /// <remarks>
