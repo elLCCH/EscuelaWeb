@@ -21,8 +21,8 @@
         <ul class ="menuCuenta">
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
-                  <li><a href="#">Gestion de usuario</a></li>
-                  <li><a href="../index.aspx">Cerrar Sesion</a></li>
+                  <li><a href="#">Cambiar Contraseña</a></li>
+                  <li><a href="../index.aspx">Salir</a></li>
                 </ul>
             </li>
         </ul>
@@ -33,8 +33,6 @@
         <!--MENU IZQUIERDO-->
         <div class="left">  
             <ul class="Menu">
-                <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cuenta</asp:LinkButton></li>
-                <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server">Cerrar Sesion</asp:LinkButton></li>
                 <li><asp:LinkButton ID="lbtnCalificaciones" runat="server" >Calificaciones</asp:LinkButton></li>
                 <li><asp:LinkButton ID="lbtnPrimerB" runat="server" CssClass="parteNegra">Primer Bimestre</asp:LinkButton></li>
                 <li><asp:LinkButton ID="lbtnSegundoB" runat="server" CssClass="parteNegra">Segundo bimestre</asp:LinkButton></li>
@@ -50,7 +48,7 @@
         
         <div class="ParteDerecha">
             <div class ="Saludo">
-                <div style="font-size:40px; width:auto; text-align:center;">BIENVENIDO SECRETARIA</div>
+                <div style="font-size:40px; width:auto; text-align:center;">BIENVENIDO INTERESADO</div>
             <div class="Bienvenido">
                 <center>
                     <div class="fecha">
@@ -65,7 +63,7 @@
                 </asp:Calendar>
                         <asp:Label ID="RELOJLABEL" runat="server" Text="Label"></asp:Label>
                    </div>
-                </center>
+                </center>  
                 <%--RELOJ--%>
                 <script lang ="JavaScript">
                     var timerID = null;
