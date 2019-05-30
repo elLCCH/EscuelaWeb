@@ -33,5 +33,10 @@ namespace EscuelaWeb.Vistas
         {
             Response.Redirect("Avisos/frmRealizarAvisoMiCursoProfesor.aspx");
         }
+
+        protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../index.aspx");
+        }
     }
 }
