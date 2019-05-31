@@ -31,7 +31,7 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
 
         protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
         {
-            Response.Redirect("../../Index.aspx");
+            Response.Redirect("../../index.aspx");
         }
 
         protected void lbtnProfesores_Click(object sender, EventArgs e)
@@ -47,6 +47,11 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
         protected void lbtnAvisos_Click(object sender, EventArgs e)
         {
             Response.Redirect("../frmAvisosSecretaria.aspx");
+        }
+
+        protected void lbtnCuenta_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("../frmCuentaBSecretaria.aspx");
         }
     }
 }

@@ -13,10 +13,15 @@ namespace EscuelaWeb.Vistas
         {
 
         }
-
         protected void btnIniciar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("");
+            if (cbValidar.Checked==true)
+            {
+                //Response.Redirect("Secretaria/frmBSecretaria.aspx");
+                //Response.Redirect("Profesor/frmBProfesor.aspx");
+                Response.Redirect("Interesado/frmBInteresado.aspx");
+            }
+            
         }
     }
 }

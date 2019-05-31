@@ -17,7 +17,6 @@ namespace EscuelaWeb.Vistas.ingreso
         protected void lbtnInicio_Click(object sender, EventArgs e)
         {
             Response.Redirect("frmBSecretaria.aspx");
-
         }
 
 
@@ -39,14 +38,15 @@ namespace EscuelaWeb.Vistas.ingreso
             Response.Redirect("Usuarios/Administrativos.aspx");
         }
 
-        protected void lbtnAvisos_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("frmAvisosSecretaria.aspx");
-        }
 
         protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
         {
+            Response.Redirect("../index.aspx");
+        }
 
+        protected void lbtnCuenta_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmCuentaBSecretaria.aspx");
         }
     }
 }
