@@ -112,7 +112,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="css\Allfondo.css" />
     <Content Include="css\index.css" />
     <Content Include="css\Interesado\BInteresado.css" />
     <Content Include="css\Profesor\Avisos\RealizarAvisoMiCursoProfesor.css" />
@@ -122,6 +121,7 @@
     <Content Include="css\Profesor\RegistroCalificaciones.css" />
     <Content Include="css\Secretaria\BSecretaria.css" />
     <Content Include="css\Secretaria\CuentaBSecretaria.css" />
+    <Content Include="css\login1.css" />
     <Content Include="css\Secretaria\Usuarios\Administrativos.css" />
     <Content Include="css\Secretaria\Usuarios\Alumnos.css" />
     <Content Include="css\Secretaria\Usuarios\Profesores.css" />
@@ -146,7 +146,6 @@
     <Content Include="img\fondoescolar.jpg" />
     <Content Include="img\fondoRep.jpg" />
     <Content Include="img\fondorepeat.jpg" />
-    <Content Include="img\Fondox.net_textura-azul-y-puntos_1280x768.jpg" />
     <Content Include="img\imagenfondo.jpg" />
     <Content Include="img\lapices.PNG" />
     <Content Include="img\lock.png" />
@@ -186,12 +185,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Vistas\Interesado\Bimestres\CuartoBim.aspx" />
-    <Content Include="Vistas\Interesado\Bimestres\PrimerBim.aspx" />
-    <Content Include="Vistas\Interesado\Bimestres\SegundoBim.aspx" />
-    <Content Include="Vistas\Interesado\Bimestres\TercerBim.aspx" />
     <Content Include="Vistas\Interesado\frmAvisosInteresado.aspx" />
-    <Content Include="Vistas\Interesado\frmCuentaBInteresado.aspx" />
     <Content Include="Vistas\Profesor\Avisos\frmRealizarAvisoMiCursoProfesor.aspx" />
     <Content Include="Vistas\Profesor\Avisos\frmVerAvisoGeneralProfesor.aspx" />
     <Content Include="Vistas\Profesor\frmCuentaProfesor.aspx" />
@@ -259,47 +253,12 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Interesado\Bimestres\CuartoBim.aspx.cs">
-      <DependentUpon>CuartoBim.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\Interesado\Bimestres\CuartoBim.aspx.designer.cs">
-      <DependentUpon>CuartoBim.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\Interesado\Bimestres\PrimerBim.aspx.cs">
-      <DependentUpon>PrimerBim.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\Interesado\Bimestres\PrimerBim.aspx.designer.cs">
-      <DependentUpon>PrimerBim.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\Interesado\Bimestres\SegundoBim.aspx.cs">
-      <DependentUpon>SegundoBim.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\Interesado\Bimestres\SegundoBim.aspx.designer.cs">
-      <DependentUpon>SegundoBim.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\Interesado\Bimestres\TercerBim.aspx.cs">
-      <DependentUpon>TercerBim.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\Interesado\Bimestres\TercerBim.aspx.designer.cs">
-      <DependentUpon>TercerBim.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Vistas\Interesado\frmAvisosInteresado.aspx.cs">
       <DependentUpon>frmAvisosInteresado.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vistas\Interesado\frmAvisosInteresado.aspx.designer.cs">
       <DependentUpon>frmAvisosInteresado.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\Interesado\frmCuentaBInteresado.aspx.cs">
-      <DependentUpon>frmCuentaBInteresado.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Vistas\Interesado\frmCuentaBInteresado.aspx.designer.cs">
-      <DependentUpon>frmCuentaBInteresado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Profesor\Avisos\frmRealizarAvisoMiCursoProfesor.aspx.cs">
       <DependentUpon>frmRealizarAvisoMiCursoProfesor.aspx</DependentUpon>
