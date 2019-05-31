@@ -129,6 +129,17 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Data\dsEscuela.xsc">
+      <DependentUpon>dsEscuela.xsd</DependentUpon>
+    </Content>
+    <None Include="Data\dsEscuela.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEscuela.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Data\dsEscuela.xss">
+      <DependentUpon>dsEscuela.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="img\colegio.jpg" />
     <Content Include="img\contactos.png" />
@@ -224,6 +235,11 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dsEscuela.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsEscuela.xsd</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
