@@ -115,16 +115,8 @@
     <Content Include="css\Allfondo.css" />
     <Content Include="css\index.css" />
     <Content Include="css\Interesado\BInteresado.css" />
-    <Content Include="css\Profesor\Avisos\RealizarAvisoMiCursoProfesor.css" />
-    <Content Include="css\Profesor\Avisos\VerAvisoGeneralProfesor.css" />
-    <Content Include="css\Profesor\BProfesor.css" />
     <Content Include="css\Profesor\CuentaProfesor.css" />
-    <Content Include="css\Profesor\RegistroCalificaciones.css" />
     <Content Include="css\Secretaria\BSecretaria.css" />
-    <Content Include="css\Secretaria\CuentaBSecretaria.css" />
-    <Content Include="css\Secretaria\Usuarios\Administrativos.css" />
-    <Content Include="css\Secretaria\Usuarios\Alumnos.css" />
-    <Content Include="css\Secretaria\Usuarios\Profesores.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -147,6 +139,7 @@
     <Content Include="img\fondoRep.jpg" />
     <Content Include="img\fondorepeat.jpg" />
     <Content Include="img\Fondox.net_textura-azul-y-puntos_1280x768.jpg" />
+    <Content Include="img\FONDO_final.jpeg" />
     <Content Include="img\imagenfondo.jpg" />
     <Content Include="img\lapices.PNG" />
     <Content Include="img\lock.png" />

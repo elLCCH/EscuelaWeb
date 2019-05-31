@@ -8,6 +8,7 @@
     <meta charset="utf-8"/>
      <title>Bienvenido Interesado</title>
      <link rel="stylesheet" href="../../css/Interesado/BInteresado.css"/>
+    <link rel="stylesheet" href="../../css/Allfondo.css"/>
     
 </head>
 <body onload="startclock()">

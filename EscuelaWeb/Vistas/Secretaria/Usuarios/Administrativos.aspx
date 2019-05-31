@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <title>Bienvenido Secretario</title>
     <link rel="stylesheet" href="../../../css/Secretaria/BSecretaria.css">
-    
+    <link rel="stylesheet" href="../../../css/Allfondo.css"/>
 </head>
 <body onload="startclock()">
     

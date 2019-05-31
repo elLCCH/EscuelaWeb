@@ -8,6 +8,7 @@
     <meta charset="utf-8"/>
     <title>Profesor</title>
     <link rel="stylesheet" href="../../css/Profesor/CuentaProfesor.css"/>
+    <link rel="stylesheet" href="../../css/Allfondo.css"/>
 </head>
 <body>
     <header>
