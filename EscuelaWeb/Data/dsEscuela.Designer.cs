@@ -406,6 +406,14 @@ namespace EscuelaWeb.Data {
             base.Tables.Add(this.tableProfesor);
             this.tableProfesor_Curso = new Profesor_CursoDataTable();
             base.Tables.Add(this.tableProfesor_Curso);
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Administrativo_Avisos", new global::System.Data.DataColumn[] {
+                        this.tableAdministrativo.ci_AdministrativoColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAvisos.ci_AdministrativoColumn});
+            this.tableAvisos.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             this.relationfk_CursoCalif = new global::System.Data.DataRelation("fk_CursoCalif", new global::System.Data.DataColumn[] {
                         this.tableCurso.id_CursoColumn}, new global::System.Data.DataColumn[] {
                         this.tableCalificaciones.id_CursoColumn}, false);
@@ -7148,6 +7156,15 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateUpdatedRows(dsEscuela dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._administrativoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Administrativo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._administrativoTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._cursoTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Curso.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -7181,15 +7198,6 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._profesorTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._administrativoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Administrativo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._administrativoTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -7230,6 +7238,14 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateInsertedRows(dsEscuela dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._administrativoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Administrativo.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._administrativoTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._cursoTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Curso.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -7259,14 +7275,6 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._profesorTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._administrativoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Administrativo.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._administrativoTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -7328,14 +7336,6 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._administrativoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Administrativo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._administrativoTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._profesorTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Profesor.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -7365,6 +7365,14 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._cursoTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._administrativoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Administrativo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._administrativoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
