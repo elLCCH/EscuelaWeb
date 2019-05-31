@@ -9,9 +9,24 @@ namespace EscuelaWeb.Vistas.Director_UE
 {
     public partial class frmBDirector : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
         {
+            Response.Redirect("../index.aspx");
+        }
 
+        protected void lbtnRealizarAvisos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Avisos/frmRealizarAvisoDirector.aspx");
+        }
+
+        protected void lbtnVerAvisos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Avisos/frmVerAvisosDirector.aspx");
+        }
+
+        protected void lbtnCuenta_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmCuentaDirector.aspx");
         }
     }
 }

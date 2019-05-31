@@ -13,5 +13,30 @@ namespace EscuelaWeb.Vistas.Director_UE
         {
 
         }
+
+        protected void lbtnInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../frmBDirector.aspx");
+        }
+
+        protected void lbtnRealizarAvisos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmRealizarAvisoDirector.aspx");
+        }
+
+        protected void lbtnVerAvisos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmVerAvisosDirector.aspx");
+        }
+
+        protected void lbtnCuenta_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../frmCuentaDirector.aspx");
+        }
+
+        protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../../index.aspx");
+        }
     }
 }
