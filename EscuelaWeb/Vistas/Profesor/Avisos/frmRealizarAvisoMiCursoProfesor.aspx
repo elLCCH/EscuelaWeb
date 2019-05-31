@@ -14,17 +14,18 @@
     <header>
             <div class="encabezado"><p class="titulo">UNIDAD EDUCATIVA "CARLOS BELTRAN MORALES"</p></div>
     </header>
+<form id="form1" runat="server">   
     <nav class ="Navegacion">
         <ul class ="menuCuenta">
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
                   <li><a href="../frmCuentaProfesor.aspx">Gestion de usuario</a></li>
-                  <li><a href="../index.aspx">Cerrar Sesion</a></li>
+                  <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click" OnClientClick="return MessageBoxShow();">Salir</asp:LinkButton></li>
                 </ul>
             </li>
         </ul>
     </nav> 
-<form id="form1" runat="server">   
+
     <div class="contenedorMenu">
         <!--MENU IZQUIERDO-->
         <div class="left">  
@@ -42,13 +43,24 @@
         <!--PARTE   DERECHA DEL MENU IZQ-->
         <div class="ParteDerecha">
             <div class="RealizarAviso">
-                <h1>REALIZAR AVISO</h1>
+                <h1 style="text-align:center;">Realizar Aviso</h1>
                 <asp:Label ID="lblTitlulo" runat="server" Text="Titulo:"></asp:Label>
-                <asp:TextBox ID="txtTitulo" runat="server" Width="475px"></asp:TextBox>
+                <asp:TextBox ID="txtTitulo" runat="server" Width="574px"></asp:TextBox>
                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion:"></asp:Label>
-                <asp:TextBox ID="txtDescripcion" runat="server" Height="94px" Width="475px"></asp:TextBox>
+                <asp:TextBox ID="txtDescripcion" runat="server" Height="94px" Width="609px"></asp:TextBox>
             </div>
         </div>
+    <script type="text/javascript">
+                function MessageBoxShow() {
+                    
+                    var opcion = confirm("¿SEGURO QUE DESEA CERRAR SESION?");
+                    if (opcion == true) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            </script>
 </form>    
 </body>
 </html>

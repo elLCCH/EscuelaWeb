@@ -17,19 +17,19 @@
        <p class="titulo">UNIDAD EDUCATIVA "CARLOS BELTRAN MORALES"</p>
    </div>
 </header>
-
+<form id="frmCuerpo" runat="server"> 
     <nav class ="Navegacion">
         <ul class ="menuCuenta">
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
                   <li><a href="frmCuentaProfesor.aspx">Cambiar contraseña</a></li>
-                  <li><a href="../index.aspx">Salir</a></li>
+                  <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click" OnClientClick="return MessageBoxShow();">Salir</asp:LinkButton></li>
                 </ul>
             </li>
         </ul>
     </nav> 
 
-<form id="frmCuerpo" runat="server">   
+  
     <!--LA PARTE DE PRINCIPAL Y MENU IZQ-->
     <div class="contenedorMenu">
         <!--MENU IZQUIERDO-->
@@ -61,7 +61,7 @@
                     <TitleStyle BackColor="#333399" BorderStyle="Solid" Font-Bold="True" Font-Size="12pt" ForeColor="White" Height="12pt" />
                     <TodayDayStyle BackColor="#999999" ForeColor="White" />
                 </asp:Calendar>
-                        <asp:Label ID="RELOJLABEL" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="RELOJLABEL" runat="server" Text="Label" ForeColor="White"></asp:Label>
                    </div>
                 </center>
                 <%--RELOJ--%>
@@ -97,6 +97,17 @@
             </div>
             </div>
         </div>
+    <script type="text/javascript">
+        function MessageBoxShow() {
+
+            var opcion = confirm("¿SEGURO QUE DESEA CERRAR SESION?");
+            if (opcion == true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+            </script>
 </form>    
 </body>
 </html>

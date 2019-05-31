@@ -22,13 +22,22 @@ namespace EscuelaWeb.Vistas.Interesado {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control lbtnCuenta.
+        /// Control lbtnCerrarSesion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnCuenta;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnCerrarSesion;
+        
+        /// <summary>
+        /// Control lbtnInicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnInicio;
         
         /// <summary>
         /// Control lbtnCalificaciones.
@@ -76,21 +85,21 @@ namespace EscuelaWeb.Vistas.Interesado {
         protected global::System.Web.UI.WebControls.LinkButton lbtnCuartoB;
         
         /// <summary>
-        /// Control lboxAvisosProfesor.
+        /// Control lbtnAvisos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lboxAvisosProfesor;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnAvisos;
         
         /// <summary>
-        /// Control lboxAvisosDirector.
+        /// Control dgvAvisos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox lboxAvisosDirector;
+        protected global::System.Web.UI.WebControls.GridView dgvAvisos;
     }
 }

@@ -14,17 +14,18 @@
     <header>
             <div class="encabezado"><p class="titulo">UNIDAD EDUCATIVA "CARLOS BELTRAN MORALES"</p></div>
     </header>
+    <form id="form1" runat="server">
     <nav class ="Navegacion">
         <ul class ="menuCuenta">
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
                   <li><a href="../frmCuentaProfesor.aspx">Gestion de usuario</a></li>
-                  <li><a href="../index.aspx">Cerrar Sesion</a></li>
+                  <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click" OnClientClick="return MessageBoxShow();">Salir</asp:LinkButton></li>
                 </ul>
             </li>
         </ul>
     </nav> 
-    <form id="form1" runat="server">   
+       
     <div class="contenedorMenu">
         <!--MENU IZQUIERDO-->
         <div class="left">  
@@ -40,8 +41,33 @@
     </div>     
         <!--PARTE   DERECHA DEL MENU IZQ-->
         <div class="ParteDerecha">
-            
+            <div class="RealizarAviso">
+                <h1 style="text-align:center;">LISTA DE AVISOS</h1>
+
+                <h3>AVISOS</h3>
+                <asp:GridView ID="dgvAvisos" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                    <SortedDescendingHeaderStyle BackColor="#242121" />
+                </asp:GridView>
+            </div>
         </div>
+        <script type="text/javascript">
+                function MessageBoxShow() {
+                    
+                    var opcion = confirm("¿SEGURO QUE DESEA CERRAR SESION?");
+                    if (opcion == true) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            </script>
 </form>  
 </body>
 </html>

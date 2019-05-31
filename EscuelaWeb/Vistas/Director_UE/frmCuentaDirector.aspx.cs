@@ -21,7 +21,7 @@ namespace EscuelaWeb.Vistas.Director_UE
 
         protected void lbtnRealizarAvisos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Avisos/frmRealizarAvisosDirector.aspx");
+            Response.Redirect("Avisos/frmRealizarAvisoDirector.aspx");
         }
 
         protected void lbtnVerAvisos_Click(object sender, EventArgs e)

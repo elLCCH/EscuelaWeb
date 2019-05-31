@@ -8,6 +8,7 @@
         <meta charset="utf-8"/>
         <title>Escuela</title>
         <link rel="stylesheet" href="../css/index.css"/>
+        <link rel="stylesheet" href="../css/Allfondo.css"/>
 </head>
 <body>
 <!--CABECERA-->
@@ -33,7 +34,7 @@
                 <img class="imgUsuario" src="../img/man-user.png" alt=""/>
                 <asp:TextBox ID="txtCuenta" runat="server" CssClass="textEmail" placeholder="Escribe tu Cuenta"></asp:TextBox>
                 <img class="imgPassword" src="../img/lock.png" alt=""/>                           
-                <asp:TextBox ID="txtContrasenia" runat="server" CssClass="textPassword" placeholder="Introduzca su contraseña"></asp:TextBox>
+                <asp:TextBox ID="txtContrasenia" runat="server" CssClass="textPassword" placeholder="Introduzca su contraseña" TextMode="Password"></asp:TextBox>
                 </div>
                 <div class="checkbox" style="margin-left: 15px; left: 0px;">
                     <label style="color:#3174C1">

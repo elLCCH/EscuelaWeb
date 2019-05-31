@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace EscuelaWeb.Vistas.Profesor {
+namespace EscuelaWeb.Vistas.Interesado.Bimestres {
     
     
-    public partial class frmCuentaProfesor {
+    public partial class PrimerBim {
         
         /// <summary>
         /// Control form1.
@@ -40,13 +40,49 @@ namespace EscuelaWeb.Vistas.Profesor {
         protected global::System.Web.UI.WebControls.LinkButton lbtnInicio;
         
         /// <summary>
-        /// Control lbtnRegCalificaciones.
+        /// Control lbtnCalificaciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnRegCalificaciones;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnCalificaciones;
+        
+        /// <summary>
+        /// Control lbtnPrimerB.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnPrimerB;
+        
+        /// <summary>
+        /// Control lbtnSegundoB.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnSegundoB;
+        
+        /// <summary>
+        /// Control lbtnTerceroB.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnTerceroB;
+        
+        /// <summary>
+        /// Control lbtnCuartoB.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnCuartoB;
         
         /// <summary>
         /// Control lbtnAvisos.
@@ -56,86 +92,5 @@ namespace EscuelaWeb.Vistas.Profesor {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbtnAvisos;
-        
-        /// <summary>
-        /// Control lbtnVerAvisosG.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnVerAvisosG;
-        
-        /// <summary>
-        /// Control LinkButton1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
-        
-        /// <summary>
-        /// Control Label1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-        
-        /// <summary>
-        /// Control txtNombre.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombre;
-        
-        /// <summary>
-        /// Control Label2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// Control txtApellidos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidos;
-        
-        /// <summary>
-        /// Control Label3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-        
-        /// <summary>
-        /// Control txtContrasenia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContrasenia;
-        
-        /// <summary>
-        /// Control btnGuardarCambios.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarCambios;
     }
 }

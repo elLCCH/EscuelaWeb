@@ -5,9 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8"/>
+    <meta charset="utf-8">
     <title>Bienvenido Secretario</title>
-    <link rel="stylesheet" href="../../css/Secretaria/BSecretaria.css"/>
+    <link rel="stylesheet" href="../../css/Secretaria/BSecretaria.css">
+    <link rel="stylesheet" href="../../css/Allfondo.css"/>
     
 </head>
 <body onload="startclock()">
@@ -25,7 +26,7 @@
                 <ul class="subMenu">
                   <%--<li><a href="#">Gestion de usuario</a></li>--%>
                   <li><asp:LinkButton ID="lbtnCuenta" runat="server" OnClick="lbtnCuenta_Click">Cambiar contraseña</asp:LinkButton></li>
-                  <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click">Salir</asp:LinkButton></li>
+                  <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click" OnClientClick="return MessageBoxShow();">Salir</asp:LinkButton></li>
                   <%--<li><a href="../index.aspx">Cerrar Sesion</a></li>--%>
                 </ul>
             </li>
@@ -106,6 +107,17 @@
                 </script>
             </div>
             </div>
+            <script type="text/javascript">
+                function MessageBoxShow() {
+                    
+                    var opcion = confirm("¿SEGURO QUE DESEA CERRAR SESION?");
+                    if (opcion == true) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            </script>
         </div>
     </form>
 </body>
