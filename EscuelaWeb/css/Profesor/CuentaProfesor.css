@@ -121,7 +121,7 @@ a {
     min-width: 200px;
     /*display: inline-block;*/ /*HACE Q SE ESE MENU TRNSPASE LOS OTROS MENUS*/
     line-height: 18px;
-    width: 200px;
+    width: 249px;
     height: auto;
     float: left;
 }
@@ -155,13 +155,17 @@ a {
         background: #424242;
         color: #ffffff;
     }
+        .contenedorMenu .left .Menu li .avisos:hover {
+            background: rgba(19, 159, 235, 0.644);
+            color: aliceblue;
+        }
 
-    .contenedorMenu * {
-        margin: 0;
-        padding: 0;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-    }
+        .contenedorMenu * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
 
 .cerrarsesion {
     float: right;
@@ -176,11 +180,12 @@ a {
     float: left;
     height: auto;
     margin: 0px 20px 0px 0px;
-    width: 200px;
+    width: 250px;
 }
 
 .ParteDerecha {
-    width: 1000px;
+    width: 100%;
+    margin:25px;
 }
 /*FRM CUENTA PROFESOR*/
 .DatosPersonales {
@@ -258,14 +263,15 @@ a {
 .RealizarAviso {
     background-color: #20b3bd;
     padding:50px;
-    width:474px;
+    width:625px;
     height:auto;
     float:left;
     margin:20px 50px;
     position:relative;
-    left: 30%;
+    left: 0%;
+    top: -19px;
 }
 h1 {
     position:relative;
-    left:20%;
+    left:4%;
 }

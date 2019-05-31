@@ -88,7 +88,6 @@ a {
 }
 
 body {
-    /*background: url(../img/fondodelapices.jpg);*/
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -199,20 +198,45 @@ a {
 #RELOJLABEL {
     font-size: 30px;
 }
+/*FRM BIENVENIDO PROFESOR*/
+.Saludo {
+    background-image: url('../img/urdaibai-desde-magunas-700x467.jpg');
+    background-size: 100%;
+    height: 400px;
+    width: 650px;
+    position: relative;
+    left: 35%;
+    position: absolute;
+    top: 30%;
+}
+/*FRM REALIZAR AVISO DIRECTOR*/
+.RealizarAviso {
+    background-color: #20b3bd;
+    padding: 50px;
+    width: 474px;
+    height: auto;
+    float: left;
+    margin: 20px 50px;
+    position: relative;
+    left: 30%;
+}
 
-/*FRM CUENTA SECRETARIA*/
-/*CAJA CUENTA*/
+h1 {
+    position: relative;
+    left: 20%;
+}
+/*FRM CUENTA DIRECTOR*/
 .DatosPersonales {
     /*background-color: #ff6a00;
     height: 350px;
     width: 500px;*/
     padding: 50px;
-    background-color: rgba(19, 159, 235, 0.644);
+    background-color: #20b3bd;
     width: 400px;
     height: auto;
     float: left;
-    /*margin-left: auto;
-    margin-right: auto;*/
+    /*margin-left: 10px;
+    margin-right: 20%;*/
     margin: 20px 0 0 50px;
 }
 
@@ -227,96 +251,13 @@ a {
     width: 150px;
     float: left;
 }
-
 .imagen {
     margin: 20px;
     width: 150px;
     height: 150px;
-    background: url(../../img/man-user.png);
+    background: url(../img/man-user.png);
     background-size: cover;
     background-repeat: no-repeat;
     margin-left: auto;
     margin-right: auto;
 }
-
-#btnGuardarCambios {
-    float: right;
-    font-size: 20px;
-}
-/*---GESTIONAR USUARIOS---*/
-/*CAJA AGREGAR MODIFICAR*/
-.CRUD_ALUMNOS {
-    padding: 20px;
-    background-color: #ff6a00;
-    width: 407px;
-    height: 434px;
-    float: left;
-    margin: 0 0 0 25px;
-}
-
-
-.CajaTexto {
-    margin-bottom: 10px; /*HACE Q SE JUNTE TODA LA CAJA*/
-    padding: 3px;
-    float: left;
-    width: 190px;
-}
-
-.texto {
-    width: 150px;
-    float: left;
-    height: 22px;
-}
-
-
-
-.btnder {
-    /*float: right;*/
-    font-size: 20px;
-}
-
-.btnizq {
-    font-size: 20px;
-    /*float:left;*/
-}
-
-.leftOpciones {
-    width: 97%;
-    height: 347px;
-}
-
-.boton {
-    width: 167px;
-    margin: 5px 0 0 0;
-    float: left;
-}
-/*ADMINISTRATIVO*/
-.tablaUsuarios {
-    height: 294px;
-    width: 60%;
-    padding: 25px;
-}
-
-.AgregarModificar {
-    width: 40%;
-}
-/*CAJA AGREGAR MODIFICAR*/
-.CRUD_ALUMNOS {
-    padding: 20px;
-    background-color: #2287D0;
-    width: 407px;
-    height: 462px;
-    float: left;
-    margin: 0 0 0 25px;
-}
-
-.botonAdornado {
-    background-color: #009DC8;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-    .botonAdornado:hover {
-        background: #4792be;
-    }

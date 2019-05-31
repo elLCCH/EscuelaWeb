@@ -22,15 +22,6 @@ namespace EscuelaWeb.Vistas.Director_UE {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control lbtnInicio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnInicio;
-        
-        /// <summary>
         /// Control lbtnCuenta.
         /// </summary>
         /// <remarks>
@@ -49,13 +40,13 @@ namespace EscuelaWeb.Vistas.Director_UE {
         protected global::System.Web.UI.WebControls.LinkButton lbtnCerrarSesion;
         
         /// <summary>
-        /// Control lbtnRegCalificaciones.
+        /// Control lbtnInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnRegCalificaciones;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnInicio;
         
         /// <summary>
         /// Control lbtnAvisos.
@@ -67,13 +58,31 @@ namespace EscuelaWeb.Vistas.Director_UE {
         protected global::System.Web.UI.WebControls.LinkButton lbtnAvisos;
         
         /// <summary>
-        /// Control Calendar1.
+        /// Control lbtnRealizarAvisos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+        protected global::System.Web.UI.WebControls.LinkButton lbtnRealizarAvisos;
+        
+        /// <summary>
+        /// Control lbtnVerAvisos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnVerAvisos;
+        
+        /// <summary>
+        /// Control Calendario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar Calendario;
         
         /// <summary>
         /// Control RELOJLABEL.

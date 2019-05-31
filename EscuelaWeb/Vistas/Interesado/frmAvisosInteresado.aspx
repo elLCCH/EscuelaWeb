@@ -8,6 +8,7 @@
     <meta charset="utf-8">
      <title>Bienvenido Interesado</title>
      <link rel="stylesheet" href="../../css/Interesado/BInteresado.css">
+    <link rel="stylesheet" href="../../css/Allfondo.css"/>
     
 </head>
 <body>
@@ -17,29 +18,30 @@
                 <p class="titulo">UNIDAD EDUCATIVA "CARLOS BELTRAN MORALES"</p>
             </div>
 </header>
+<form id="form1" runat="server">   
 <nav class ="Navegacion">
         <ul class ="menuCuenta">
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
-                  <li><a href="#">Gestion de usuario</a></li>
-                  <li><a href="../index.aspx">Cerrar Sesion</a></li>
+                  <li><a href="frmCuentaBInteresado.aspx">Cambiar Contraseña</a></li>
+                  <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click" OnClientClick="return MessageBoxShow();">Salir</asp:LinkButton></li>
                 </ul>
             </li>
         </ul>
     </nav>  
-<form id="form1" runat="server">   
+
         <!--LA PARTE DE PRINCIPAL Y MENU IZQ-->
     <div class="contenedorMenu">
         <!--MENU IZQUIERDO-->
         <div class="left">  
             <ul class="Menu">
-                <li><asp:LinkButton ID="lbtnCuenta" runat="server">Cuenta</asp:LinkButton></li>
+                <li><asp:LinkButton ID="lbtnInicio" runat="server" OnClick="lbtnInicio_Click" >Inicio</asp:LinkButton></li>
                 <li><asp:LinkButton ID="lbtnCalificaciones" runat="server" >Calificaciones</asp:LinkButton></li>
-                <li><asp:LinkButton ID="lbtnPrimerB" runat="server" CssClass="parteNegra">Primer Bimestre</asp:LinkButton></li>
-                <li><asp:LinkButton ID="lbtnSegundoB" runat="server" CssClass="parteNegra">Segundo bimestre</asp:LinkButton></li>
-                <li><asp:LinkButton ID="lbtnTerceroB" runat="server" CssClass="parteNegra">Tercer bimestre</asp:LinkButton></li>
-                <li><asp:LinkButton ID="lbtnCuartoB" runat="server" CssClass="parteNegra">Cuarto bimestre</asp:LinkButton></li>
-                <li class="activado"><a href="#">Avisos</a></li>
+                <li><asp:LinkButton ID="lbtnPrimerB" runat="server" CssClass="parteNegra" OnClick="lbtnPrimerB_Click">Primer Bimestre</asp:LinkButton></li>
+                <li><asp:LinkButton ID="lbtnSegundoB" runat="server" CssClass="parteNegra" OnClick="lbtnSegundoB_Click">Segundo bimestre</asp:LinkButton></li>
+                <li><asp:LinkButton ID="lbtnTerceroB" runat="server" CssClass="parteNegra" OnClick="lbtnTerceroB_Click">Tercer bimestre</asp:LinkButton></li>
+                <li><asp:LinkButton ID="lbtnCuartoB" runat="server" CssClass="parteNegra" OnClick="lbtnCuartoB_Click">Cuarto bimestre</asp:LinkButton></li>
+                <li><asp:LinkButton ID="lbtnAvisos" runat="server" OnClick="lbtnAvisos_Click" >Avisos</asp:LinkButton></li>
             </ul>
             
         </div>
@@ -48,16 +50,34 @@
         <!--PARTE   DERECHA DEL MENU IZQ-->
         
         <div class="ParteDerecha">
-            <div class="avisos">
-                <h1 style="text-align:center; color:#000000;">AVISOS</h1>
-                <h1>AVISOS PROFESOR</h1>
-                <asp:ListBox ID="lboxAvisosProfesor" runat="server"  Width="80%"></asp:ListBox>
-            </div>
-            <div class="avisos">
-                <h1>AVISOS DIRECTOR</h1>
-                <asp:ListBox ID="lboxAvisosDirector" runat="server"  Width="80%"></asp:ListBox>
+            
+            <div class="RealizarAviso">
+                <h1 style="text-align:center;">LISTA DE AVISOS</h1>
+
+                <h3>AVISOS</h3>
+                <asp:GridView ID="dgvAvisos" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                    <SortedDescendingHeaderStyle BackColor="#242121" />
+                </asp:GridView>
             </div>
         </div>
+    <script type="text/javascript">
+                function MessageBoxShow() {
+                    
+                    var opcion = confirm("¿SEGURO QUE DESEA CERRAR SESION?");
+                    if (opcion == true) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            </script>
 </form>    
 </body>
 </html>
