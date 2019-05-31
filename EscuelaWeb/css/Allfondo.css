@@ -1,5 +1,9 @@
 ﻿body {
-    background: url(../img/FONDO_final.jpeg);
+    background: url(../img/FONDOfijo.png);
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.Navegacion {
+    background-color: #333399;
 }
