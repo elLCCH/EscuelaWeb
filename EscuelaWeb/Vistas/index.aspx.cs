@@ -19,7 +19,8 @@ namespace EscuelaWeb.Vistas
             {
                 //Response.Redirect("Secretaria/frmBSecretaria.aspx");
                 //Response.Redirect("Profesor/frmBProfesor.aspx");
-                Response.Redirect("Interesado/frmBInteresado.aspx");
+                //Response.Redirect("Interesado/frmBInteresado.aspx");
+                Response.Redirect("Director_UE/frmBDirector.aspx");
             }
             
         }

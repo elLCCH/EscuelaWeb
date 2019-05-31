@@ -9,6 +9,7 @@
      <title>Bienvenido Interesado</title>
      <!--<link rel="stylesheet" href="../../css/Profesor/RegistroCalificaciones.css">-->
      <link rel="stylesheet" href="../../css/Profesor/CuentaProfesor.css"/>
+    <link rel="stylesheet" href="../../css/Allfondo.css"/>
 </head>
 <body>
     <!--ENCABEZADO-->

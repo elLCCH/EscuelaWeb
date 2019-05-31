@@ -1,10 +1,5 @@
 ﻿@charset "utf-8";
 
-#form1 {
-    width: 100%;
-    height: auto;
-}
-
 .titulo {
     font-size: 25px;
     font-weight: bolder;
@@ -13,25 +8,93 @@
     padding-top: 2.5%;
     padding-bottom: 5%;
     margin: 0;
-    text-align: center;
 }
 
 .encabezado {
-    background: url(../../../img/lapices.PNG);
-    /*background-color: #002147;*/
+    background-color: #002147;
     height: 100px;
     margin: 0;
     padding: 0;
     background-repeat: no-repeat;
     background-size: cover;
+    text-align: center;
+}
+
+/*BARRA CERRAR SESION Y CUENTA*/
+.Salir {
+    background: #3264db;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    top: 5px;
+}
+
+.Navegacion {
+    margin: 10px auto;
+    background: #3264db;
+    width: 100%;
+    height: 50px;
+}
+
+    .Navegacion ul {
+        list-style: none;
+        float: right;
+    }
+
+.menuCuenta > li {
+    /*position:relative;*/
+    display: inline-block;
+}
+
+    .menuCuenta > li a {
+        display: block;
+        padding: 5px 10px;
+        text-decoration: none;
+    }
+
+.menuCuenta li a:hover {
+    color: #CE7D35;
+    transition: all .3s;
+}
+
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+/*SUBMENU CUENTA*/
+.subMenu {
+    /*position:absolute;*/
+    background: #333333;
+    /*width:130%;*/
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+    .subMenu li a {
+        display: block;
+        padding: 15px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+.menuCuenta ul li:hover > ul {
+    display: block;
+}
+
+.menuCuenta li:hover .subMenu {
+    visibility: visible;
+    opacity: 1;
 }
 
 body {
-    background: url(../img/fondodelapices.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+/*body {
+    font-family: 'Lucida Sans';
+    line-height: 18px;
+}*/
 
 a {
     text-decoration: none;
@@ -44,7 +107,6 @@ a {
     background: #2287D0;
     color: aliceblue;
 }
-
 
 
 /*MENU IZQ*/
@@ -104,6 +166,7 @@ a {
             color: aliceblue;
         }
 
+
 .cerrarsesion {
     float: right;
 }
@@ -121,53 +184,73 @@ a {
 }
 /*PARTE DERECHA*/
 .ParteDerecha {
-    width: 100%;
+    width: 81%;
 }
 
+/*FRM BIENVENIDO SECRETARIA*/
 .Bienvenido {
-    width: 407px;
+    width: 314px;
+    height: 255px;
     margin-left: auto;
     margin-right: auto;
-    height: 324px;
 }
 
 #RELOJLABEL {
     font-size: 30px;
 }
-
-.tablaUsuarios {
-    height: 294px;
-    width: 60%;
-    padding: 25px;
+/*FRM BIENVENIDO PROFESOR*/
+.Saludo {
+    background-image: url('../img/urdaibai-desde-magunas-700x467.jpg');
+    background-size: 100%;
+    height: 400px;
+    width: 650px;
+    position: relative;
+    left: 35%;
+    position: absolute;
+    top: 30%;
 }
-
-.AgregarModificar {
-    width: 40%;
-}
-/*CAJA AGREGAR MODIFICAR*/
-.CRUD_ALUMNOS {
-    padding: 20px;
-    background-color: #ff6a00;
-    width: 407px;
-    height: 434px;
+/*FRM REALIZAR AVISO DIRECTOR*/
+.RealizarAviso {
+    background-color: #20b3bd;
+    padding: 50px;
+    width: 474px;
+    height: auto;
     float: left;
-    margin: 0 0 0 25px;
+    margin: 20px 50px;
+    position: relative;
+    left: 30%;
 }
 
+h1 {
+    position: relative;
+    left: 20%;
+}
+/*FRM CUENTA DIRECTOR*/
+.DatosPersonales {
+    /*background-color: #ff6a00;
+    height: 350px;
+    width: 500px;*/
+    padding: 50px;
+    background-color: #20b3bd;
+    width: 400px;
+    height: auto;
+    float: left;
+    /*margin-left: 10px;
+    margin-right: 20%;*/
+    margin: 20px 0 0 50px;
+}
 
 .CajaTexto {
-    margin-bottom: 10px; /*HACE Q SE JUNTE TODA LA CAJA*/
-    padding: 3px;
+    margin-bottom: 20px; /*HACE Q SE JUNTE TODA LA CAJA*/
+    width: 50%;
+    padding: 6px;
     float: left;
-    width: 190px;
 }
 
 .texto {
     width: 150px;
     float: left;
-    height: 22px;
 }
-
 .imagen {
     margin: 20px;
     width: 150px;
@@ -177,25 +260,4 @@ a {
     background-repeat: no-repeat;
     margin-left: auto;
     margin-right: auto;
-}
-
-.btnder {
-    /*float: right;*/
-    font-size: 20px;
-}
-
-.btnizq {
-    font-size: 20px;
-    /*float:left;*/
-}
-
-.leftOpciones {
-    width: 97%;
-    height: 347px;
-}
-
-.boton {
-    width: 167px;
-    margin: 5px 0 0 0;
-    float: left;
 }

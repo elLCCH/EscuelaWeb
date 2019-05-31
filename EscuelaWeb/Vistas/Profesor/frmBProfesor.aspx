@@ -9,6 +9,7 @@
      <title>Profesor</title>
      <!--<link rel="stylesheet" href="../../css/Profesor/BProfesor.css"/>-->
      <link rel="stylesheet" href="../../css/Profesor/CuentaProfesor.css"/>
+    <link rel="stylesheet" href="../../css/Allfondo.css"/>
 </head>
 <body onload="startclock()">
 <!--ENCABEZADO-->
