@@ -5,9 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
     <title>Bienvenido Secretario</title>
-    <link rel="stylesheet" href="../../css/Secretaria/BSecretaria.css">
+    <link rel="stylesheet" href="../../css/Secretaria/BSecretaria.css"/>
     <link rel="stylesheet" href="../../css/Allfondo.css"/>
     
 </head>
