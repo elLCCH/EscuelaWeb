@@ -236,6 +236,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controlador\AlumnoController.cs" />
     <Compile Include="Data\dsEscuela.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -430,7 +431,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controlador\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

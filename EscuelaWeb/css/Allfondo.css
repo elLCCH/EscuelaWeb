@@ -2,6 +2,7 @@
     background: url(../img/FONDOfijo.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background:fixed;
 }
 
 .Navegacion {
