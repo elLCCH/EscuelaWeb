@@ -106,7 +106,7 @@
                         <asp:TextBox ID="txtApMaterno" runat="server" CssClass="CajaTexto"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label6" runat="server" Text="FECHA NAC.:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtFechNac" runat="server" CssClass="CajaTexto" TextMode="DateTime"></asp:TextBox>
+                        <asp:TextBox ID="txtFechNac" runat="server" CssClass="CajaTexto" TextMode="Date"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label9" runat="server" Text="DIRECCION:" CssClass="texto"></asp:Label></div>
                         <asp:TextBox ID="txtDireccion" runat="server" CssClass="CajaTexto"></asp:TextBox>
@@ -119,11 +119,23 @@
                         <asp:TextBox ID="txtCOntrasenia" runat="server" CssClass="CajaTexto"></asp:TextBox>
                        <br />
                         <div Class="texto"><asp:Label ID="Label5" runat="server" Text="CURSO:" CssClass="texto"></asp:Label></div>
-                       <asp:DropDownList ID="cbCurso" runat="server" CssClass="CajaTexto"></asp:DropDownList>
+                       <asp:DropDownList ID="cbCurso" runat="server" CssClass="CajaTexto">
+                           <asp:ListItem>Primero</asp:ListItem>
+                           <asp:ListItem>Segundo</asp:ListItem>
+                           <asp:ListItem>Tercero</asp:ListItem>
+                           <asp:ListItem>Cuarto</asp:ListItem>
+                           <asp:ListItem>Quinto</asp:ListItem>
+                           <asp:ListItem>Sexto</asp:ListItem>
+                        </asp:DropDownList>
                        
                        <br />
                         <div Class="texto"><asp:Label ID="Label10" runat="server" Text="PARALELO:" CssClass="texto"></asp:Label></div>
-                       <asp:DropDownList ID="cbParalelo" runat="server" CssClass="CajaTexto" ></asp:DropDownList>
+                       <asp:DropDownList ID="cbParalelo" runat="server" CssClass="CajaTexto" >
+                           <asp:ListItem>A</asp:ListItem>
+                           <asp:ListItem>B</asp:ListItem>
+                           <asp:ListItem>C</asp:ListItem>
+                           <asp:ListItem>D</asp:ListItem>
+                        </asp:DropDownList>
                         
                        <div style="height: 37px" class="boton">
                         <asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="btnizq" OnClick="btnEliminar_Click"/>
@@ -133,17 +145,24 @@
                         </div>
                            
                         <div style="height: 38px" class="boton">
-                        <asp:Button ID="btnNuevo" runat="server" Text="NUEVO" CssClass="btnizq" OnClick="btnNuevo_Click"/></div>
+                        <asp:Button ID="btnNuevo" runat="server" Text="REGISTRAR" CssClass="btnizq" OnClick="btnNuevo_Click"/></div>
                        <div style="height: 38px" class="boton">
-                        <asp:Button ID="btnBuscar" CssClass="btnder" runat="server" Text="BUSCAR" Height="37px" Width="203px" />
-                        </div>
-                   </div>       
+                        <asp:Button ID="btnLimpiar" runat="server" Text="LIMPIAR" CssClass="btnder" OnClick="btnLimpiar_Click"/></div>
+                   </div>      
+               <asp:Label ID="lblIdCurso" runat="server" Text="IdCurso" CssClass="Ocultar"></asp:Label>
            </div>
+
+            
+                
             <div class="tablaUsuarios">
-                   
-                   <asp:GridView ID="dgEstudiantes" runat="server" CellPadding="3" GridLines="None" Height="284px" Width="80%" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" DataKeyNames="Ci_Estudiante" DataSourceID="SqlDataSourceAlumnos">
+<%--<div style="height: 38px" class="parteBusqueda" >
+<asp:Button ID="btnBuscar" CssClass="btnizq" runat="server" Text="BUSCAR" Height="37px" Width="153px" OnClick="btnBuscar_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<asp:TextBox ID="txtBusqueda" runat="server" Width="775px" Height="27px" OnTextChanged="txtBusqueda_TextChanged" ></asp:TextBox>
+</div>--%>
+                   <asp:GridView ID="dgEstudiantes" runat="server" CellPadding="3" GridLines="None" Height="284px" Width="80%" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" DataKeyNames="Ci_Estudiante" DataSourceID="SqlDataSourceAlumnos" OnSelectedIndexChanged="dgEstudiantes_SelectedIndexChanged">
                        <Columns>
-                           <asp:CommandField ShowSelectButton="True" />
+                           <asp:CommandField SelectText="Modificar" ShowSelectButton="True" />
                            <asp:BoundField DataField="Ci_Estudiante" HeaderText="Ci_Estudiante" ReadOnly="True" SortExpression="Ci_Estudiante" />
                            <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                            <asp:BoundField DataField="Ap_Paterno" HeaderText="Ap_Paterno" SortExpression="Ap_Paterno" />
