@@ -34,9 +34,9 @@ namespace EscuelaWeb.Controlador
         public int Id_curso { get => id_curso; set => id_curso = value; }
 
         Context db;
-        public void insertar_alumno(string Pnombre, string Pap_paterno, string Pap_materno, string Pcontrasenia, int Pcel, DateTime Pfec, string Pdir, int Pid_curso)
+        public void insertar_alumno(int PCiEst, string Pnombre, string Pap_paterno, string Pap_materno, string Pcontrasenia, int Pcel, DateTime Pfec, string Pdir, int Pid_curso)
         {
-            est.Insert(Pnombre,Pap_paterno,Pap_materno,Pcontrasenia,Pcel,Pfec,Pdir,Pid_curso);
+            est.Insert(PCiEst,Pnombre,Pap_paterno,Pap_materno,Pcontrasenia,Pcel,Pfec,Pdir,Pid_curso);
         }
         public void modificar(int Pci, string Pnombre, string Pap_paterno, string Pap_materno, string Pcontrasenia, int Pcel, DateTime Pfec, string Pdir, int Pid_curso)
         {

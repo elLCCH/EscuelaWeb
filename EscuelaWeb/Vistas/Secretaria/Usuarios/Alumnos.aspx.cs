@@ -69,8 +69,8 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
 
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
-            cAlumno.insertar_alumno(txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, 2);
-            GridView1.DataBind();
+            cAlumno.insertar_alumno(Convert.ToInt32(txtci.Text),txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, 2);
+            dgEstudiantes.DataBind();
         }
 
         protected void btnEliminar_Click(object sender, EventArgs e)
