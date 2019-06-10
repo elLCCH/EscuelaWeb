@@ -161,7 +161,6 @@
     <Content Include="img\ministerio1.png" />
     <Content Include="img\miniterio.jpg" />
     <Content Include="img\urdaibai-desde-magunas-700x467.jpg" />
-    <Content Include="JS\Profesor\Profesor.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -237,8 +236,9 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controlador\AdministrativoController.cs" />
     <Compile Include="Controlador\AlumnoController.cs" />
-    <Compile Include="Controlador\ProfesorController.cs" />
+    <Compile Include="Controlador\Profesorescontroller.cs" />
     <Compile Include="Data\dsEscuela.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
