@@ -236,7 +236,9 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controlador\AdministrativoController.cs" />
     <Compile Include="Controlador\AlumnoController.cs" />
+    <Compile Include="Controlador\Profesorescontroller.cs" />
     <Compile Include="Data\dsEscuela.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
