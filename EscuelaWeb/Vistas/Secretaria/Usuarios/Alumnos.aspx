@@ -57,6 +57,63 @@
         <!--PARTE   DERECHA DEL MENU IZQ-->
 
         <div class="ParteDerecha">
+            <asp:Label ID="lblIdCurso" runat="server" Text="" CssClass="Ocultar"></asp:Label>
+        <div class="CRUD_ALUMNOS" id="CAlumnos" runat="server">
+
+
+            <div style="font-size:40px; width:auto; text-align:center;">ESTUDIANTES</div>
+                        <div Class="texto"><div Class="texto"><asp:Label ID="Label1" runat="server" Text="CI:" ></asp:Label></div></div>
+                        <asp:TextBox ID="txtci" runat="server" CssClass="CajaTexto" OnTextChanged="txtci_TextChanged"></asp:TextBox>
+                        <br />
+                        <div Class="texto"><asp:Label ID="Label7" runat="server" Text="NOMBRE:" CssClass="texto"></asp:Label></div>
+                        <asp:TextBox ID="txtNombre" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <br />
+                        <div Class="texto"><asp:Label ID="Label2" runat="server" Text="AP. PATERNO:" CssClass="texto"></asp:Label></div>
+                        <asp:TextBox ID="txtApPaterno" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <br />
+                        <div Class="texto"><asp:Label ID="Label3" runat="server" Text="AP. MATERNO:" CssClass="texto"></asp:Label></div>
+                        <asp:TextBox ID="txtApMaterno" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <br />
+                        <div Class="texto"><asp:Label ID="Label6" runat="server" Text="FECHA NAC.:" CssClass="texto"></asp:Label></div>
+                        <asp:TextBox ID="txtFechNac" runat="server" CssClass="CajaTexto" TextMode="DateTime"></asp:TextBox>
+                        <br />
+                        <div Class="texto"><asp:Label ID="Label9" runat="server" Text="DIRECCION:" CssClass="texto"></asp:Label></div>
+                        <asp:TextBox ID="txtDireccion" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        
+                       <br />
+                        <div Class="texto"><asp:Label ID="Label8" runat="server" Text="CELULAR:" CssClass="texto"></asp:Label></div>
+                        <asp:TextBox ID="txtCelular" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                       <br />
+                        <div Class="texto"><asp:Label ID="Label4" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label></div>
+                        <asp:TextBox ID="txtCOntrasenia" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                       <br />
+                        <div Class="texto"><asp:Label ID="Label5" runat="server" Text="CURSO:" CssClass="texto"></asp:Label></div>
+                       <asp:DropDownList ID="cbCurso" runat="server" CssClass="CajaTexto">
+                           <asp:ListItem>Primero</asp:ListItem>
+                           <asp:ListItem>Segundo</asp:ListItem>
+                           <asp:ListItem>Tercero</asp:ListItem>
+                           <asp:ListItem>Cuarto</asp:ListItem>
+                           <asp:ListItem>Quinto</asp:ListItem>
+                           <asp:ListItem>Sexto</asp:ListItem>
+                        </asp:DropDownList>
+                       
+                       <br />
+                        <div Class="texto"><asp:Label ID="Label10" runat="server" Text="PARALELO:" CssClass="texto"></asp:Label></div>
+                       <asp:DropDownList ID="cbParalelo" runat="server" CssClass="CajaTexto" >
+                           <asp:ListItem>A</asp:ListItem>
+                           <asp:ListItem>B</asp:ListItem>
+                           <asp:ListItem>C</asp:ListItem>
+                           <asp:ListItem>D</asp:ListItem>
+                        </asp:DropDownList>
+                        
+                       <div style="height: 44px; width: 214px;" class="boton">
+                        <asp:Button ID="btnGuardar" CssClass="btnder" runat="server" Text="GUARDAR CAMBIOS" Height="36px" Width="212px" OnClick="btnGuardar_Click" />
+                        </div>
+                         <div style="height: 33px; width: 133px;" class="boton">
+                       <asp:Button ID="btnCancelar" runat="server" Text="CANCELAR" CssClass="btnizq" Height="34px" Width="132px" OnClick="btnCancelar_Click"/>
+                         </div>
+                   </div>
+           
             <br />
             <div style="font-size:40px; width:auto; text-align:center;">ESTUDIANTES</div>
             <%--RELOJ--%>
@@ -90,60 +147,25 @@
                 }
 </SCRIPT>
             
-           <div class="SGestionUsuarios" style="width:99%; height: 583px;">
-               
-                   <div class="CRUD_ALUMNOS">
-                        <div Class="texto"><div Class="texto"><asp:Label ID="Label1" runat="server" Text="CI:" ></asp:Label></div></div>
-                        <asp:TextBox ID="txtci" runat="server" CssClass="CajaTexto"></asp:TextBox>
-                        <br />
-                        <div Class="texto"><asp:Label ID="Label7" runat="server" Text="NOMBRE:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtNombre" runat="server" CssClass="CajaTexto"></asp:TextBox>
-                        <br />
-                        <div Class="texto"><asp:Label ID="Label2" runat="server" Text="AP. PATERNO:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtApPaterno" runat="server" CssClass="CajaTexto"></asp:TextBox>
-                        <br />
-                        <div Class="texto"><asp:Label ID="Label3" runat="server" Text="AP. MATERNO:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtApMaterno" runat="server" CssClass="CajaTexto"></asp:TextBox>
-                        <br />
-                        <div Class="texto"><asp:Label ID="Label6" runat="server" Text="FECHA NAC.:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtFechNac" runat="server" CssClass="CajaTexto" TextMode="DateTime"></asp:TextBox>
-                        <br />
-                        <div Class="texto"><asp:Label ID="Label9" runat="server" Text="DIRECCION:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtDireccion" runat="server" CssClass="CajaTexto"></asp:TextBox>
-                        
-                       <br />
-                        <div Class="texto"><asp:Label ID="Label8" runat="server" Text="CELULAR:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtCelular" runat="server" CssClass="CajaTexto"></asp:TextBox>
-                       <br />
-                        <div Class="texto"><asp:Label ID="Label4" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtCOntrasenia" runat="server" CssClass="CajaTexto"></asp:TextBox>
-                       <br />
-                        <div Class="texto"><asp:Label ID="Label5" runat="server" Text="CURSO:" CssClass="texto"></asp:Label></div>
-                       <asp:DropDownList ID="cbCurso" runat="server" CssClass="CajaTexto"></asp:DropDownList>
-                       
-                       <br />
-                        <div Class="texto"><asp:Label ID="Label10" runat="server" Text="PARALELO:" CssClass="texto"></asp:Label></div>
-                       <asp:DropDownList ID="cbParalelo" runat="server" CssClass="CajaTexto" ></asp:DropDownList>
-                        
-                       <div style="height: 37px" class="boton">
-                        <asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="btnizq" OnClick="btnEliminar_Click"/>
-                       </div>
-                        <div style="height: 37px" class="boton">
-                        <asp:Button ID="btnGuardar" CssClass="btnder" runat="server" Text="GUARDAR CAMBIOS" Height="37px" Width="203px" OnClick="btnGuardar_Click" />
-                        </div>
-                           
-                        <div style="height: 38px" class="boton">
-                        <asp:Button ID="btnNuevo" runat="server" Text="NUEVO" CssClass="btnizq" OnClick="btnNuevo_Click"/></div>
-                       <div style="height: 38px" class="boton">
-                        <asp:Button ID="btnBuscar" CssClass="btnder" runat="server" Text="BUSCAR" Height="37px" Width="203px" />
-                        </div>
-                   </div>       
-           </div>
+
+            
+                
             <div class="tablaUsuarios">
-                   
-                   <asp:GridView ID="dgEstudiantes" runat="server" CellPadding="3" GridLines="None" Height="284px" Width="80%" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" DataKeyNames="Ci_Estudiante" DataSourceID="SqlDataSourceAlumnos">
+<%--<div style="height: 38px" class="parteBusqueda" >
+<asp:Button ID="btnBuscar" CssClass="btnizq" runat="server" Text="BUSCAR" Height="37px" Width="153px" OnClick="btnBuscar_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<asp:TextBox ID="txtBusqueda" runat="server" Width="775px" Height="27px" OnTextChanged="txtBusqueda_TextChanged" ></asp:TextBox>
+</div>--%>
+                <div style="height: 38px">
+                    <asp:Button ID="btnNuevo" runat="server" Text="NUEVO" CssClass="btnder" OnClick="btnNuevo_Click"/>
+                    <asp:RadioButton ID="rbEliminar" runat="server" Text="Eliminar" GroupName="TIPO" Font-Size="15pt" />
+                    <asp:RadioButton ID="rbModificar" runat="server" Checked="True" Text="Modificar" GroupName="TIPO" Font-Size="15pt" />
+                </div>
+
+                
+                   <asp:GridView ID="dgEstudiantes" runat="server" CellPadding="3" GridLines="None" Height="284px" Width="80%" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" DataKeyNames="Ci_Estudiante" DataSourceID="SqlDataSourceAlumnos" OnSelectedIndexChanged="dgEstudiantes_SelectedIndexChanged">
                        <Columns>
-                           <asp:CommandField ShowSelectButton="True" />
+                           <asp:CommandField SelectText="SELECCIONAR" ShowSelectButton="True" />
                            <asp:BoundField DataField="Ci_Estudiante" HeaderText="Ci_Estudiante" ReadOnly="True" SortExpression="Ci_Estudiante" />
                            <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
                            <asp:BoundField DataField="Ap_Paterno" HeaderText="Ap_Paterno" SortExpression="Ap_Paterno" />
@@ -178,7 +200,38 @@
                     return false;
                 }
             }
-            </script>
+        </script>
+        <script type="text/javascript">
+            function Eliminacion() {
+
+                var opcion = confirm("¿SEGURO QUE QUIERE ELIMINAR ESTE REGISTRO?");
+                if (opcion == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
+        <script type="text/javascript">
+            function Agregacion() {
+
+                var opcion = alert("REGISTRO AGREGADO EXITOSAMENTE");
+                return true;
+            }
+        </script>
+        <script type="text/javascript">
+            function Modificacion() {
+
+                var opcion = alert("REGISTRO MODIFICADO SATISFACTORIAMENTE");
+                return true;
+            }
+        </script>
+        <script type="text/javascript">
+            function Error() {
+                var opcion = alert("ERROR LA ACCION NO SE PUDO REALIZAR");
+                return true;
+            }
+        </script>
     </form>
 </body>
 </html>
