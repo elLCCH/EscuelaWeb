@@ -5459,8 +5459,8 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "select Ci_Estudiante, Nombre,Ap_Paterno\r\nfrom Estudiante\r\nwhere (Nombre=@Original" +
-                "_Parametro or Ap_Paterno=@Original_Parametro)";
+            this._commandCollection[1].CommandText = "select Ci_Estudiante\r\nfrom Estudiante\r\nwhere (Nombre=@Original_Parametro or Ap_Pa" +
+                "terno=@Original_Parametro)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Parametro", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
