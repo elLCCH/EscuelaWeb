@@ -16,10 +16,6 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            
-            
-
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
@@ -72,33 +68,63 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
 
         }
 
-        protected void btnNuevo_Click(object sender, EventArgs e)
-        {//obtenemos el curso
-            int curso = cAlumno.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
-
-            //insertamos y actualizamos tabla
-            cAlumno.insertar_alumno(Convert.ToInt32(txtci.Text),txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text,curso);
-            dgEstudiantes.DataBind();
-            limpiar();
-        }
-
-        protected void btnEliminar_Click(object sender, EventArgs e)
-        {
-            cAlumno.eliminar(Convert.ToInt32(txtci.Text));
-            dgEstudiantes.DataBind();
-            limpiar();
-        }
-
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-           int curso=cAlumno.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
-            cAlumno.modificar(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text,curso);
-            dgEstudiantes.DataBind();
-            limpiar();
+            //obtenemos el curso
+            int curso = cAlumno.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
+            if (btnGuardar.Text=="REGISTRAR")
+            {
+                //ES NUEVO ENTONCES INSERTAR
+                
+                //insertamos y actualizamos tabla
+                cAlumno.insertar_alumno(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, curso);
+                dgEstudiantes.DataBind();
+                CAlumnos.Style["visibility"] = "hidden";
+                limpiar();
+            }
+            else
+            {
+                if (rbModificar.Checked == true)
+                {
+                    //YA EXISTE ENTONCES MODIFICAR
+
+                    //int curso = cAlumno.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
+                    cAlumno.modificar(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, curso);
+                    dgEstudiantes.DataBind();
+                    limpiar();
+                    CAlumnos.Style["visibility"] = "hidden";
+                }
+                if (rbEliminar.Checked == true)
+                {
+                    cAlumno.eliminar(Convert.ToInt32(txtci.Text));
+                    dgEstudiantes.DataBind();
+                    limpiar();
+                    CAlumnos.Style["visibility"] = "hidden";
+
+                }
+            }
+            
+
+
+            
+
         }
         
         protected void dgEstudiantes_SelectedIndexChanged(object sender, EventArgs e)
         {//esto ayuda a q se llenen al seleccionar
+            
+            if (rbModificar.Checked == true)
+            {
+                CAlumnos.Style["visibility"] = "visible";
+                btnGuardar.Text = "GUARDAR CAMBIOS";
+                btnGuardar.OnClientClick = "return Modificacion();";
+            }
+            if (rbEliminar.Checked == true)
+            {
+                btnGuardar.OnClientClick = " return Eliminacion();";
+                btnGuardar.Text = "ELIMINAR REGISTRO";
+                CAlumnos.Style["visibility"] = "visible";
+            }
             txtci.Text = dgEstudiantes.SelectedRow.Cells[1].Text;
             txtNombre.Text = dgEstudiantes.SelectedRow.Cells[2].Text;
             txtApPaterno.Text = dgEstudiantes.SelectedRow.Cells[3].Text;
@@ -109,6 +135,7 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
             txtDireccion.Text = dgEstudiantes.SelectedRow.Cells[8].Text;
             cbCurso.Text= dgEstudiantes.SelectedRow.Cells[9].Text;
             cbParalelo.Text = dgEstudiantes.SelectedRow.Cells[10].Text;
+            
         }
         private void limpiar()
         {
@@ -143,15 +170,26 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
         //}
 
         protected void txtBusqueda_TextChanged(object sender, EventArgs e)
-        {
-            
-
-            
+        {    
         }
 
-        protected void btnLimpiar_Click(object sender, EventArgs e)
+        protected void txtci_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnNuevo_Click(object sender, EventArgs e)
         {
             limpiar();
+            CAlumnos.Style["visibility"] = "visible";
+            //lblIdCurso.Text = "";
+            btnGuardar.Text = "REGISTRAR";
+            btnGuardar.OnClientClick = "return Agregacion();";
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            CAlumnos.Style["visibility"] = "hidden";
         }
     }
 }
