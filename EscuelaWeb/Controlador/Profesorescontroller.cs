@@ -6,10 +6,9 @@ using System.Web;
 
 namespace EscuelaWeb.Controlador
 {
-    public class AdministrativoController
+    public class Profesorescontroller
     {
-        AdministrativoTableAdapter admin = new AdministrativoTableAdapter();
-
+        ProfesorTableAdapter prof = new ProfesorTableAdapter();
         private int ci_estudiante;
         private string nombre;
         private string ap_paterno;
@@ -18,7 +17,6 @@ namespace EscuelaWeb.Controlador
         private int celular;
         private DateTime fecha_nac;
         private string direccion;
-        private string ocupacion;
 
         public int Ci_estudiante { get => ci_estudiante; set => ci_estudiante = value; }
         public string Nombre { get => nombre; set => nombre = value; }
@@ -28,19 +26,18 @@ namespace EscuelaWeb.Controlador
         public int Celular { get => celular; set => celular = value; }
         public DateTime Fecha_nac { get => fecha_nac; set => fecha_nac = value; }
         public string Direccion { get => direccion; set => direccion = value; }
-        public string Ocupacion { get => ocupacion; set => ocupacion = value; }
 
-        public void insertar_Administrativo(int PCiEst, string Pnombre, string Pap_paterno, string Pap_materno, string Pcontrasenia, int Pcel, DateTime Pfec, string Pdir,string Pocupacion)
+        public void insertar_Profesor(int PCiProf, string Pnombre, string Pap_paterno, string Pap_materno, string Pcontrasenia, int Pcel, DateTime Pfec, string Pdir)
         {
-            admin.Insert(PCiEst, Pnombre, Pap_paterno, Pap_materno, Pcontrasenia, Pcel, Pfec, Pdir, Pocupacion);
+            prof.Insert(PCiProf, Pnombre, Pap_paterno, Pap_materno, Pcontrasenia, Pcel, Pfec, Pdir);
         }
-        public void modificar_Administrativo(int Pci, string Pnombre, string Pap_paterno, string Pap_materno, string Pcontrasenia, int Pcel, DateTime Pfec, string Pdir, string Pocupacion)
+        public void modificar_Profesor(int Pci, string Pnombre, string Pap_paterno, string Pap_materno, string Pcontrasenia, int Pcel, DateTime Pfec, string Pdir)
         {
-            admin.Update(Pci, Pnombre, Pap_paterno, Pap_materno, Pcontrasenia, Pcel, Pfec, Pdir, Pocupacion, Pci);
+            prof.Update(Pci, Pnombre, Pap_paterno, Pap_materno, Pcontrasenia, Pcel, Pfec, Pdir, Pci);
         }
-        public void eliminar_Administrativo(int pCI)
+        public void eliminar_Profesor(int pCI)
         {
-            admin.Delete(pCI);
+            prof.Delete(pCI);
         }
     }
 

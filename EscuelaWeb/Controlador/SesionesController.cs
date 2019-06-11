@@ -1,4 +1,5 @@
-﻿using EscuelaWeb.Data.dsEscuelaTableAdapters;
+﻿using EscuelaWeb.Data;
+using EscuelaWeb.Data.dsEscuelaTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,10 +7,12 @@ using System.Web;
 
 namespace EscuelaWeb.Controlador
 {
-    public class AdministrativoController
+    public class SesionesController
     {
         AdministrativoTableAdapter admin = new AdministrativoTableAdapter();
-
+        EstudianteTableAdapter est = new EstudianteTableAdapter();
+        ProfesorTableAdapter prof = new ProfesorTableAdapter();
+        dsEscuela _ds = new dsEscuela();
         private int ci_estudiante;
         private string nombre;
         private string ap_paterno;
@@ -18,7 +21,7 @@ namespace EscuelaWeb.Controlador
         private int celular;
         private DateTime fecha_nac;
         private string direccion;
-        private string ocupacion;
+        private int id_curso;
 
         public int Ci_estudiante { get => ci_estudiante; set => ci_estudiante = value; }
         public string Nombre { get => nombre; set => nombre = value; }
@@ -28,20 +31,15 @@ namespace EscuelaWeb.Controlador
         public int Celular { get => celular; set => celular = value; }
         public DateTime Fecha_nac { get => fecha_nac; set => fecha_nac = value; }
         public string Direccion { get => direccion; set => direccion = value; }
-        public string Ocupacion { get => ocupacion; set => ocupacion = value; }
+        public int Id_curso { get => id_curso; set => id_curso = value; }
 
-        public void insertar_Administrativo(int PCiEst, string Pnombre, string Pap_paterno, string Pap_materno, string Pcontrasenia, int Pcel, DateTime Pfec, string Pdir,string Pocupacion)
+
+        public bool AutenticarEstudiante(int pCuenta, string pClave)
         {
-            admin.Insert(PCiEst, Pnombre, Pap_paterno, Pap_materno, Pcontrasenia, Pcel, Pfec, Pdir, Pocupacion);
-        }
-        public void modificar_Administrativo(int Pci, string Pnombre, string Pap_paterno, string Pap_materno, string Pcontrasenia, int Pcel, DateTime Pfec, string Pdir, string Pocupacion)
-        {
-            admin.Update(Pci, Pnombre, Pap_paterno, Pap_materno, Pcontrasenia, Pcel, Pfec, Pdir, Pocupacion, Pci);
-        }
-        public void eliminar_Administrativo(int pCI)
-        {
-            admin.Delete(pCI);
+            if (est.FillByAutenticarEstudiante(_ds.Estudiante, pCuenta, pClave) > 0)
+                return true;
+            else
+                return false;
         }
     }
-
 }

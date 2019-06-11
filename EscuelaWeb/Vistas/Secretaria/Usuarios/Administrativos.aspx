@@ -59,12 +59,12 @@
 
 <div class="ParteDerecha">
             <asp:Label ID="lblIdCurso" runat="server" Text="" CssClass="Ocultar"></asp:Label>
-        <div class="CRUD_ALUMNOS" id="CAlumnos" runat="server">
+        <div class="CRUD_ALUMNOS" id="CAdmin" runat="server">
 
 
             <div style="font-size:40px; width:auto; text-align:center;">ADMINISTRATIVO</div>
                         <div Class="texto"><div Class="texto"><asp:Label ID="Label1" runat="server" Text="CI:" ></asp:Label></div></div>
-                        <asp:TextBox ID="txtci" runat="server" CssClass="CajaTexto" OnTextChanged="txtci_TextChanged"></asp:TextBox>
+                        <asp:TextBox ID="txtci" runat="server" CssClass="CajaTexto"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label7" runat="server" Text="NOMBRE:" CssClass="texto"></asp:Label></div>
                         <asp:TextBox ID="txtNombre" runat="server" CssClass="CajaTexto"></asp:TextBox>
@@ -88,24 +88,12 @@
                         <div Class="texto"><asp:Label ID="Label4" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label></div>
                         <asp:TextBox ID="txtCOntrasenia" runat="server" CssClass="CajaTexto"></asp:TextBox>
                        <br />
-                        <div Class="texto"><asp:Label ID="Label5" runat="server" Text="CURSO:" CssClass="texto"></asp:Label></div>
-                       <asp:DropDownList ID="cbCurso" runat="server" CssClass="CajaTexto">
-                           <asp:ListItem>Primero</asp:ListItem>
-                           <asp:ListItem>Segundo</asp:ListItem>
-                           <asp:ListItem>Tercero</asp:ListItem>
-                           <asp:ListItem>Cuarto</asp:ListItem>
-                           <asp:ListItem>Quinto</asp:ListItem>
-                           <asp:ListItem>Sexto</asp:ListItem>
+                        <div Class="texto"><asp:Label ID="Label5" runat="server" Text="OCUPACION:" CssClass="texto"></asp:Label></div>
+                       <asp:DropDownList ID="cbOcupacion" runat="server" CssClass="CajaTexto">
+                           <asp:ListItem>Director</asp:ListItem>
+                           <asp:ListItem>Secretaria</asp:ListItem>
                         </asp:DropDownList>
                        
-                       <br />
-                        <div Class="texto"><asp:Label ID="Label10" runat="server" Text="PARALELO:" CssClass="texto"></asp:Label></div>
-                       <asp:DropDownList ID="cbParalelo" runat="server" CssClass="CajaTexto" >
-                           <asp:ListItem>A</asp:ListItem>
-                           <asp:ListItem>B</asp:ListItem>
-                           <asp:ListItem>C</asp:ListItem>
-                           <asp:ListItem>D</asp:ListItem>
-                        </asp:DropDownList>
                         
                        <div style="height: 44px; width: 214px;" class="boton">
                         <asp:Button ID="btnGuardar" CssClass="btnder" runat="server" Text="GUARDAR CAMBIOS" Height="36px" Width="212px" OnClick="btnGuardar_Click" />
@@ -151,7 +139,7 @@
 
             
                 
-            <div class="tablaUsuarios" title="ESTDIANTE">
+            <div class="tablaUsuarios">
                 <%--<div style="height: 38px" class="parteBusqueda" >
 <asp:Button ID="btnBuscar" CssClass="btnizq" runat="server" Text="BUSCAR" Height="37px" Width="153px" OnClick="btnBuscar_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -164,19 +152,18 @@
                 </div>
 
                 
-                   <asp:GridView ID="dgEstudiantes" runat="server" CellPadding="3" GridLines="None" Height="284px" Width="80%" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" DataKeyNames="Ci_Estudiante" DataSourceID="SqlDataSourceAlumnos" OnSelectedIndexChanged="dgEstudiantes_SelectedIndexChanged">
+                   <asp:GridView ID="dgAdministrativos" runat="server" CellPadding="3" GridLines="None" Height="284px" Width="80%" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" DataKeyNames="Ci_Administrativo" DataSourceID="SqlDataSourceAdministrativo" OnSelectedIndexChanged="dgAdministrativos_SelectedIndexChanged">
                        <Columns>
                            <asp:CommandField SelectText="SELECCIONAR" ShowSelectButton="True" />
-                           <asp:BoundField DataField="Ci_Estudiante" HeaderText="Ci_Estudiante" ReadOnly="True" SortExpression="Ci_Estudiante" />
-                           <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
-                           <asp:BoundField DataField="Ap_Paterno" HeaderText="Ap_Paterno" SortExpression="Ap_Paterno" />
-                           <asp:BoundField DataField="Ap_Materno" HeaderText="Ap_Materno" SortExpression="Ap_Materno" />
-                           <asp:BoundField DataField="Contrasenia" HeaderText="Contrasenia" SortExpression="Contrasenia" />
-                           <asp:BoundField DataField="Celular" HeaderText="Celular" SortExpression="Celular" />
+                           <asp:BoundField DataField="Ci_Administrativo" HeaderText="Ci_Administrativo" ReadOnly="True" SortExpression="Ci_Administrativo" />
+                           <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
+                           <asp:BoundField DataField="ap_Paterno" HeaderText="ap_Paterno" SortExpression="ap_Paterno" />
+                           <asp:BoundField DataField="ap_Materno" HeaderText="ap_Materno" SortExpression="ap_Materno" />
+                           <asp:BoundField DataField="contrasenia" HeaderText="contrasenia" SortExpression="contrasenia" />
+                           <asp:BoundField DataField="celular" HeaderText="celular" SortExpression="celular" />
                            <asp:BoundField DataField="FechaNac" HeaderText="FechaNac" SortExpression="FechaNac" />
-                           <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
-                           <asp:BoundField DataField="curso" HeaderText="curso" SortExpression="curso" />
-                           <asp:BoundField DataField="paralelo" HeaderText="paralelo" SortExpression="paralelo" />
+                           <asp:BoundField DataField="direccion" HeaderText="direccion" SortExpression="direccion" />
+                           <asp:BoundField DataField="Ocupacion" HeaderText="Ocupacion" SortExpression="Ocupacion" />
                        </Columns>
                        <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
                        <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
@@ -188,7 +175,7 @@
                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
                        <SortedDescendingHeaderStyle BackColor="#33276A" />
                    </asp:GridView>
-                   <asp:SqlDataSource ID="SqlDataSourceAlumnos" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT Estudiante.Ci_Estudiante, Estudiante.Nombre, Estudiante.Ap_Paterno, Estudiante.Ap_Materno, Estudiante.Contrasenia, Estudiante.Celular, Estudiante.FechaNac, Estudiante.Direccion, Curso.curso, Curso.paralelo FROM Curso INNER JOIN Estudiante ON Curso.Id_Curso = Estudiante.Id_Curso"></asp:SqlDataSource>
+                   <asp:SqlDataSource ID="SqlDataSourceAdministrativo" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT * FROM [Administrativo]"></asp:SqlDataSource>
                </div>
         </div>
         <script type="text/javascript">
