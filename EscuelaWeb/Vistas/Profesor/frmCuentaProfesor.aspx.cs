@@ -11,7 +11,7 @@ namespace EscuelaWeb.Vistas.Profesor
     public partial class frmCuentaProfesor : System.Web.UI.Page
     {
         ProfesorController objProfesorController = new ProfesorController();
-        public int _ci_profesor;
+        public int _ci_profesor=3555914;
         protected void Page_Load(object sender, EventArgs e)
         {
             objProfesorController.MostrarCuenta(_ci_profesor,txtNombre,txtApellidos,txtContrasenia);
