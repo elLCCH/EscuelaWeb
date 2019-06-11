@@ -45,14 +45,14 @@
             <div class="DatosPersonales">
                 <div class="imagen"></div>
                 <div class="texto"><asp:Label ID="Label1" runat="server" Text="NOMBRE:" ></asp:Label></div>
-                <asp:TextBox ID="txtNombre" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                <asp:TextBox ID="txtNombre" runat="server" CssClass="CajaTexto" Enabled="False"></asp:TextBox>
 
                 <br />
                 <asp:Label ID="Label2" runat="server" Text="APELLIDOS:" CssClass="texto"></asp:Label>
-                <asp:TextBox ID="txtApellidos" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                <asp:TextBox ID="txtApellidos" runat="server" CssClass="CajaTexto" Enabled="False"></asp:TextBox>
                 <br />
                 <asp:Label ID="Label3" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label>
-                <asp:TextBox ID="txtContrasenia" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                <asp:TextBox ID="txtContrasenia" runat="server" CssClass="CajaTexto" OnTextChanged="txtContrasenia_TextChanged"></asp:TextBox>
                 <br />
                 <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar Cambios" Height="37px" Width="187px" />
             </div>

@@ -38,5 +38,10 @@ namespace EscuelaWeb.Vistas.Profesor
         {
             Response.Redirect("../index.aspx");
         }
+
+        protected void txtContrasenia_TextChanged(object sender, EventArgs e)
+        {
+            btnGuardarCambios.Enabled = true;
+        }
     }
 }
