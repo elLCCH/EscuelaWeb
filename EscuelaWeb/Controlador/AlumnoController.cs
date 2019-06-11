@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
 
 
 namespace EscuelaWeb.Controlador
@@ -34,23 +35,33 @@ namespace EscuelaWeb.Controlador
         public int Id_curso { get => id_curso; set => id_curso = value; }
 
         Context db;
-        public void insertar_alumno(string Pnombre, string Pap_paterno, string Pap_materno, string Pcontrasenia, int Pcel, DateTime Pfec, string Pdir, int Pid_curso)
+        public void insertar_alumno(int PCiEst, string Pnombre, string Pap_paterno, string Pap_materno, string Pcontrasenia, int Pcel, DateTime Pfec, string Pdir, int Pid_curso)
         {
-            est.Insert(Pnombre,Pap_paterno,Pap_materno,Pcontrasenia,Pcel,Pfec,Pdir,Pid_curso);
+            est.Insert(PCiEst,Pnombre,Pap_paterno,Pap_materno,Pcontrasenia,Pcel,Pfec,Pdir,Pid_curso);
         }
         public void modificar(int Pci, string Pnombre, string Pap_paterno, string Pap_materno, string Pcontrasenia, int Pcel, DateTime Pfec, string Pdir, int Pid_curso)
         {
-            est.Update(Pnombre, Pap_paterno, Pap_materno, Pcontrasenia, Pcel, Pfec, Pdir, Pid_curso,Pci);
+            est.Update(Pci,Pnombre,Pap_paterno,Pap_materno,Pcontrasenia,Pcel,Pfec,Pdir,Pid_curso,Pci);
         }
         public void listar(GridView dgv)
         {
             db = new Context();
-            //dgv.DataSource = est.SelectEstudianteCurso(dgv);
             dgv.DataBind();
         }
         public void eliminar(int pCI)
         {
             est.Delete(pCI);
         }
+        public int SeleccionaIdCurso(string pCurso, string pParalelo)
+        {
+            int curso = (int)est.SeleccionIdCurso(pCurso, pParalelo);
+            return curso;
+        }
+        public int BuscarEstudiante(string pBuscar)
+        {
+            int estudiante = (int)est.BuscarEstudianteId(pBuscar);
+            return estudiante;
+        }
+        
     }
 }
