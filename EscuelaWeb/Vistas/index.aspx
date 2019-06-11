@@ -32,7 +32,7 @@
                 <div><p class="titulo_iniciar_sesion">INICIAR SESION</p></div>
                 <div style="padding:20px; height:121px; width:auto">
                 <img class="imgUsuario" src="../img/man-user.png" alt=""/>
-                <asp:TextBox ID="txtCuenta" runat="server" CssClass="textEmail" placeholder="Escribe tu Cuenta"></asp:TextBox>
+                <asp:TextBox ID="txtCuenta" runat="server" CssClass="textEmail" placeholder="Escribe tu Cuenta" TextMode="Number"></asp:TextBox>
                 <img class="imgPassword" src="../img/lock.png" alt=""/>                           
                 <asp:TextBox ID="txtContrasenia" runat="server" CssClass="textPassword" placeholder="Introduzca su contraseña" TextMode="Password"></asp:TextBox>
                 </div>
