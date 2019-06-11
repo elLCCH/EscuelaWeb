@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace EscuelaWeb.Controlador
 {
     public class ProfesorController
     {
-        ProfesorTableAdapter tbl = new ProfesorTableAdapter();
+        ProfesorTableAdapter ObjProfesor = new ProfesorTableAdapter();
         private int ci_profesor;
         private string nombre;
         private string ap_paterno;
@@ -27,9 +28,11 @@ namespace EscuelaWeb.Controlador
         public DateTime Fecha_nac { get => fecha_nac; set => fecha_nac = value; }
         public string Direccion { get => direccion; set => direccion = value; }
 
-        public void MostrarCuenta()
+        public void MostrarCuenta(int Pci,TextBox txtNombre, TextBox txtApellidos, TextBox txtContrasenia)
         {
-            
+            txtNombre.Text = Convert.ToString(ObjProfesor.ScalarQueryCuentaMostrarNombre(Pci));
+            txtApellidos.Text = Convert.ToString(ObjProfesor.ScalarQueryCuentaMostrarApellidos(Pci));
+            txtContrasenia.Text = Convert.ToString(ObjProfesor.ScalarQueryCuentaMostrarContrasenia(Pci));
         }
     }
 }

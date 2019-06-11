@@ -54,7 +54,7 @@
                 <asp:Label ID="Label3" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label>
                 <asp:TextBox ID="txtContrasenia" runat="server" CssClass="CajaTexto" OnTextChanged="txtContrasenia_TextChanged"></asp:TextBox>
                 <br />
-                <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar Cambios" Height="37px" Width="187px" />
+                <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar Cambios" Height="37px" Width="187px" OnClick="btnGuardarCambios_Click" />
             </div>
         </div>
         <script type="text/javascript">
