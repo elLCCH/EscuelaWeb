@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EscuelaWeb.Controlador;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,11 @@ namespace EscuelaWeb.Vistas.Profesor
 {
     public partial class frmCuentaProfesor : System.Web.UI.Page
     {
+        ProfesorController objProfesorController = new ProfesorController();
+        public int _ci_profesor=3555914;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            objProfesorController.MostrarCuenta(_ci_profesor,txtNombre,txtApellidos,txtContrasenia);
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
@@ -37,6 +40,16 @@ namespace EscuelaWeb.Vistas.Profesor
         protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
         {
             Response.Redirect("../index.aspx");
+        }
+
+        protected void txtContrasenia_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        protected void btnGuardarCambios_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

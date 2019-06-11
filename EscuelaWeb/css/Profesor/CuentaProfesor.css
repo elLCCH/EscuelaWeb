@@ -189,25 +189,25 @@ a {
 }
 /*FRM CUENTA PROFESOR*/
 .DatosPersonales {
-    /*background-color: #ff6a00;
-    height: 350px;
-    width: 500px;*/
     padding: 50px;
     background-color:#20b3bd;
     width: 400px;
     height: auto;
     float: left;
-    /*margin-left: 10px;
-    margin-right: 20%;*/
     margin: 20px 0 0 50px;
+    position:relative;
+    top: -16px;
+    position:absolute;
+    right:40%;
+    top:25%;
 }
 
-.CajaTexto {
-    margin-bottom: 20px; /*HACE Q SE JUNTE TODA LA CAJA*/
-    width: 50%;
-    padding: 6px;
-    float: left;
-}
+    .CajaTexto {
+        margin-bottom: 20px; /*HACE Q SE JUNTE TODA LA CAJA*/
+        width: 50%;
+        padding: 6px;
+        float: left;
+    }
 
 .texto {
     width: 150px;
@@ -274,4 +274,65 @@ a {
 h1 {
     position:relative;
     left:4%;
+}
+
+/*TABLA DE REGISTRO*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFF8DC;
+}
+
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    margin: 0px 45px 45px 45px;
+    width: 1147px;
+    text-align: center;
+    //border-collapse: collapse;
+    position: relative;
+    //left:0%;
+    right:-20%;
+    top: -20px;
+}
+
+th {
+    font-size: 13px;
+    font-weight: normal;
+    padding: 8px;
+    background: #b9c9fe;
+    border-top: 4px #aabcfe;
+    border-bottom: 1px #fff;
+    color: #039;
+}
+
+td {
+    padding: 8px;
+    background: #e8edff;
+    border-bottom: 1px solid #fff;
+    color: #669;
+    border-top: 1px solid transparent;
+}
+
+tr:hover td {
+    background: #d0dafd;
+    color: #339;
+}
+
+.editar {
+    color: blue;
+    cursor: pointer;
+}
+
+#contenedorForm {
+    margin-left: 45px;
+    font-size: 12px;
+}
+
+.boton {
+    color: black;
+    padding: 5px;
+    margin: 10px;
+    background-color: #b9c9fe;
+    font-weight: bold;
 }

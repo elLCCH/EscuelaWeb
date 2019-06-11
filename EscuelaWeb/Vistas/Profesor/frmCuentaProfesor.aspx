@@ -41,10 +41,11 @@
         
     </div>     
         <!--PARTE   DERECHA DEL MENU IZQ-->
+        
         <div class="ParteDerecha">    
             <div class="DatosPersonales">
                 <div class="imagen"></div>
-                <div class="texto"><asp:Label ID="Label1" runat="server" Text="NOMBRE:" ></asp:Label></div>
+                <div Class="texto"><asp:Label ID="Label1" runat="server" Text="NOMBRE:" ></asp:Label></div>
                 <asp:TextBox ID="txtNombre" runat="server" CssClass="CajaTexto"></asp:TextBox>
 
                 <br />
@@ -57,7 +58,7 @@
                 <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar Cambios" Height="37px" Width="187px" />
             </div>
         </div>
-        <script type="text/javascript">
+    <script type="text/javascript">
                 function MessageBoxShow() {
                     
                     var opcion = confirm("¿SEGURO QUE DESEA CERRAR SESION?");
@@ -69,5 +70,6 @@
                 }
             </script>
 </form>  
+
 </body>
 </html>

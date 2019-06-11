@@ -10,6 +10,15 @@
      <!--<link rel="stylesheet" href="../../css/Profesor/RegistroCalificaciones.css">-->
      <link rel="stylesheet" href="../../css/Profesor/CuentaProfesor.css"/>
     <link rel="stylesheet" href="../../css/Allfondo.css"/>
+    <script type="text/javascript" src="../../JS/Profesor/Profesor.js"></script>
+    <style type="text/css">
+        .auto-style1 {
+            height: 81px;
+        }
+        .auto-style2 {
+            height: 33px;
+        }
+    </style>
 </head>
 <body>
     <!--ENCABEZADO-->
@@ -42,7 +51,7 @@
                <li><asp:LinkButton ID="lbtnVerAvisosG" runat="server" CssClass="avisos" OnClick="lbtnVerAvisosG_Click">Ver Generales</asp:LinkButton></li>
                <li><asp:LinkButton ID="lbtnRealizarAviso" runat="server" CssClass="avisos" OnClick="lbtnRealizarAviso_Click">Realizar aviso</asp:LinkButton></li>
             </ul>
-        </div>
+        </div >
         
     </div>     
             
@@ -50,6 +59,9 @@
         <!--PARTE   DERECHA DEL MENU IZQ-->
         
         <div class="ParteDerecha">
+            <div class ="">
+
+            </div>
             <div style="width:auto;">
                 <div>
                     <asp:Label ID="lblalumno" runat="server" Text="no hay est. seleccionado:" CssClass="separacion"></asp:Label>
@@ -70,10 +82,40 @@
 
             <div class="tabla">
                 <div style="margin-left:auto; margin-right:auto;">
-                <asp:GridView ID="GridView1" runat="server" Width="204px"></asp:GridView>
                 </div>
             </div>
-            
+            <center>
+            <table>
+                <caption>Contenido nutricional por cada 100 g de alimento.</caption>
+                <tr>
+                    <th colspan = '2'> ESTUDIANTE</th>
+                    <th colspan ='5'>COMUNIDAD Y SOCIEDAD</th>
+                    <th colspan ='2'>CIENCIA, TECNOLOGIA Y PRODUCCION</th>
+                    <th >VIDA TIERRA TERRITORIO</th>
+                    <th >COSMOS Y PENSAMIENTO</th>
+                    <th rowspan ='2'>OPCIONES</th>
+                </tr> 
+                <tr>
+                    <th class="auto-style1">Carnet</th>
+                    <th class="auto-style1">Apellidos y nombres</th> 
+                    <th class="auto-style1">Comunicación y lenguajes</th> 
+                     <th class="auto-style1">Ciencias sociales</th> 
+                     <th class="auto-style1">Educacion física y deportes</th>
+                     <th class="auto-style1">Educación Musical</th> 
+                     <th class="auto-style1">Artes plásticas y visuales</th>
+                     <th class="auto-style1">Matemática</th>
+                     <th class="auto-style1">Técnica Tecnológica</th>
+                     <th class="auto-style1">Ciencias Naturales</th>
+                     <th class="auto-style1">Valores, espiritualidad y religiones</th>
+                </tr>
+                <tr> <td>11111</td> <td>mxkdncks</td> <td>0</td><td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td>
+                    <td><span class="editar" onclick="transformarEnEditable(this)">Editar</span></td>
+                </tr>
+                  
+</table>
+<div id="contenedorForm">
+</div>
+                </center> 
         </div>
     <script type="text/javascript">
                 function MessageBoxShow() {
