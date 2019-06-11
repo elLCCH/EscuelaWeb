@@ -50,59 +50,16 @@
         <!--PARTE   DERECHA DEL MENU IZQ-->
 
         <div class="ParteDerecha">
-            <br />
-            <div style="font-size:40px; width:auto; text-align:center;">PROFESORES</div>
-            <%--RELOJ--%>
-<SCRIPT Lang="JavaScript">
-                var timerID = null;
-                var timerRunning = false;
-                function stopclock() {
-                    if (timerRunning)
-                        clearTimeout(timerID);
-                    timerRunning = false;
-                }
-                function showtime() {
-                    var now = new Date();
-                    var hours = now.getHours();
-                    var minutes = now.getMinutes();
-                    var seconds = now.getSeconds();
-                    var timeValue = "" + ((hours > 12) ? hours - 12 : hours)
+            <asp:Label ID="lblIdCurso" runat="server" Text="" CssClass="Ocultar"></asp:Label>
+        <div class="CRUD_ALUMNOS" id="CProf" runat="server">
 
-                    if (timeValue == "0") timeValue = 12;
-                    timeValue += ((minutes < 10) ? ":0" : ":") + minutes
-                    timeValue += ((seconds < 10) ? ":0" : ":") + seconds
-                    timeValue += (hours >= 12) ? " P.M." : " A.M."
-                    document.getElementById('RELOJLABEL').innerText = timeValue;
 
-                    timerID = setTimeout("showtime()", 1000);
-                    timerRunning = true;
-                }
-                function startclock() {
-                    stopclock();
-                    showtime();
-                }
-</SCRIPT>
-           <div class="SGestionUsuarios" style="width:98%; height: 513px;">
-               
-                   <div class="CRUD_ALUMNOS">
-                       <div Class="texto"><asp:Label ID="Label4" runat="server" Text="CUENTA:" ></asp:Label></div>
-                        <asp:TextBox ID="txtCuenta" runat="server" CssClass="CajaTexto"></asp:TextBox>
-
-                        <br />
-                        <div Class="texto"><asp:Label ID="Label5" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtContrasenia" runat="server" CssClass="CajaTexto"></asp:TextBox>
-                        <br />
-                        <div Class="texto"><asp:Label ID="Label6" runat="server" Text="FECHA NAC.:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtFechNac" runat="server" CssClass="CajaTexto"></asp:TextBox>
-                        <br />
-                        <div Class="texto"><asp:Label ID="Label9" runat="server" Text="DIRECCION:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="TextBox1" runat="server" CssClass="CajaTexto"></asp:TextBox>
+            <div style="font-size:40px; width:auto; text-align:center;">ADMINISTRATIVO</div>
                         <div Class="texto"><div Class="texto"><asp:Label ID="Label1" runat="server" Text="CI:" ></asp:Label></div></div>
                         <asp:TextBox ID="txtci" runat="server" CssClass="CajaTexto"></asp:TextBox>
-                       <br />
+                        <br />
                         <div Class="texto"><asp:Label ID="Label7" runat="server" Text="NOMBRE:" CssClass="texto"></asp:Label></div>
                         <asp:TextBox ID="txtNombre" runat="server" CssClass="CajaTexto"></asp:TextBox>
-                        
                         <br />
                         <div Class="texto"><asp:Label ID="Label2" runat="server" Text="AP. PATERNO:" CssClass="texto"></asp:Label></div>
                         <asp:TextBox ID="txtApPaterno" runat="server" CssClass="CajaTexto"></asp:TextBox>
@@ -110,41 +67,115 @@
                         <div Class="texto"><asp:Label ID="Label3" runat="server" Text="AP. MATERNO:" CssClass="texto"></asp:Label></div>
                         <asp:TextBox ID="txtApMaterno" runat="server" CssClass="CajaTexto"></asp:TextBox>
                         <br />
+                        <div Class="texto"><asp:Label ID="Label6" runat="server" Text="FECHA NAC.:" CssClass="texto"></asp:Label></div>
+                        <asp:TextBox ID="txtFechNac" runat="server" CssClass="CajaTexto" TextMode="DateTime"></asp:TextBox>
+                        <br />
+                        <div Class="texto"><asp:Label ID="Label9" runat="server" Text="DIRECCION:" CssClass="texto"></asp:Label></div>
+                        <asp:TextBox ID="txtDireccion" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        
+                       <br />
                         <div Class="texto"><asp:Label ID="Label8" runat="server" Text="CELULAR:" CssClass="texto"></asp:Label></div>
                         <asp:TextBox ID="txtCelular" runat="server" CssClass="CajaTexto"></asp:TextBox>
-                       <div style="height: 37px" class="boton">
-                        <asp:Button ID="btnEliminar" runat="server" Text="ELIMINAR" CssClass="botonAdornado"/>
-                       </div>
-                        <div style="height: 37px" class="boton">
-                        <asp:Button ID="btnGuardar" CssClass="botonAdornado" runat="server" Text="GUARDAR CAMBIOS" Height="37px" Width="203px" />
+                       <br />
+                        <div Class="texto"><asp:Label ID="Label4" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label></div>
+                        <asp:TextBox ID="txtCOntrasenia" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                       <%--<br />
+                        <div Class="texto"><asp:Label ID="Label5" runat="server" Text="OCUPACION:" CssClass="texto"></asp:Label></div>--%>
+                       <%--<asp:DropDownList ID="cbOcupacion" runat="server" CssClass="CajaTexto">
+                           <asp:ListItem>Director</asp:ListItem>
+                           <asp:ListItem>Secretaria</asp:ListItem>
+                        </asp:DropDownList>--%>
+                       
+                        
+                       <div style="height: 44px; width: 214px;" class="boton">
+                        <asp:Button ID="btnGuardar" CssClass="btnder" runat="server" Text="GUARDAR CAMBIOS" Height="36px" Width="212px" OnClick="btnGuardar_Click" />
                         </div>
-                           
-                        <div style="height: 38px" class="boton">
-                        <asp:Button ID="btnNuevo" runat="server" Text="NUEVO" CssClass="botonAdornado"/></div>
-                       <div style="height: 38px" class="boton">
-                        <asp:Button ID="btnBuscar" CssClass="botonAdornado" runat="server" Text="BUSCAR" Height="37px" Width="203px" />
-                        </div>
+                         <div style="height: 33px; width: 133px;" class="boton">
+                       <asp:Button ID="btnCancelar" runat="server" Text="CANCELAR" CssClass="btnizq" Height="34px" Width="132px" OnClick="btnCancelar_Click"/>
+                         </div>
                    </div>
-               
-               <div class="tablaUsuarios">
-                   <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="284px" Width="100%">
-                       <AlternatingRowStyle BackColor="White" />
-                       <EditRowStyle BackColor="#2461BF" />
-                       <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                       <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                       <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
-                       <RowStyle BackColor="#EFF3FB" />
-                       <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
-                       <SortedAscendingCellStyle BackColor="#F5F7FB" />
-                       <SortedAscendingHeaderStyle BackColor="#6D95E1" />
-                       <SortedDescendingCellStyle BackColor="#E9EBEF" />
-                       <SortedDescendingHeaderStyle BackColor="#4870BE" />
-                   </asp:GridView>
-               </div>
+           
+            <br />
+            <div style="font-size:40px; width:auto; text-align:center;">PLANTEL DOCENTE</div>
+            <%--RELOJ--%>
+<SCRIPT lang="JavaScript">
+    var timerID = null;
+    var timerRunning = false;
+    function stopclock() {
+        if (timerRunning)
+            clearTimeout(timerID);
+        timerRunning = false;
+    }
+    function showtime() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+        var timeValue = "" + ((hours > 12) ? hours - 12 : hours)
 
-           </div>
+        if (timeValue == "0") timeValue = 12;
+        timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+        timeValue += ((seconds < 10) ? ":0" : ":") + seconds
+        timeValue += (hours >= 12) ? " P.M." : " A.M."
+        document.getElementById('RELOJLABEL').innerText = timeValue;
+
+        timerID = setTimeout("showtime()", 1000);
+        timerRunning = true;
+    }
+    function startclock() {
+        stopclock();
+        showtime();
+    }
+</SCRIPT>
             
 
+            
+                
+            <div class="tablaUsuarios">
+                <%--<div style="height: 38px" class="parteBusqueda" >
+<asp:Button ID="btnBuscar" CssClass="btnizq" runat="server" Text="BUSCAR" Height="37px" Width="153px" OnClick="btnBuscar_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<asp:TextBox ID="txtBusqueda" runat="server" Width="775px" Height="27px" OnTextChanged="txtBusqueda_TextChanged" ></asp:TextBox>
+</div>--%>
+                <div style="height: 38px">
+                    <asp:Button ID="btnNuevo" runat="server" Text="NUEVO" CssClass="btnder" OnClick="btnNuevo_Click"/>
+                    <asp:RadioButton ID="rbEliminar" runat="server" Text="Eliminar" GroupName="TIPO" Font-Size="15pt" />
+                    <asp:RadioButton ID="rbModificar" runat="server" Checked="True" Text="Modificar" GroupName="TIPO" Font-Size="15pt" />
+                </div>
+
+                
+                   <asp:GridView ID="dgProfesores" runat="server" CellPadding="3" GridLines="None" Height="284px" Width="80%" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" DataKeyNames="Ci_Profesor" DataSourceID="SqlDataSourceProfesores" OnSelectedIndexChanged="dgProfesores_SelectedIndexChanged">
+                       <Columns>
+                           <asp:CommandField ShowSelectButton="True" />
+                           <asp:BoundField DataField="Ci_Profesor" HeaderText="Ci_Profesor" ReadOnly="True" SortExpression="Ci_Profesor" />
+                           <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
+                           <asp:BoundField DataField="ap_Paterno" HeaderText="ap_Paterno" SortExpression="ap_Paterno" />
+                           <asp:BoundField DataField="ap_Materno" HeaderText="ap_Materno" SortExpression="ap_Materno" />
+                           <asp:BoundField DataField="contrasenia" HeaderText="contrasenia" SortExpression="contrasenia" />
+                           <asp:BoundField DataField="celular" HeaderText="celular" SortExpression="celular" />
+                           <asp:BoundField DataField="FechaNac" HeaderText="FechaNac" SortExpression="FechaNac" />
+                           <asp:BoundField DataField="direccion" HeaderText="direccion" SortExpression="direccion" />
+                           <asp:TemplateField HeaderText="Cursos" SortExpression="Ci_Profesor">
+                               <EditItemTemplate>
+                                   <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+                               </EditItemTemplate>
+                               <ItemTemplate>
+                                   <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+                               </ItemTemplate>
+                           </asp:TemplateField>
+                       </Columns>
+                       <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
+                       <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
+                       <PagerStyle BackColor="#C6C3C6" ForeColor="Black" HorizontalAlign="Right" />
+                       <RowStyle BackColor="#DEDFDE" ForeColor="Black" />
+                       <SelectedRowStyle BackColor="#9471DE" Font-Bold="True" ForeColor="White" />
+                       <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                       <SortedAscendingHeaderStyle BackColor="#594B9C" />
+                       <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                       <SortedDescendingHeaderStyle BackColor="#33276A" />
+                   </asp:GridView>
+                   <asp:SqlDataSource ID="SqlDataSourceProfesores" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT * FROM [Profesor]"></asp:SqlDataSource>
+               </div>
         </div>
         <script type="text/javascript">
             function MessageBoxShow() {
@@ -156,7 +187,38 @@
                     return false;
                 }
             }
-            </script>
+        </script>
+        <script type="text/javascript">
+            function Eliminacion() {
+
+                var opcion = confirm("¿SEGURO QUE QUIERE ELIMINAR ESTE REGISTRO?");
+                if (opcion == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
+        <script type="text/javascript">
+            function Agregacion() {
+
+                var opcion = alert("REGISTRO AGREGADO EXITOSAMENTE");
+                return true;
+            }
+        </script>
+        <script type="text/javascript">
+            function Modificacion() {
+
+                var opcion = alert("REGISTRO MODIFICADO SATISFACTORIAMENTE");
+                return true;
+            }
+        </script>
+        <script type="text/javascript">
+            function Error() {
+                var opcion = alert("ERROR LA ACCION NO SE PUDO REALIZAR");
+                return true;
+            }
+        </script>
     </form>
 </body>
 </html>

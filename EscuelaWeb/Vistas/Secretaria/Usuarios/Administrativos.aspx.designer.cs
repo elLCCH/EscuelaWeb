@@ -94,13 +94,13 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones {
         protected global::System.Web.UI.WebControls.Label lblIdCurso;
         
         /// <summary>
-        /// Control CAlumnos.
+        /// Control CAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CAlumnos;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl CAdmin;
         
         /// <summary>
         /// Control Label1.
@@ -256,31 +256,13 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones {
         protected global::System.Web.UI.WebControls.Label Label5;
         
         /// <summary>
-        /// Control cbCurso.
+        /// Control cbOcupacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cbCurso;
-        
-        /// <summary>
-        /// Control Label10.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label10;
-        
-        /// <summary>
-        /// Control cbParalelo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cbParalelo;
+        protected global::System.Web.UI.WebControls.DropDownList cbOcupacion;
         
         /// <summary>
         /// Control btnGuardar.
@@ -328,21 +310,21 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones {
         protected global::System.Web.UI.WebControls.RadioButton rbModificar;
         
         /// <summary>
-        /// Control dgEstudiantes.
+        /// Control dgAdministrativos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgEstudiantes;
+        protected global::System.Web.UI.WebControls.GridView dgAdministrativos;
         
         /// <summary>
-        /// Control SqlDataSourceAlumnos.
+        /// Control SqlDataSourceAdministrativo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceAlumnos;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceAdministrativo;
     }
 }
