@@ -48,5 +48,10 @@ namespace EscuelaWeb.Vistas.Interesado
         {
             Response.Redirect("../index.aspx");
         }
+
+        protected void dgvAvisos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

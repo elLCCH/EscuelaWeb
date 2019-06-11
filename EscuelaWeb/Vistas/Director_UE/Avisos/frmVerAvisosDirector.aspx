@@ -22,10 +22,10 @@
         <ul class ="menuCuenta">
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
-                  <%--<li><a href="#">Gestion de usuario</a></li>--%>
+                    <%--<li><a href="#">Gestion de usuario</a></li>--%>
                   <li><asp:LinkButton ID="lbtnCuenta" runat="server" OnClick="lbtnCuenta_Click">Cambiar contraseña</asp:LinkButton></li>
                   <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click" OnClientClick="return MessageBoxShow();">Salir</asp:LinkButton></li>
-                  <%--<li><a href="../index.aspx">Cerrar Sesion</a></li>--%>
+                      <%--<li><a href="../index.aspx">Cerrar Sesion</a></li>--%>
                 </ul>
             </li>
         </ul>
@@ -54,8 +54,16 @@
             <div class="RealizarAviso">
                 <h1 style="text-align:center;">LISTA DE AVISOS</h1>
 
-                <h3>AVISOS</h3>
-                <asp:GridView ID="dgvAvisos" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                <h3>AVISOS<asp:Label ID="lblcod" runat="server" Text="Label"></asp:Label>
+                    <asp:Button ID="bntEliminar" runat="server" OnClick="bntEliminar_Click" Text="Button" />
+                </h3>
+                <asp:GridView ID="dgvAvisos" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="id_Avisos" DataSourceID="SqlDataSourceAvisosDirector" OnSelectedIndexChanged="dgvAvisos_SelectedIndexChanged">
+                    <Columns>
+                        <asp:CommandField SelectText="Selecionar" ShowSelectButton="True" />
+                        <asp:BoundField DataField="id_Avisos" HeaderText="id_Avisos" InsertVisible="False" ReadOnly="True" SortExpression="id_Avisos" />
+                        <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
+                        <asp:BoundField DataField="contenido" HeaderText="contenido" SortExpression="contenido" />
+                    </Columns>
                     <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
                     <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
                     <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
@@ -65,6 +73,12 @@
                     <SortedDescendingCellStyle BackColor="#E5E5E5" />
                     <SortedDescendingHeaderStyle BackColor="#242121" />
                 </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSourceAvisosDirector" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" DeleteCommand="DELETE FROM Avisos
+WHERE        (id_Avisos = @Original_id_Avisos)" SelectCommand="SELECT [id_Avisos], [titulo], [contenido] FROM [Avisos]">
+                    <DeleteParameters>
+                        <asp:Parameter Name="Original_id_Avisos" />
+                    </DeleteParameters>
+                </asp:SqlDataSource>
             </div>
         </div>
         <script type="text/javascript">

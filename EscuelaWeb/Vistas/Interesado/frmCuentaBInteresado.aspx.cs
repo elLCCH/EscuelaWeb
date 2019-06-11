@@ -53,5 +53,15 @@ namespace EscuelaWeb.Vistas.Interesado
         {
             Response.Redirect("../index.aspx");
         }
+
+        protected void btnGuardarCambios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

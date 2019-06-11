@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EscuelaWeb.Controlador;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,7 @@ namespace EscuelaWeb.Vistas.Director_UE
 {
     public partial class frmVerAvisosDirector : System.Web.UI.Page
     {
+        AvisosDirectorController avDir = new AvisosDirectorController(); 
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -37,6 +39,16 @@ namespace EscuelaWeb.Vistas.Director_UE
         protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
         {
             Response.Redirect("../../index.aspx");
+        }
+
+        protected void dgvAvisos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblcod.Text = dgvAvisos.SelectedRow.Cells[0].ToString();
+        }
+
+        protected void bntEliminar_Click(object sender, EventArgs e)
+        {
+            avDir.eliminarAviso(Convert.ToInt32(lblcod.Text));
         }
     }
 }
