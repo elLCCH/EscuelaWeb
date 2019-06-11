@@ -54,7 +54,7 @@
             <div class="RealizarAviso">
                 <h1 style="text-align:center;">LISTA DE AVISOS</h1>
 
-                <h3>AVISOS<asp:Label ID="lblcod" runat="server" Text="Label"></asp:Label>
+                <h3>AVISOS<asp:Label ID="lblcod" runat="server"></asp:Label>
                     <asp:Button ID="bntEliminar" runat="server" OnClick="bntEliminar_Click" Text="Button" />
                 </h3>
                 <asp:GridView ID="dgvAvisos" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="id_Avisos" DataSourceID="SqlDataSourceAvisosDirector" OnSelectedIndexChanged="dgvAvisos_SelectedIndexChanged">
