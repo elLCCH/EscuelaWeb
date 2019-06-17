@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EscuelaWeb.Controlador;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,11 @@ namespace EscuelaWeb.Vistas.CuentaPerfil
 {
     public partial class frmCuentaBSecretaria : System.Web.UI.Page
     {
+        AdministrativoController admin = new AdministrativoController();
+        int ci_Admin = 552343;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            admin.MostrarCuentaAdministrativo(ci_Admin, txtNombre, txtApellidos);
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
@@ -52,6 +55,23 @@ namespace EscuelaWeb.Vistas.CuentaPerfil
         protected void lbtnCuenta_Click1(object sender, EventArgs e)
         {
             Response.Redirect("frmCuentaBSecretaria.aspx");
+        }
+
+        protected void btnGuardarCambios_Click(object sender, EventArgs e)
+        {
+            if (txtContrasenia.Text == txtContrasenia1.Text)
+            {
+                admin.ModificarContrasenia(ci_Admin, txtContrasenia.Text);
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('La contraseña ha sido cambiada Correctamente');", true);
+                txtContrasenia1.Text = "";
+                txtContrasenia.Text = "";
+            }
+            else
+            {
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('Las contraseñas no son iguales');", true);
+                txtContrasenia1.Text = "";
+                txtContrasenia.Text = "";
+            }
         }
     }
 }

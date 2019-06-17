@@ -78,6 +78,7 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
                 
                 //insertamos y actualizamos tabla
                 cAlumno.insertar_alumno(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, curso);
+                dgEstudiantes.DataSourceID = "SqlDataSourceAlumnos";
                 dgEstudiantes.DataBind();
                 CAlumnos.Style["visibility"] = "hidden";
                 limpiar();
@@ -90,6 +91,7 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
 
                     //int curso = cAlumno.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
                     cAlumno.modificar(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, curso);
+                    dgEstudiantes.DataSourceID = "SqlDataSourceAlumnos";
                     dgEstudiantes.DataBind();
                     limpiar();
                     CAlumnos.Style["visibility"] = "hidden";
@@ -97,6 +99,7 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
                 if (rbEliminar.Checked == true)
                 {
                     cAlumno.eliminar(Convert.ToInt32(txtci.Text));
+                    dgEstudiantes.DataSourceID = "SqlDataSourceAlumnos";
                     dgEstudiantes.DataBind();
                     limpiar();
                     CAlumnos.Style["visibility"] = "hidden";
@@ -190,6 +193,20 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             CAlumnos.Style["visibility"] = "hidden";
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            SqlConnection conexion = new SqlConnection("server=.;DataBase=dbEscuela;Integrated Security=True");
+            conexion.Open();
+            dgEstudiantes.DataSourceID = "";
+            SqlCommand comando = new SqlCommand("Select * from Estudiante e, Curso c where e.Id_Curso = c.Id_Curso and Ci_Estudiante='" + Convert.ToInt32(txtBuscar.Text) + "'", conexion);//aca tu consulta
+            SqlDataAdapter adaptador = new SqlDataAdapter();
+            adaptador.SelectCommand = comando;
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            dgEstudiantes.DataSource = tabla;
+            dgEstudiantes.DataBind();
         }
     }
 }

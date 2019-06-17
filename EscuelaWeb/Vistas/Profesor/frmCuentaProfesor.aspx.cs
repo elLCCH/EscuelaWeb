@@ -14,7 +14,7 @@ namespace EscuelaWeb.Vistas.Profesor
         public int _ci_profesor=3555914;
         protected void Page_Load(object sender, EventArgs e)
         {
-            objProfesorController.MostrarCuenta(_ci_profesor,txtNombre,txtApellidos,txtContrasenia);
+            objProfesorController.MostrarCuenta(_ci_profesor,txtNombre,txtApellidos);
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
@@ -49,7 +49,19 @@ namespace EscuelaWeb.Vistas.Profesor
 
         protected void btnGuardarCambios_Click(object sender, EventArgs e)
         {
-            
+            if (txtContrasenia.Text == txtContrasenia1.Text)
+            {
+                objProfesorController.ModificarContrasenia(_ci_profesor, txtContrasenia.Text);
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('La contraseña ha sido cambiada Correctamente');", true);
+                txtContrasenia1.Text = "";
+                txtContrasenia.Text = "";
+            }
+            else
+            {
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('Las contraseñas no son iguales');", true);
+                txtContrasenia1.Text = "";
+                txtContrasenia.Text = "";
+            }
         }
     }
 }

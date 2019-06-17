@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace EscuelaWeb.Controlador
 {
@@ -42,6 +43,17 @@ namespace EscuelaWeb.Controlador
         {
             admin.Delete(pCI);
         }
+        public void MostrarCuentaAdministrativo(int Pci, TextBox txtNombre, TextBox txtApellidos)
+        {
+            txtNombre.Text = Convert.ToString(admin.obtenerNombreAdmin(Pci));
+            txtApellidos.Text = Convert.ToString(admin.obtenerApellidos(Pci));
+            //txtContrasenia.Text = Convert.ToString(admin.obtenerContrasenia(Pci));
+        }
+        public void ModificarContrasenia(int Pci, string Pcontrasenia)
+        {
+            admin.ModificarContrasenia(Pci, Pcontrasenia, Pci);
+        }
+
     }
 
 }

@@ -160,6 +160,9 @@
                     <asp:Button ID="btnNuevo" runat="server" Text="NUEVO" CssClass="btnder" OnClick="btnNuevo_Click"/>
                     <asp:RadioButton ID="rbEliminar" runat="server" Text="Eliminar" GroupName="TIPO" Font-Size="15pt" />
                     <asp:RadioButton ID="rbModificar" runat="server" Checked="True" Text="Modificar" GroupName="TIPO" Font-Size="15pt" />
+                    <asp:TextBox ID="txtBuscar" runat="server" CssClass="Busqueda"></asp:TextBox>
+                    <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="BUSCAR" CssClass="Busqueda"/>
+               
                 </div>
 
                 
