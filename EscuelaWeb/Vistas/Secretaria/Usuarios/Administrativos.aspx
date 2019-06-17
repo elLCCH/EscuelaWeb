@@ -23,10 +23,10 @@
         <ul class ="menuCuenta">
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
-                  <%--<li><a href="#">Gestion de usuario</a></li>--%>
+                    <%--<li><a href="#">Gestion de usuario</a></li>--%>
                   <li><asp:LinkButton ID="lbtnCuenta" runat="server" OnClick="lbtnCuenta_Click1">Cambiar contraseña</asp:LinkButton></li>
                   <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click" OnClientClick="return MessageBoxShow();">Salir</asp:LinkButton></li>
-                  <%--<li><a href="../index.aspx">Cerrar Sesion</a></li>--%>
+                      <%--<li><a href="../index.aspx">Cerrar Sesion</a></li>--%>
                 </ul>
             </li>
         </ul>
@@ -176,6 +176,8 @@
                        <SortedDescendingHeaderStyle BackColor="#33276A" />
                    </asp:GridView>
                    <asp:SqlDataSource ID="SqlDataSourceAdministrativo" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT * FROM [Administrativo]"></asp:SqlDataSource>
+                <asp:TextBox ID="txtBuscar" runat="server"></asp:TextBox>
+                <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="BUSCAR" />
                </div>
         </div>
         <script type="text/javascript">
