@@ -48,13 +48,13 @@ namespace EscuelaWeb.Data {
         
         private global::System.Data.DataRelation relationfk_IdMateria;
         
-        private global::System.Data.DataRelation relationfk_Prof;
-        
         private global::System.Data.DataRelation relationfk_Curso;
         
         private global::System.Data.DataRelation relationfk_Profesor;
         
         private global::System.Data.DataRelation relationfk_Admin;
+        
+        private global::System.Data.DataRelation relationfk_Prof;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -382,10 +382,10 @@ namespace EscuelaWeb.Data {
             this.relationfk_EstudianteCalif = this.Relations["fk_EstudianteCalif"];
             this.relationfk_CursoEstudiante = this.Relations["fk_CursoEstudiante"];
             this.relationfk_IdMateria = this.Relations["fk_IdMateria"];
-            this.relationfk_Prof = this.Relations["fk_Prof"];
             this.relationfk_Curso = this.Relations["fk_Curso"];
             this.relationfk_Profesor = this.Relations["fk_Profesor"];
             this.relationfk_Admin = this.Relations["fk_Admin"];
+            this.relationfk_Prof = this.Relations["fk_Prof"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -428,10 +428,6 @@ namespace EscuelaWeb.Data {
                         this.tableMateria.Id_MateriaColumn}, new global::System.Data.DataColumn[] {
                         this.tableCalificaciones.Id_MateriaColumn}, false);
             this.Relations.Add(this.relationfk_IdMateria);
-            this.relationfk_Prof = new global::System.Data.DataRelation("fk_Prof", new global::System.Data.DataColumn[] {
-                        this.tableProfesor.Ci_ProfesorColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAvisos.Ci_ProfesorColumn}, false);
-            this.Relations.Add(this.relationfk_Prof);
             this.relationfk_Curso = new global::System.Data.DataRelation("fk_Curso", new global::System.Data.DataColumn[] {
                         this.tableCurso.Id_CursoColumn}, new global::System.Data.DataColumn[] {
                         this.tableProfesor_Curso.Id_CursoColumn}, false);
@@ -444,6 +440,10 @@ namespace EscuelaWeb.Data {
                         this.tableAdministrativo.Ci_AdministrativoColumn}, new global::System.Data.DataColumn[] {
                         this.tableAvisos.Ci_AdministrativoColumn}, false);
             this.Relations.Add(this.relationfk_Admin);
+            this.relationfk_Prof = new global::System.Data.DataRelation("fk_Prof", new global::System.Data.DataColumn[] {
+                        this.tableProfesor.Ci_ProfesorColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAvisos.Ci_ProfesorColumn}, false);
+            this.Relations.Add(this.relationfk_Prof);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3299,23 +3299,23 @@ namespace EscuelaWeb.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public ProfesorRow ProfesorRow {
-                get {
-                    return ((ProfesorRow)(this.GetParentRow(this.Table.ParentRelations["fk_Prof"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["fk_Prof"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public AdministrativoRow AdministrativoRow {
                 get {
                     return ((AdministrativoRow)(this.GetParentRow(this.Table.ParentRelations["fk_Admin"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["fk_Admin"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public ProfesorRow ProfesorRow {
+                get {
+                    return ((ProfesorRow)(this.GetParentRow(this.Table.ParentRelations["fk_Prof"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["fk_Prof"]);
                 }
             }
             
@@ -3889,23 +3889,23 @@ namespace EscuelaWeb.Data {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AvisosRow[] GetAvisosRows() {
-                if ((this.Table.ChildRelations["fk_Prof"] == null)) {
-                    return new AvisosRow[0];
-                }
-                else {
-                    return ((AvisosRow[])(base.GetChildRows(this.Table.ChildRelations["fk_Prof"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public Profesor_CursoRow[] GetProfesor_CursoRows() {
                 if ((this.Table.ChildRelations["fk_Profesor"] == null)) {
                     return new Profesor_CursoRow[0];
                 }
                 else {
                     return ((Profesor_CursoRow[])(base.GetChildRows(this.Table.ChildRelations["fk_Profesor"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public AvisosRow[] GetAvisosRows() {
+                if ((this.Table.ChildRelations["fk_Prof"] == null)) {
+                    return new AvisosRow[0];
+                }
+                else {
+                    return ((AvisosRow[])(base.GetChildRows(this.Table.ChildRelations["fk_Prof"])));
                 }
             }
         }
@@ -4513,15 +4513,12 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ci_Administrativo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ci_Administrativo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Avisos] SET [titulo] = @titulo, [contenido] = @contenido, [Ci_Profesor] =" +
-                " @Ci_Profesor, [Ci_Administrativo] = @Ci_Administrativo WHERE (([id_Avisos] = @O" +
-                "riginal_id_Avisos))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE Avisos SET titulo = @titulo, contenido = @contenido WHERE (id_Avisos = @Or" +
+                "iginal_id_Avisos)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@titulo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "titulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contenido", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "contenido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ci_Profesor", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ci_Profesor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ci_Administrativo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Ci_Administrativo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_Avisos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_Avisos", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@titulo", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "titulo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@contenido", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "contenido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_Avisos", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_Avisos", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4665,7 +4662,7 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string titulo, string contenido, global::System.Nullable<int> Ci_Profesor, global::System.Nullable<int> Ci_Administrativo, int Original_id_Avisos) {
+        public virtual int Update(string titulo, string contenido, int Original_id_Avisos) {
             if ((titulo == null)) {
                 throw new global::System.ArgumentNullException("titulo");
             }
@@ -4678,19 +4675,7 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(contenido));
             }
-            if ((Ci_Profesor.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Ci_Profesor.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((Ci_Administrativo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Ci_Administrativo.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id_Avisos));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_id_Avisos));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5881,13 +5866,13 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sigla", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sigla", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [Materia] SET [Id_Materia] = @Id_Materia, [Nom_Materia] = @Nom_Materia, [S" +
-                "igla] = @Sigla WHERE (([Id_Materia] = @Original_Id_Materia))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE Materia SET Id_Materia = @Id_Materia, Nom_Materia = @Nom_Materia, Sigla = " +
+                "@Sigla WHERE (Id_Materia = @Original_Id_Materia)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Materia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Materia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom_Materia", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nom_Materia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sigla", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Sigla", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Materia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Materia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Materia", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Materia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nom_Materia", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Nom_Materia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sigla", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Sigla", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Materia", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Materia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7485,15 +7470,6 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._avisosTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Avisos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._avisosTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._calificacionesTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Calificaciones.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -7509,6 +7485,15 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._profesor_CursoTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._avisosTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Avisos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._avisosTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -7562,14 +7547,6 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._avisosTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Avisos.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._avisosTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._calificacionesTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Calificaciones.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -7586,6 +7563,14 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._avisosTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Avisos.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._avisosTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -7596,6 +7581,14 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private int UpdateDeletedRows(dsEscuela dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._avisosTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Avisos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._avisosTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._profesor_CursoTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Profesor_Curso.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -7609,14 +7602,6 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._calificacionesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._avisosTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Avisos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._avisosTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

@@ -238,6 +238,7 @@
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controlador\AlumnoController.cs" />
+    <Compile Include="Controlador\AvisosController.cs" />
     <Compile Include="Controlador\ProfesorController.cs" />
     <Compile Include="Data\dsEscuela.Designer.cs">
       <AutoGen>True</AutoGen>
