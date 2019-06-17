@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EscuelaWeb.Controlador;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,8 @@ namespace EscuelaWeb.Vistas.Profesor.Avisos
 {
     public partial class frmRealizarAvisoMiCursoProfesor : System.Web.UI.Page
     {
+        AvisosController objAvisosController = new AvisosController();
+        public int _ciProfesor = 3555914;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -37,6 +40,13 @@ namespace EscuelaWeb.Vistas.Profesor.Avisos
         protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
         {
             Response.Redirect("../../index.aspx");
+        }
+
+        protected void btnRegistrarAviso_Click(object sender, EventArgs e)
+        {
+            objAvisosController.PublicarAvisoProfesor(txtTitulo.Text,txtDescripcion.Text,_ciProfesor);
+            txtTitulo.Text = "";
+            txtDescripcion.Text = "";
         }
     }
 }

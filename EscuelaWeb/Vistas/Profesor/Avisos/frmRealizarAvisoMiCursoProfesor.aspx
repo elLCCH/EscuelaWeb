@@ -49,6 +49,7 @@
                 <asp:TextBox ID="txtTitulo" runat="server" Width="574px"></asp:TextBox>
                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion:"></asp:Label>
                 <asp:TextBox ID="txtDescripcion" runat="server" Height="94px" Width="609px"></asp:TextBox>
+                <asp:Button ID="btnRegistrarAviso" runat="server" Text="PUBLICAR" Width="91px" OnClick="btnRegistrarAviso_Click" OnClientClick="MsgConfirmacionAviso();" />
             </div>
         </div>
     <script type="text/javascript">
@@ -60,6 +61,13 @@
                     } else {
                         return false;
                     }
+                }
+            </script>
+    <script type="text/javascript">
+                function MsgConfirmacionAviso() {
+                    
+                    var opcion = alert("AVISO PUBLICADO CORRECTAMENTE");
+                    return true;
                 }
             </script>
 </form>    
