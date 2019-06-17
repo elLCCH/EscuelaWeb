@@ -11,7 +11,7 @@ namespace EscuelaWeb.Vistas.Interesado
 	public partial class frmCuentaBInteresado : System.Web.UI.Page
 	{
         AlumnoController alumno = new AlumnoController();
-        public int ci_Int = 14332;
+        public int ci_Int = 123123;
         protected void Page_Load(object sender, EventArgs e)
         {
             alumno.MostrarCuentaInteresado(ci_Int, txtNombre, txtApellidos);

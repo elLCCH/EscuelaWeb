@@ -12,30 +12,29 @@ namespace EscuelaWeb.Vistas.Interesado.Bimestres
     public partial class PrimerBim : System.Web.UI.Page
     {
         SqlConnection conexion = new SqlConnection("server=.;DataBase=dbEscuela;Integrated Security=True");
+        int primer = 2352;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
             conexion.Open();
-            SqlCommand comando = new SqlCommand("Select * from Calificaciones", conexion);//aca tu consulta
-            //este otro es para que la consulta pueda recibir un parametro
-//SqlCommand comando = new SqlCommand("Select * from Calificaciones where Ci_Estudiante='"+ lbltexto.text +"'", conexion);
+            SqlCommand comando = new SqlCommand("select m.Nom_Materia, c.calificacion from Calificaciones c,Materia m where c.Id_Materia = m.Id_Materia and Ci_Estudiante= '" + primer + "' and bimestre='PRIMER BIMESTRE'", conexion);//aca tu consulta
             SqlDataAdapter adaptador = new SqlDataAdapter();
             adaptador.SelectCommand = comando;
             DataTable tabla = new DataTable();
             adaptador.Fill(tabla);
-            GridView1.DataSource = tabla;
-            GridView1.DataBind();
+            gvPrimerBim.DataSource = tabla;
+            gvPrimerBim.DataBind();
 
 
 
-            //}
-            //catch (Exception)
-            //{
-            //    conexion.Close();
-            //    Response.Write("NO CONEXION");
+            }
+            catch (Exception)
+            {
+                conexion.Close();
+                Response.Write("NO CONEXION");
 
-            //}
+            }
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
