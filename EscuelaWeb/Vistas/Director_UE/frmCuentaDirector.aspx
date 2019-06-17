@@ -62,9 +62,12 @@
                 <asp:TextBox ID="txtApellidos" runat="server" CssClass="CajaTexto"></asp:TextBox>
                 <br />
                 <asp:Label ID="Label3" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label>
-                <asp:TextBox ID="txtContrasenia" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                <asp:TextBox ID="txtContrasenia" runat="server" CssClass="CajaTexto" TextMode="Password"></asp:TextBox>
                 <br />
-                <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar Cambios" Height="37px" Width="187px" />
+                <asp:Label ID="Label4" runat="server" Text="CONFIRMAR CONTRASEÑA:" CssClass="texto"></asp:Label>
+                <asp:TextBox ID="txtContrasenia1" runat="server" CssClass="CajaTexto" TextMode="Password"></asp:TextBox>
+                <br />
+                <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar Cambios" Height="37px" Width="187px" OnClick="btnGuardarCambios_Click" />
             </div>
         </div>
         <script type="text/javascript">

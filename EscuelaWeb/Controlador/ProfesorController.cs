@@ -28,11 +28,15 @@ namespace EscuelaWeb.Controlador
         public DateTime Fecha_nac { get => fecha_nac; set => fecha_nac = value; }
         public string Direccion { get => direccion; set => direccion = value; }
 
-        public void MostrarCuenta(int Pci,TextBox txtNombre, TextBox txtApellidos, TextBox txtContrasenia)
+        public void MostrarCuenta(int Pci,TextBox txtNombre, TextBox txtApellidos)
         {
             txtNombre.Text = Convert.ToString(ObjProfesor.ScalarQueryCuentaMostrarNombre(Pci));
             txtApellidos.Text = Convert.ToString(ObjProfesor.ScalarQueryCuentaMostrarApellidos(Pci));
-            txtContrasenia.Text = Convert.ToString(ObjProfesor.ScalarQueryCuentaMostrarContrasenia(Pci));
+            //txtContrasenia.Text = Convert.ToString(ObjProfesor.ScalarQueryCuentaMostrarContrasenia(Pci));
+        }
+        public void ModificarContrasenia(int Pci, string Pcontrasenia)
+        {
+            ObjProfesor.ModificarContrasenia(Pci, Pcontrasenia, Pci);
         }
     }
 }

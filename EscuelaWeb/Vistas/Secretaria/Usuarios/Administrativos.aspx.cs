@@ -5,12 +5,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
 {
     public partial class Administrativos : System.Web.UI.Page
     {
         AdministrativoController _Ad = new AdministrativoController();
+        SqlConnection conexion = new SqlConnection("server=.;DataBase=dbEscuela;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -100,6 +103,7 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
 
                 //insertamos y actualizamos tabla
                 _Ad.insertar_Administrativo(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, cbOcupacion.Text);
+                dgAdministrativos.DataSourceID = "SqlDataSourceAdministrativo";
                 dgAdministrativos.DataBind();
                 CAdmin.Style["visibility"] = "hidden";
                 limpiar();
@@ -112,6 +116,7 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
 
                     //int curso = cAlumno.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
                     _Ad.modificar_Administrativo(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, cbOcupacion.Text);
+                    dgAdministrativos.DataSourceID = "SqlDataSourceAdministrativo";
                     dgAdministrativos.DataBind();
                     limpiar();
                     CAdmin.Style["visibility"] = "hidden";
@@ -119,6 +124,7 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
                 if (rbEliminar.Checked == true)
                 {
                     _Ad.eliminar_Administrativo(Convert.ToInt32(txtci.Text));
+                    dgAdministrativos.DataSourceID = "SqlDataSourceAdministrativo";
                     dgAdministrativos.DataBind();
                     limpiar();
                     CAdmin.Style["visibility"] = "hidden";
@@ -142,6 +148,20 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             CAdmin.Style["visibility"] = "hidden";
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            conexion.Open();
+            dgAdministrativos.DataSourceID = "";
+            SqlCommand comando = new SqlCommand("Select * from Administrativo where Ci_Administrativo='" + Convert.ToInt32(txtBuscar.Text) + "'", conexion);//aca tu consulta
+            SqlDataAdapter adaptador = new SqlDataAdapter();
+            adaptador.SelectCommand = comando;
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            dgAdministrativos.DataSource = tabla;
+            dgAdministrativos.DataBind();
+
         }
     }
 }

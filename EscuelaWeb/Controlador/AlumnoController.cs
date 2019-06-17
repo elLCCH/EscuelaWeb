@@ -62,6 +62,16 @@ namespace EscuelaWeb.Controlador
             int estudiante = (int)est.BuscarEstudianteId(pBuscar);
             return estudiante;
         }
-        
+
+        public void MostrarCuentaInteresado(int Pci, TextBox txtNombre, TextBox txtApellidos)
+        {
+            txtNombre.Text = Convert.ToString(est.obtenerNombreEst(Pci));
+            txtApellidos.Text = Convert.ToString(est.obtenerApellidosEst(Pci));
+            //txtContrasenia.Text = Convert.ToString(est.obtenerContrasenia(Pci));
+        }
+        public void ModificarContrasenia(int Pci ,string Pcontrasenia)
+        {
+            est.ModificarContrasenia(Pci ,Pcontrasenia, Pci);
+        }
     }
 }
