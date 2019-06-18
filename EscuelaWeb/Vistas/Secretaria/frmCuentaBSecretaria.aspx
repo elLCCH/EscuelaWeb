@@ -60,6 +60,7 @@
                 <br />
                 <asp:Label ID="Label3" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label>
                 <asp:TextBox ID="txtContrasenia" runat="server" CssClass="CajaTexto" TextMode="Password"></asp:TextBox>
+                <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
                 <br />
                 <asp:Label ID="Label4" runat="server" Text="CONFIRMAR CONTRASEÑA:" CssClass="texto"></asp:Label>
                 <asp:TextBox ID="txtContrasenia1" runat="server" CssClass="CajaTexto" TextMode="Password"></asp:TextBox>

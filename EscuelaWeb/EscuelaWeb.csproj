@@ -304,6 +304,9 @@
     <Compile Include="Controlador\ProfesorController.cs" />
     <Compile Include="Controlador\Profesorescontroller.cs" />
     <Compile Include="Controlador\SesionesController.cs" />
+    <Compile Include="Data\dsEscuela.cs">
+      <DependentUpon>dsEscuela.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Data\dsEscuela.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

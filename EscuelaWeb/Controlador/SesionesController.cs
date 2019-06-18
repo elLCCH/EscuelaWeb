@@ -41,5 +41,26 @@ namespace EscuelaWeb.Controlador
             else
                 return false;
         }
+        public bool AutenticarProfesor(int pCuenta, string pClave)
+        {
+            if (prof.FillByAutenticarProfesor(_ds.Profesor, pCuenta, pClave) > 0)
+                return true;
+            else
+                return false;
+        }
+        public bool AutenticarAdministrativo(int pCuenta, string pClave)
+        {
+            if (admin.FillByAutenticarAdministrativo(_ds.Administrativo, pCuenta, pClave) > 0)
+                return true;
+            else
+                return false;
+        }
+        public bool AutenticarSecretario(int pCuenta, string pClave)
+        {
+            if (admin.FillByAutenticarSecretario(_ds.Administrativo, pCuenta, pClave) > 0)
+                return true;
+            else
+                return false;
+        }
     }
 }

@@ -9,6 +9,11 @@ namespace EscuelaWeb.Vistas.Director_UE
 {
     public partial class frmBDirector : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            String Valor = Request.QueryString["ID"]; //obteniendo valor desde el otro form
+
+        }
         protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
         {
             Response.Redirect("../index.aspx");
