@@ -14,9 +14,13 @@ namespace EscuelaWeb.Controlador
         {
             ObjAviso.Insert(Ptitulo,Pcontenido,Pci,null);
         }
-        public void modificar(string Ptitulo, string Pcontenido, int PId)
+        public void modificarAvisoProfesor(string Ptitulo, string Pcontenido, int PCiProf, int pCiAdmin, int pIDAviso)
         {
-            ObjAviso.Update(Ptitulo, Pcontenido, PId);
+            ObjAviso.Update(Ptitulo, Pcontenido, PCiProf, pCiAdmin, pIDAviso);
+        }
+        public void modificarAvisoProfesor(int pIDAviso)
+        {
+            ObjAviso.Delete(pIDAviso);
         }
 
     }
