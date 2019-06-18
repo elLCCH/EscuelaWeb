@@ -89,21 +89,18 @@
                        <br />
                         <div Class="texto"><asp:Label ID="Label5" runat="server" Text="CURSO:" CssClass="texto"></asp:Label></div>
                        <asp:DropDownList ID="cbCurso" runat="server" CssClass="CajaTexto">
-                           <asp:ListItem>Primero</asp:ListItem>
-                           <asp:ListItem>Segundo</asp:ListItem>
-                           <asp:ListItem>Tercero</asp:ListItem>
-                           <asp:ListItem>Cuarto</asp:ListItem>
-                           <asp:ListItem>Quinto</asp:ListItem>
-                           <asp:ListItem>Sexto</asp:ListItem>
+                           <asp:ListItem>PRIMERO</asp:ListItem>
+                           <asp:ListItem>SEGUNDO</asp:ListItem>
+                           <asp:ListItem>TERCERO</asp:ListItem>
+                           <asp:ListItem>CUARTO</asp:ListItem>
+                           <asp:ListItem>QUINTO</asp:ListItem>
+                           <asp:ListItem>SEXTO</asp:ListItem>
                         </asp:DropDownList>
                        
                        <br />
                         <div Class="texto"><asp:Label ID="Label10" runat="server" Text="PARALELO:" CssClass="texto"></asp:Label></div>
                        <asp:DropDownList ID="cbParalelo" runat="server" CssClass="CajaTexto" >
                            <asp:ListItem>A</asp:ListItem>
-                           <asp:ListItem>B</asp:ListItem>
-                           <asp:ListItem>C</asp:ListItem>
-                           <asp:ListItem>D</asp:ListItem>
                         </asp:DropDownList>
                         
                        <div style="height: 44px; width: 214px;" class="boton">

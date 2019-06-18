@@ -79,13 +79,23 @@
                        <br />
                         <div Class="texto"><asp:Label ID="Label4" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label></div>
                         <asp:TextBox ID="txtCOntrasenia" runat="server" CssClass="CajaTexto"></asp:TextBox>
-                       <%--<br />
-                        <div Class="texto"><asp:Label ID="Label5" runat="server" Text="OCUPACION:" CssClass="texto"></asp:Label></div>--%>
-                       <%--<asp:DropDownList ID="cbOcupacion" runat="server" CssClass="CajaTexto">
-                           <asp:ListItem>Director</asp:ListItem>
-                           <asp:ListItem>Secretaria</asp:ListItem>
-                        </asp:DropDownList>--%>
+            <br />
+                       <div Class="texto"><asp:Label ID="Label5" runat="server" Text="CURSO:" CssClass="texto"></asp:Label></div>
+                       <asp:DropDownList ID="cbCurso" runat="server" CssClass="CajaTexto">
+                           <asp:ListItem>PRIMERO</asp:ListItem>
+                           <asp:ListItem>SEGUNDO</asp:ListItem>
+                           <asp:ListItem>TERCERO</asp:ListItem>
+                           <asp:ListItem>CUARTO</asp:ListItem>
+                           <asp:ListItem>QUINTO</asp:ListItem>
+                           <asp:ListItem>SEXTO</asp:ListItem>
+                        </asp:DropDownList>
                        
+                       <br />
+                        <div Class="texto"><asp:Label ID="Label10" runat="server" Text="PARALELO:" CssClass="texto"></asp:Label></div>
+                       <asp:DropDownList ID="cbParalelo" runat="server" CssClass="CajaTexto" >
+                           <asp:ListItem>A</asp:ListItem>
+                        </asp:DropDownList>
+                        
                         
                        <div style="height: 44px; width: 214px;" class="boton">
                         <asp:Button ID="btnGuardar" CssClass="btnder" runat="server" Text="GUARDAR CAMBIOS" Height="36px" Width="212px" OnClick="btnGuardar_Click" />
