@@ -9,9 +9,10 @@ namespace EscuelaWeb.Vistas.ingreso
 {
     public partial class frmBSecretaria : System.Web.UI.Page
     {
+        
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            String ID = Request.QueryString["ID"]; //obteniendo valor desde el otro form
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
