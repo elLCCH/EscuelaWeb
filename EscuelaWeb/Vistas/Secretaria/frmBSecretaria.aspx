@@ -118,6 +118,7 @@
                     }
                 }
             </script>
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         </div>
     </form>
 </body>

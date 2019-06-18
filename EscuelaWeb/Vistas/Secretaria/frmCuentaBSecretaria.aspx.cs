@@ -11,9 +11,11 @@ namespace EscuelaWeb.Vistas.CuentaPerfil
     public partial class frmCuentaBSecretaria : System.Web.UI.Page
     {
         AdministrativoController admin = new AdministrativoController();
-        int ci_Admin = 552343;
         protected void Page_Load(object sender, EventArgs e)
         {
+            String ID = Request.QueryString["ID"]; //obteniendo valor desde el otro form
+            Label5.Text = ID;
+            int ci_Admin = Convert.ToInt32(ID);
             admin.MostrarCuentaAdministrativo(ci_Admin, txtNombre, txtApellidos);
         }
 
@@ -59,6 +61,8 @@ namespace EscuelaWeb.Vistas.CuentaPerfil
 
         protected void btnGuardarCambios_Click(object sender, EventArgs e)
         {
+            String ID = Request.QueryString["ID"]; //obteniendo valor desde el otro form
+            int ci_Admin = Convert.ToInt32(ID);
             if (txtContrasenia.Text == txtContrasenia1.Text)
             {
                 admin.ModificarContrasenia(ci_Admin, txtContrasenia.Text);
