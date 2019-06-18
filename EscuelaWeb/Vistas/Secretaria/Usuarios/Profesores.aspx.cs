@@ -1,6 +1,8 @@
 ﻿using EscuelaWeb.Controlador;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -92,12 +94,13 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
+            int curso = P.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
             if (btnGuardar.Text == "REGISTRAR")
             {
                 //ES NUEVO ENTONCES INSERTAR
-
                 //insertamos y actualizamos tabla
-                P.insertar_Profesor(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text);
+                P.insertar_Profesor(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, curso);
+                dgProfesores.DataSourceID = "SqlDataSourceProfesores";
                 dgProfesores.DataBind();
                 CProf.Style["visibility"] = "hidden";
                 limpiar();
@@ -109,7 +112,8 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
                     //YA EXISTE ENTONCES MODIFICAR
 
                     //int curso = cAlumno.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
-                    P.modificar_Profesor(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text);
+                    P.modificar_Profesor(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text,curso);
+                    dgProfesores.DataSourceID = "SqlDataSourceProfesores";
                     dgProfesores.DataBind();
                     limpiar();
                     CProf.Style["visibility"] = "hidden";
@@ -117,6 +121,7 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
                 if (rbEliminar.Checked == true)
                 {
                     P.eliminar_Profesor(Convert.ToInt32(txtci.Text));
+
                     dgProfesores.DataBind();
                     limpiar();
                     CProf.Style["visibility"] = "hidden";
@@ -138,6 +143,20 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             CProf.Style["visibility"] = "hidden";
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            SqlConnection conexion = new SqlConnection("server=.;DataBase=dbEscuela;Integrated Security=True");
+            conexion.Open();
+            dgProfesores.DataSourceID = "";
+            SqlCommand comando = new SqlCommand("Select * from Profesor where Ci_Profesor='" + Convert.ToInt32(txtBuscar.Text) + "'", conexion);//aca tu consulta
+            SqlDataAdapter adaptador = new SqlDataAdapter();
+            adaptador.SelectCommand = comando;
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+            dgProfesores.DataSource = tabla;
+            dgProfesores.DataBind();
         }
     }
 }

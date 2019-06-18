@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EscuelaWeb.Controlador;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,11 @@ namespace EscuelaWeb.Vistas.Profesor
 {
     public partial class frmCuentaProfesor : System.Web.UI.Page
     {
+        ProfesorController objProfesorController = new ProfesorController();
+        public int _ci_profesor= 500600;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            objProfesorController.MostrarCuenta(_ci_profesor,txtNombre,txtApellidos);
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
@@ -37,6 +40,28 @@ namespace EscuelaWeb.Vistas.Profesor
         protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
         {
             Response.Redirect("../index.aspx");
+        }
+
+        protected void txtContrasenia_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        protected void btnGuardarCambios_Click(object sender, EventArgs e)
+        {
+            if (txtContrasenia.Text == txtContrasenia1.Text)
+            {
+                objProfesorController.ModificarContrasenia(_ci_profesor, txtContrasenia.Text);
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('La contraseña ha sido cambiada Correctamente');", true);
+                txtContrasenia1.Text = "";
+                txtContrasenia.Text = "";
+            }
+            else
+            {
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('Las contraseñas no son iguales');", true);
+                txtContrasenia1.Text = "";
+                txtContrasenia.Text = "";
+            }
         }
     }
 }

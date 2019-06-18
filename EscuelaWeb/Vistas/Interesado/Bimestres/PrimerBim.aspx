@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PrimerBim.aspx.cs" Inherits="EscuelaWeb.Vistas.Interesado.Bimestres.PrimerBim" %>
 
+<%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -60,9 +62,10 @@
                 }
             </script>
         <div class="ParteDerecha">
-            
+            <asp:GridView ID="GridView1" runat="server"></asp:GridView>
 
         </div>
+        
 </form>   
 </body>
 </html>

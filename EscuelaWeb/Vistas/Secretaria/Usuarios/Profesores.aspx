@@ -79,13 +79,23 @@
                        <br />
                         <div Class="texto"><asp:Label ID="Label4" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label></div>
                         <asp:TextBox ID="txtCOntrasenia" runat="server" CssClass="CajaTexto"></asp:TextBox>
-                       <%--<br />
-                        <div Class="texto"><asp:Label ID="Label5" runat="server" Text="OCUPACION:" CssClass="texto"></asp:Label></div>--%>
-                       <%--<asp:DropDownList ID="cbOcupacion" runat="server" CssClass="CajaTexto">
-                           <asp:ListItem>Director</asp:ListItem>
-                           <asp:ListItem>Secretaria</asp:ListItem>
-                        </asp:DropDownList>--%>
+            <br />
+                       <div Class="texto"><asp:Label ID="Label5" runat="server" Text="CURSO:" CssClass="texto"></asp:Label></div>
+                       <asp:DropDownList ID="cbCurso" runat="server" CssClass="CajaTexto">
+                           <asp:ListItem>PRIMERO</asp:ListItem>
+                           <asp:ListItem>SEGUNDO</asp:ListItem>
+                           <asp:ListItem>TERCERO</asp:ListItem>
+                           <asp:ListItem>CUARTO</asp:ListItem>
+                           <asp:ListItem>QUINTO</asp:ListItem>
+                           <asp:ListItem>SEXTO</asp:ListItem>
+                        </asp:DropDownList>
                        
+                       <br />
+                        <div Class="texto"><asp:Label ID="Label10" runat="server" Text="PARALELO:" CssClass="texto"></asp:Label></div>
+                       <asp:DropDownList ID="cbParalelo" runat="server" CssClass="CajaTexto" >
+                           <asp:ListItem>A</asp:ListItem>
+                        </asp:DropDownList>
+                        
                         
                        <div style="height: 44px; width: 214px;" class="boton">
                         <asp:Button ID="btnGuardar" CssClass="btnder" runat="server" Text="GUARDAR CAMBIOS" Height="36px" Width="212px" OnClick="btnGuardar_Click" />
@@ -141,12 +151,13 @@
                     <asp:Button ID="btnNuevo" runat="server" Text="NUEVO" CssClass="btnder" OnClick="btnNuevo_Click"/>
                     <asp:RadioButton ID="rbEliminar" runat="server" Text="Eliminar" GroupName="TIPO" Font-Size="15pt" />
                     <asp:RadioButton ID="rbModificar" runat="server" Checked="True" Text="Modificar" GroupName="TIPO" Font-Size="15pt" />
+                    <asp:TextBox ID="txtBuscar" runat="server" CssClass="Busqueda"></asp:TextBox>
+                    <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="BUSCAR" CssClass="Busqueda"/>
                 </div>
 
                 
                    <asp:GridView ID="dgProfesores" runat="server" CellPadding="3" GridLines="None" Height="284px" Width="80%" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" DataKeyNames="Ci_Profesor" DataSourceID="SqlDataSourceProfesores" OnSelectedIndexChanged="dgProfesores_SelectedIndexChanged">
                        <Columns>
-                           <asp:CommandField ShowSelectButton="True" />
                            <asp:BoundField DataField="Ci_Profesor" HeaderText="Ci_Profesor" ReadOnly="True" SortExpression="Ci_Profesor" />
                            <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
                            <asp:BoundField DataField="ap_Paterno" HeaderText="ap_Paterno" SortExpression="ap_Paterno" />
@@ -155,14 +166,6 @@
                            <asp:BoundField DataField="celular" HeaderText="celular" SortExpression="celular" />
                            <asp:BoundField DataField="FechaNac" HeaderText="FechaNac" SortExpression="FechaNac" />
                            <asp:BoundField DataField="direccion" HeaderText="direccion" SortExpression="direccion" />
-                           <asp:TemplateField HeaderText="Cursos" SortExpression="Ci_Profesor">
-                               <EditItemTemplate>
-                                   <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
-                               </EditItemTemplate>
-                               <ItemTemplate>
-                                   <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
-                               </ItemTemplate>
-                           </asp:TemplateField>
                        </Columns>
                        <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
                        <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />

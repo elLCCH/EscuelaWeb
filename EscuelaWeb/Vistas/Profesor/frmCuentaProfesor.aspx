@@ -41,10 +41,11 @@
         
     </div>     
         <!--PARTE   DERECHA DEL MENU IZQ-->
+        
         <div class="ParteDerecha">    
             <div class="DatosPersonales">
                 <div class="imagen"></div>
-                <div class="texto"><asp:Label ID="Label1" runat="server" Text="NOMBRE:" ></asp:Label></div>
+                <div Class="texto"><asp:Label ID="Label1" runat="server" Text="NOMBRE:" ></asp:Label></div>
                 <asp:TextBox ID="txtNombre" runat="server" CssClass="CajaTexto"></asp:TextBox>
 
                 <br />
@@ -52,12 +53,15 @@
                 <asp:TextBox ID="txtApellidos" runat="server" CssClass="CajaTexto"></asp:TextBox>
                 <br />
                 <asp:Label ID="Label3" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label>
-                <asp:TextBox ID="txtContrasenia" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                <asp:TextBox ID="txtContrasenia" runat="server" CssClass="CajaTexto" TextMode="Password"></asp:TextBox>
                 <br />
-                <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar Cambios" Height="37px" Width="187px" />
+                <asp:Label ID="Label4" runat="server" Text="CONFIRMAR CONTRASEÑA:" CssClass="texto"></asp:Label>
+                <asp:TextBox ID="txtContrasenia1" runat="server" CssClass="CajaTexto" TextMode="Password"></asp:TextBox>
+                <br />
+                <asp:Button ID="btnGuardarCambios" runat="server" Text="Guardar Cambios" Height="37px" Width="187px" OnClick="btnGuardarCambios_Click" />
             </div>
         </div>
-        <script type="text/javascript">
+    <script type="text/javascript">
                 function MessageBoxShow() {
                     
                     var opcion = confirm("¿SEGURO QUE DESEA CERRAR SESION?");
@@ -69,5 +73,6 @@
                 }
             </script>
 </form>  
+
 </body>
 </html>

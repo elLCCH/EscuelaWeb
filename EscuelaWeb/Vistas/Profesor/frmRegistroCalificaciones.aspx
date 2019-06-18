@@ -10,7 +10,8 @@
      <!--<link rel="stylesheet" href="../../css/Profesor/RegistroCalificaciones.css">-->
      <link rel="stylesheet" href="../../css/Profesor/CuentaProfesor.css"/>
     <link rel="stylesheet" href="../../css/Allfondo.css"/>
-</head>
+    <script type="text/javascript" src="../../JS/Profesor/Profesor.js"></script>
+    </head>
 <body>
     <!--ENCABEZADO-->
 <header>
@@ -42,7 +43,11 @@
                <li><asp:LinkButton ID="lbtnVerAvisosG" runat="server" CssClass="avisos" OnClick="lbtnVerAvisosG_Click">Ver Generales</asp:LinkButton></li>
                <li><asp:LinkButton ID="lbtnRealizarAviso" runat="server" CssClass="avisos" OnClick="lbtnRealizarAviso_Click">Realizar aviso</asp:LinkButton></li>
             </ul>
-        </div>
+        </div >
+        
+        <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
         
     </div>     
             
@@ -50,6 +55,9 @@
         <!--PARTE   DERECHA DEL MENU IZQ-->
         
         <div class="ParteDerecha">
+            <div class ="">
+
+            </div>
             <div style="width:auto;">
                 <div>
                     <asp:Label ID="lblalumno" runat="server" Text="no hay est. seleccionado:" CssClass="separacion"></asp:Label>
@@ -59,7 +67,7 @@
                     <asp:Label ID="Label4" runat="server" Text="Introduzca la Calificacion" CssClass="separacion"></asp:Label>
                 </div>
                 <div>
-                <asp:Button ID="bntSiguiente" runat="server" Text="Confirmar Estudiante" CssClass="separacion"/>
+                <asp:Button ID="bntSiguiente" runat="server" Text="Confirmar Estudiante" CssClass="separacion" OnClick="bntSiguiente_Click"/>
                 <asp:DropDownList ID="ddlAnio" runat="server" CssClass="separacion"></asp:DropDownList>
                 <asp:DropDownList ID="ddlBimestre" runat="server" CssClass="separacion"></asp:DropDownList>
                 <asp:DropDownList ID="ddlMateria" runat="server" CssClass="separacion" ></asp:DropDownList>
@@ -68,24 +76,35 @@
             </div>
             
 
-            <div class="tabla">
-                <div style="margin-left:auto; margin-right:auto;">
-                <asp:GridView ID="GridView1" runat="server" Width="204px"></asp:GridView>
-                </div>
-            </div>
+            <center>
             
+                <br />
+            
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceCalificaciones" OnRowEditing="GridView1_RowEditing" OnRowUpdated="GridView1_RowUpdated" DataKeyNames="id_Avisos" OnRowUpdating="GridView1_RowUpdating" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                    <Columns>
+                        <asp:BoundField DataField="id_Avisos" HeaderText="id_Avisos" InsertVisible="False" ReadOnly="True" SortExpression="id_Avisos" />
+                        <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
+                        <asp:BoundField DataField="contenido" HeaderText="contenido" SortExpression="contenido" />
+                    </Columns>
+
+                </asp:GridView>
+                <br />
+                </center> 
         </div>
     <script type="text/javascript">
                 function MessageBoxShow() {
                     
                     var opcion = confirm("¿SEGURO QUE DESEA CERRAR SESION?");
-                    if (opcion == true) {
+                    if (opcion == true)
+                    {
                         return true;
-                    } else {
+                    }
+                    else
+                    {
                         return false;
                     }
                 }
-            </script>
+    </script>
 </form>    
 </body>
 </html>
