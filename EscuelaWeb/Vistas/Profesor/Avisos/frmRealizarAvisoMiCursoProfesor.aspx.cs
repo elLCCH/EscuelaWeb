@@ -11,7 +11,7 @@ namespace EscuelaWeb.Vistas.Profesor.Avisos
     public partial class frmRealizarAvisoMiCursoProfesor : System.Web.UI.Page
     {
         AvisosController objAvisosController = new AvisosController();
-        public int _ciProfesor = 3555914;
+        public int _ciProfesor = 500600;
         protected void Page_Load(object sender, EventArgs e)
         {
 

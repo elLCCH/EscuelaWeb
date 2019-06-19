@@ -6374,8 +6374,8 @@ namespace EscuelaWeb.Data.dsEscuelaTableAdapters {
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT     Ci_Profesor, nombre, ap_Paterno, ap_Materno, contrasenia, celular, Fec" +
-                "haNac, Direccion\r\nFROM      Profesor\r\nWHERE     (Ci_Profesor = @pCiProf) AND (co" +
-                "ntrasenia = @pContrasenia)";
+                "haNac, direccion,Id_Curso\r\nFROM      Profesor\r\nWHERE     (Ci_Profesor = @pCiProf" +
+                ") AND (contrasenia = @pContrasenia)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pCiProf", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Ci_Profesor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pContrasenia", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "contrasenia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

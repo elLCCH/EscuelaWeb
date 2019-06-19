@@ -11,9 +11,10 @@ namespace EscuelaWeb.Vistas.Interesado
 	public partial class frmCuentaBInteresado : System.Web.UI.Page
 	{
         AlumnoController alumno = new AlumnoController();
-        public int ci_Int = 14332;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
+            int ci_Int = Convert.ToInt32(Session["ID"]);
             alumno.MostrarCuentaInteresado(ci_Int, txtNombre, txtApellidos);
         }
 
@@ -61,6 +62,7 @@ namespace EscuelaWeb.Vistas.Interesado
         {
             if(txtContrasenia.Text==txtContrasenia1.Text)
             {
+                int ci_Int = Convert.ToInt32(Session["ID"]);
                 alumno.ModificarContrasenia(ci_Int, txtContrasenia.Text);
                 Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('La contraseña ha sido cambiada Correctamente');", true);
                 txtContrasenia1.Text = "";
