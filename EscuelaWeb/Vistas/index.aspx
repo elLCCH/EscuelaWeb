@@ -27,6 +27,7 @@
                 </ul> 
             </nav>       
         </div>
+    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     <%--FORMULARIO LOGIN--%>
             <form id="form1" runat="server" class="datosLogin">
                 <div><p class="titulo_iniciar_sesion">INICIAR SESION</p></div>

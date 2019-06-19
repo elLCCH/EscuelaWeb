@@ -11,9 +11,9 @@ namespace EscuelaWeb.Vistas.CuentaPerfil
     public partial class frmCuentaBSecretaria : System.Web.UI.Page
     {
         AdministrativoController admin = new AdministrativoController();
-        int ci_Admin = 552343;
         protected void Page_Load(object sender, EventArgs e)
         {
+            int ci_Admin = Convert.ToInt32(Session["ID"]);
             admin.MostrarCuentaAdministrativo(ci_Admin, txtNombre, txtApellidos);
         }
 
@@ -59,6 +59,7 @@ namespace EscuelaWeb.Vistas.CuentaPerfil
 
         protected void btnGuardarCambios_Click(object sender, EventArgs e)
         {
+            int ci_Admin = Convert.ToInt32(Session["ID"]);
             if (txtContrasenia.Text == txtContrasenia1.Text)
             {
                 admin.ModificarContrasenia(ci_Admin, txtContrasenia.Text);

@@ -11,9 +11,9 @@ namespace EscuelaWeb.Vistas.Director_UE
     public partial class frmCuentaDirector : System.Web.UI.Page
     {
         AdministrativoController admin = new AdministrativoController();
-        int ci_Admin = 552343;
         protected void Page_Load(object sender, EventArgs e)
         {
+            int ci_Admin = Convert.ToInt32(Session["ID"]);
             admin.MostrarCuentaAdministrativo(ci_Admin, txtNombre, txtApellidos);
 
         }
@@ -47,6 +47,7 @@ namespace EscuelaWeb.Vistas.Director_UE
         {
             if (txtContrasenia.Text == txtContrasenia1.Text)
             {
+                int ci_Admin = Convert.ToInt32(Session["ID"]);
                 admin.ModificarContrasenia(ci_Admin, txtContrasenia.Text);
                 Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('La contraseña ha sido cambiada Correctamente');", true);
                 txtContrasenia1.Text = "";

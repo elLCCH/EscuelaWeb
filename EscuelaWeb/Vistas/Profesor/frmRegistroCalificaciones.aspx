@@ -11,15 +11,7 @@
      <link rel="stylesheet" href="../../css/Profesor/CuentaProfesor.css"/>
     <link rel="stylesheet" href="../../css/Allfondo.css"/>
     <script type="text/javascript" src="../../JS/Profesor/Profesor.js"></script>
-    <style type="text/css">
-        .auto-style1 {
-            height: 81px;
-        }
-        .auto-style2 {
-            height: 33px;
-        }
-    </style>
-</head>
+    </head>
 <body>
     <!--ENCABEZADO-->
 <header>
@@ -53,6 +45,10 @@
             </ul>
         </div >
         
+        <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
+        
     </div>     
             
        
@@ -71,7 +67,7 @@
                     <asp:Label ID="Label4" runat="server" Text="Introduzca la Calificacion" CssClass="separacion"></asp:Label>
                 </div>
                 <div>
-                <asp:Button ID="bntSiguiente" runat="server" Text="Confirmar Estudiante" CssClass="separacion"/>
+                <asp:Button ID="bntSiguiente" runat="server" Text="Confirmar Estudiante" CssClass="separacion" OnClick="bntSiguiente_Click"/>
                 <asp:DropDownList ID="ddlAnio" runat="server" CssClass="separacion"></asp:DropDownList>
                 <asp:DropDownList ID="ddlBimestre" runat="server" CssClass="separacion"></asp:DropDownList>
                 <asp:DropDownList ID="ddlMateria" runat="server" CssClass="separacion" ></asp:DropDownList>
@@ -80,54 +76,35 @@
             </div>
             
 
-            <div class="tabla">
-                <div style="margin-left:auto; margin-right:auto;">
-                </div>
-            </div>
             <center>
-            <table>
-                <caption>Contenido nutricional por cada 100 g de alimento.</caption>
-                <tr>
-                    <th colspan = '2'> ESTUDIANTE</th>
-                    <th colspan ='5'>COMUNIDAD Y SOCIEDAD</th>
-                    <th colspan ='2'>CIENCIA, TECNOLOGIA Y PRODUCCION</th>
-                    <th >VIDA TIERRA TERRITORIO</th>
-                    <th >COSMOS Y PENSAMIENTO</th>
-                    <th rowspan ='2'>OPCIONES</th>
-                </tr> 
-                <tr>
-                    <th class="auto-style1">Carnet</th>
-                    <th class="auto-style1">Apellidos y nombres</th> 
-                    <th class="auto-style1">Comunicación y lenguajes</th> 
-                     <th class="auto-style1">Ciencias sociales</th> 
-                     <th class="auto-style1">Educacion física y deportes</th>
-                     <th class="auto-style1">Educación Musical</th> 
-                     <th class="auto-style1">Artes plásticas y visuales</th>
-                     <th class="auto-style1">Matemática</th>
-                     <th class="auto-style1">Técnica Tecnológica</th>
-                     <th class="auto-style1">Ciencias Naturales</th>
-                     <th class="auto-style1">Valores, espiritualidad y religiones</th>
-                </tr>
-                <tr> <td>11111</td> <td>mxkdncks</td> <td>0</td><td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td> <td>0</td>
-                    <td><span class="editar" onclick="transformarEnEditable(this)">Editar</span></td>
-                </tr>
-                  
-</table>
-<div id="contenedorForm">
-</div>
+            
+                <br />
+            
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceCalificaciones" OnRowEditing="GridView1_RowEditing" OnRowUpdated="GridView1_RowUpdated" DataKeyNames="id_Avisos" OnRowUpdating="GridView1_RowUpdating" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                    <Columns>
+                        <asp:BoundField DataField="id_Avisos" HeaderText="id_Avisos" InsertVisible="False" ReadOnly="True" SortExpression="id_Avisos" />
+                        <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
+                        <asp:BoundField DataField="contenido" HeaderText="contenido" SortExpression="contenido" />
+                    </Columns>
+
+                </asp:GridView>
+                <br />
                 </center> 
         </div>
     <script type="text/javascript">
                 function MessageBoxShow() {
                     
                     var opcion = confirm("¿SEGURO QUE DESEA CERRAR SESION?");
-                    if (opcion == true) {
+                    if (opcion == true)
+                    {
                         return true;
-                    } else {
+                    }
+                    else
+                    {
                         return false;
                     }
                 }
-            </script>
+    </script>
 </form>    
 </body>
 </html>

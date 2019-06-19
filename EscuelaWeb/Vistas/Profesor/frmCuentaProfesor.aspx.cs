@@ -11,9 +11,9 @@ namespace EscuelaWeb.Vistas.Profesor
     public partial class frmCuentaProfesor : System.Web.UI.Page
     {
         ProfesorController objProfesorController = new ProfesorController();
-        public int _ci_profesor=3555914;
         protected void Page_Load(object sender, EventArgs e)
         {
+            int _ci_profesor = Convert.ToInt32(Session["ID"]);
             objProfesorController.MostrarCuenta(_ci_profesor,txtNombre,txtApellidos);
         }
 
@@ -51,6 +51,7 @@ namespace EscuelaWeb.Vistas.Profesor
         {
             if (txtContrasenia.Text == txtContrasenia1.Text)
             {
+                int _ci_profesor = Convert.ToInt32(Session["ID"]);
                 objProfesorController.ModificarContrasenia(_ci_profesor, txtContrasenia.Text);
                 Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('La contraseña ha sido cambiada Correctamente');", true);
                 txtContrasenia1.Text = "";

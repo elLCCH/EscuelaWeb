@@ -280,20 +280,22 @@ h1 {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #FFF8DC;
-}
+    background-co
 
 table {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 12px;
     margin: 0px 45px 45px 45px;
-    width: 1147px;
+    width: 718px;
     text-align: center;
-    //border-collapse: collapse;
+    /*border-collapse: collapse;*/
     position: relative;
-    //left:0%;
-    right:-20%;
-    top: -20px;
+    /*left:0%;*/
+    right:34px;;
+    top: 7px;
+}
+
+top: 6px;
 }
 
 th {
@@ -320,7 +322,7 @@ tr:hover td {
 }
 
 .editar {
-    color: blue;
+    color: black;
     cursor: pointer;
 }
 
