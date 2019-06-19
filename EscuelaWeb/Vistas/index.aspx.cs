@@ -15,23 +15,25 @@ namespace EscuelaWeb.Vistas
         AdministrativoController admin = new AdministrativoController();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                Label1.Text = "0";
+            }
         }
         protected void btnIniciar_Click(object sender, EventArgs e)
         {
-            _IDuser = txtCuenta.Text;
-            String ID = _IDuser;
+            Session["ID"] = txtCuenta.Text;
             if (txtContrasenia.Text != "" && txtCuenta.Text != "")
             {
                 if (SC.AutenticarAdministrativo(Convert.ToInt32(txtCuenta.Text), txtContrasenia.Text) == true)
                 {
                     if (SC.AutenticarSecretario(Convert.ToInt32(txtCuenta.Text), txtContrasenia.Text) == true)
                     {
-                        Response.Redirect("Secretaria/frmBSecretaria.aspx?ID=" + ID);
+                        Response.Redirect("Secretaria/frmBSecretaria.aspx");
                     }
                     else
                     {
-                        Response.Redirect("Director_UE/frmBDirector.aspx?ID=" + ID);
+                        Response.Redirect("Director_UE/frmBDirector.aspx");
                     }
                     
                 }
@@ -53,6 +55,7 @@ namespace EscuelaWeb.Vistas
                         }
                     }
                 }
+                Session["ID"] = txtCuenta.Text;
                 Response.Redirect("index.aspx");
             }
             //Response.Redirect("index.aspx");
