@@ -35,7 +35,7 @@ namespace EscuelaWeb.Controlador
         }
         public void modificar_Profesor(int Pci, string Pnombre, string Pap_paterno, string Pap_materno, string Pcontrasenia, int Pcel, DateTime Pfec, string Pdir, int PidCurso)
         {
-            prof.Update(Pci, Pnombre, Pap_paterno, Pap_materno, Pcontrasenia, Pcel, Pfec, Pdir, Pci, PidCurso);
+            prof.Update(Pci, Pnombre, Pap_paterno, Pap_materno, Pcontrasenia, Pcel, Pfec, Pdir, PidCurso, Pci );
         }
         public void eliminar_Profesor(int pCI)
         {

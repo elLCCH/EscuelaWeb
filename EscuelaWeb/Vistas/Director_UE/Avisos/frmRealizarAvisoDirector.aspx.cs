@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EscuelaWeb.Controlador;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +10,7 @@ namespace EscuelaWeb.Vistas.Director_UE
 {
     public partial class frmRealizarAvisoDirector : System.Web.UI.Page
     {
+        AvisosDirectorController ADir = new AvisosDirectorController();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -38,6 +40,10 @@ namespace EscuelaWeb.Vistas.Director_UE
             Response.Redirect("../frmBDirector.aspx");
         }
 
-
+        protected void btnPublicar_Click(object sender, EventArgs e)
+        {
+            //ADir.publicarAvisoDirector(txtTitulo.Text, txtDescripcion, CIProf, CIAdmin);
+            ADir.publicarAvisoDirector(txtTitulo.Text, txtDescripcion.Text,0, 3);
+        }
     }
 }
