@@ -158,6 +158,7 @@
                 
                    <asp:GridView ID="dgProfesores" runat="server" CellPadding="3" GridLines="None" Height="284px" Width="80%" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" DataKeyNames="Ci_Profesor" DataSourceID="SqlDataSourceProfesores" OnSelectedIndexChanged="dgProfesores_SelectedIndexChanged">
                        <Columns>
+                           <asp:CommandField ShowSelectButton="True" />
                            <asp:BoundField DataField="Ci_Profesor" HeaderText="Ci_Profesor" ReadOnly="True" SortExpression="Ci_Profesor" />
                            <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
                            <asp:BoundField DataField="ap_Paterno" HeaderText="ap_Paterno" SortExpression="ap_Paterno" />
@@ -166,6 +167,8 @@
                            <asp:BoundField DataField="celular" HeaderText="celular" SortExpression="celular" />
                            <asp:BoundField DataField="FechaNac" HeaderText="FechaNac" SortExpression="FechaNac" />
                            <asp:BoundField DataField="direccion" HeaderText="direccion" SortExpression="direccion" />
+                           <asp:BoundField DataField="curso" HeaderText="curso" SortExpression="curso" />
+                           <asp:BoundField DataField="paralelo" HeaderText="paralelo" SortExpression="paralelo" />
                        </Columns>
                        <FooterStyle BackColor="#C6C3C6" ForeColor="Black" />
                        <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#E7E7FF" />
@@ -177,7 +180,7 @@
                        <SortedDescendingCellStyle BackColor="#CAC9C9" />
                        <SortedDescendingHeaderStyle BackColor="#33276A" />
                    </asp:GridView>
-                   <asp:SqlDataSource ID="SqlDataSourceProfesores" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT * FROM [Profesor]"></asp:SqlDataSource>
+                   <asp:SqlDataSource ID="SqlDataSourceProfesores" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT p.Ci_Profesor, p.nombre, p.ap_Paterno, p.ap_Materno, p.contrasenia, p.celular, p.FechaNac, p.direccion, c.curso, c.paralelo FROM Profesor AS p INNER JOIN Curso AS c ON p.Id_Curso = c.Id_Curso"></asp:SqlDataSource>
                </div>
         </div>
         <script type="text/javascript">

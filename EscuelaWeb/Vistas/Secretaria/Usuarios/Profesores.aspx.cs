@@ -89,6 +89,8 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
             txtCelular.Text = dgProfesores.SelectedRow.Cells[6].Text;
             txtFechNac.Text = dgProfesores.SelectedRow.Cells[7].Text;
             txtDireccion.Text = dgProfesores.SelectedRow.Cells[8].Text;
+            cbCurso.Text = dgProfesores.SelectedRow.Cells[9].Text;
+            cbParalelo.Text = dgProfesores.SelectedRow.Cells[10].Text;
 
         }
 
@@ -112,7 +114,7 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
                     //YA EXISTE ENTONCES MODIFICAR
 
                     //int curso = cAlumno.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
-                    P.modificar_Profesor(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text,curso);
+                    P.modificar_Profesor(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, curso);
                     dgProfesores.DataSourceID = "SqlDataSourceProfesores";
                     dgProfesores.DataBind();
                     limpiar();
