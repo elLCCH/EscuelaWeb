@@ -48,22 +48,28 @@
                 <h3>AVISOS</h3>
 
                 <div>
-                    <asp:ListView ID="ListViewAvisos" runat="server" DataSourceID="SqlDataSourceAvisosProfesor">
+                    <asp:ListView ID="ListViewAvisos" runat="server" DataSourceID="SqlDataSourceAvisosProfesor" >
                         <AlternatingItemTemplate>
-                            <li style="background-color: #FFF8DC;">titulo:
-                                <asp:Label ID="tituloLabel" runat="server" Text='<%# Eval("titulo") %>' />
+                            <li style="background-color: #FFF8DC;">TITULO:
+                                <asp:Label ID="TITULOLabel" runat="server" Text='<%# Eval("TITULO") %>' />
                                 <br />
-                                contenido:
-                                <asp:Label ID="contenidoLabel" runat="server" Text='<%# Eval("contenido") %>' />
+                                CONTENIDO:
+                                <asp:Label ID="CONTENIDOLabel" runat="server" Text='<%# Eval("CONTENIDO") %>' />
+                                <br />
+                                PUBLICADO POR:
+                                <asp:Label ID="PUBLICADO_PORLabel" runat="server" Text='<%# Eval("[PUBLICADO POR]") %>' />
                                 <br />
                             </li>
                         </AlternatingItemTemplate>
                         <EditItemTemplate>
-                            <li style="background-color: #008A8C;color: #FFFFFF;">titulo:
-                                <asp:TextBox ID="tituloTextBox" runat="server" Text='<%# Bind("titulo") %>' />
+                            <li style="background-color: #008A8C;color: #FFFFFF;">TITULO:
+                                <asp:TextBox ID="TITULOTextBox" runat="server" Text='<%# Bind("TITULO") %>' />
                                 <br />
-                                contenido:
-                                <asp:TextBox ID="contenidoTextBox" runat="server" Text='<%# Bind("contenido") %>' />
+                                CONTENIDO:
+                                <asp:TextBox ID="CONTENIDOTextBox" runat="server" Text='<%# Bind("CONTENIDO") %>' />
+                                <br />
+                                PUBLICADO POR:
+                                <asp:TextBox ID="PUBLICADO_PORTextBox" runat="server" Text='<%# Bind("[PUBLICADO POR]") %>' />
                                 <br />
                                 <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
                                 <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancelar" />
@@ -73,11 +79,14 @@
                             No se han devuelto datos.
                         </EmptyDataTemplate>
                         <InsertItemTemplate>
-                            <li style="">titulo:
-                                <asp:TextBox ID="tituloTextBox" runat="server" Text='<%# Bind("titulo") %>' />
+                            <li style="">TITULO:
+                                <asp:TextBox ID="TITULOTextBox" runat="server" Text='<%# Bind("TITULO") %>' />
                                 <br />
-                                contenido:
-                                <asp:TextBox ID="contenidoTextBox" runat="server" Text='<%# Bind("contenido") %>' />
+                                CONTENIDO:
+                                <asp:TextBox ID="CONTENIDOTextBox" runat="server" Text='<%# Bind("CONTENIDO") %>' />
+                                <br />
+                                PUBLICADO POR:
+                                <asp:TextBox ID="PUBLICADO_PORTextBox" runat="server" Text='<%# Bind("[PUBLICADO POR]") %>' />
                                 <br />
                                 <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
                                 <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
@@ -87,11 +96,14 @@
                             <br />
                         </ItemSeparatorTemplate>
                         <ItemTemplate>
-                            <li style="background-color: #DCDCDC;color: #000000;">titulo:
-                                <asp:Label ID="tituloLabel" runat="server" Text='<%# Eval("titulo") %>' />
+                            <li style="background-color: #DCDCDC;color: #000000;">TITULO:
+                                <asp:Label ID="TITULOLabel" runat="server" Text='<%# Eval("TITULO") %>' />
                                 <br />
-                                contenido:
-                                <asp:Label ID="contenidoLabel" runat="server" Text='<%# Eval("contenido") %>' />
+                                CONTENIDO:
+                                <asp:Label ID="CONTENIDOLabel" runat="server" Text='<%# Eval("CONTENIDO") %>' />
+                                <br />
+                                PUBLICADO POR:
+                                <asp:Label ID="PUBLICADO_PORLabel" runat="server" Text='<%# Eval("[PUBLICADO POR]") %>' />
                                 <br />
                             </li>
                         </ItemTemplate>
@@ -103,16 +115,21 @@
                             </div>
                         </LayoutTemplate>
                         <SelectedItemTemplate>
-                            <li style="background-color: #008A8C;font-weight: bold;color: #FFFFFF;">titulo:
-                                <asp:Label ID="tituloLabel" runat="server" Text='<%# Eval("titulo") %>' />
+                            <li style="background-color: #008A8C;font-weight: bold;color: #FFFFFF;">TITULO:
+                                <asp:Label ID="TITULOLabel" runat="server" Text='<%# Eval("TITULO") %>' />
                                 <br />
-                                contenido:
-                                <asp:Label ID="contenidoLabel" runat="server" Text='<%# Eval("contenido") %>' />
+                                CONTENIDO:
+                                <asp:Label ID="CONTENIDOLabel" runat="server" Text='<%# Eval("CONTENIDO") %>' />
+                                <br />
+                                PUBLICADO POR:
+                                <asp:Label ID="PUBLICADO_PORLabel" runat="server" Text='<%# Eval("[PUBLICADO POR]") %>' />
                                 <br />
                             </li>
                         </SelectedItemTemplate>
                     </asp:ListView>
-                    <asp:SqlDataSource ID="SqlDataSourceAvisosProfesor" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT [titulo], [contenido] FROM [Avisos]"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSourceAvisosProfesor" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT  a.titulo AS TITULO, a.contenido AS CONTENIDO, CONCAT('LIC. ', adm.nombre,' ', adm.ap_Paterno,' ',adm.ap_Materno) AS 'PUBLICADO POR'
+FROM  Avisos a, Administrativo adm
+WHERE a.Ci_Administrativo = adm.Ci_Administrativo"></asp:SqlDataSource>
                 </div>
             </div>
         </div>

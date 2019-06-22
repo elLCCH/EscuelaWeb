@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta charset="utf-8">
+    <meta charset="utf-8"/>
      <title>Bienvenido Interesado</title>
      <!--<link rel="stylesheet" href="../../css/Profesor/RegistroCalificaciones.css">-->
      <link rel="stylesheet" href="../../css/Profesor/CuentaProfesor.css"/>
@@ -47,7 +47,6 @@
         
         <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
         <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
-        <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
         
     </div>     
             
@@ -60,36 +59,56 @@
             </div>
             <div style="width:auto;">
                 <div>
-                    <asp:Label ID="lblalumno" runat="server" Text="no hay est. seleccionado:" CssClass="separacion"></asp:Label>
                     <asp:Label ID="Label1" runat="server" Text="Seleccione año:" CssClass="separacion"></asp:Label>
                     <asp:Label ID="Label2" runat="server" Text="Seleccione bimestre:" CssClass="separacion"></asp:Label>
                     <asp:Label ID="Label3" runat="server" Text="Seleccione Materia:" CssClass="separacion"></asp:Label>
                     <asp:Label ID="Label4" runat="server" Text="Introduzca la Calificacion" CssClass="separacion"></asp:Label>
                 </div>
                 <div>
-                <asp:Button ID="bntSiguiente" runat="server" Text="Confirmar Estudiante" CssClass="separacion" OnClick="bntSiguiente_Click"/>
-                <asp:DropDownList ID="ddlAnio" runat="server" CssClass="separacion"></asp:DropDownList>
-                <asp:DropDownList ID="ddlBimestre" runat="server" CssClass="separacion"></asp:DropDownList>
-                <asp:DropDownList ID="ddlMateria" runat="server" CssClass="separacion" ></asp:DropDownList>
-                <asp:TextBox ID="txtCalificacion" runat="server" CssClass="separacion" Width="50px"></asp:TextBox>
+                <asp:DropDownList ID="ddlAnio" runat="server" CssClass="separacion" OnSelectedIndexChanged="ddlAnio_SelectedIndexChanged"></asp:DropDownList>
+                    <asp:Button ID="btnAceptar" runat="server" OnClick="btnAceptar_Click" Text="ACEPTAR" />
+                    <asp:SqlDataSource ID="SqlDataSourceCiEstudiantes" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT [Ci_Estudiante] FROM [Estudiante]"></asp:SqlDataSource>
+                    <br />
+                    <br />
+                    <asp:Label ID="lblNombreAlumno" runat="server" Text="ESTUDIANTE :"></asp:Label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="lblCarnet" runat="server" Text="CI :"></asp:Label>
+        
                 </div>
-            </div>
-            
-
-            <center>
+            <div class ="CuadroMaterias">
             
                 <br />
-            
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSourceCalificaciones" OnRowEditing="GridView1_RowEditing" OnRowUpdated="GridView1_RowUpdated" DataKeyNames="id_Avisos" OnRowUpdating="GridView1_RowUpdating" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
-                    <Columns>
-                        <asp:BoundField DataField="id_Avisos" HeaderText="id_Avisos" InsertVisible="False" ReadOnly="True" SortExpression="id_Avisos" />
-                        <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
-                        <asp:BoundField DataField="contenido" HeaderText="contenido" SortExpression="contenido" />
-                    </Columns>
-
-                </asp:GridView>
+                    <div style="width: 940px">
+                        <asp:Label ID="Label8" runat="server" CssClass="LabelMateria" Text="COMUNICACION Y LENGUAJES : " Width="400px"></asp:Label>
+                        <asp:TextBox ID="txtLenguaje" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:Label ID="Label9" runat="server" CssClass="LabelMateria" Text="CIENCIAS SOCIALES : " Width="400px"></asp:Label>
+                        <asp:TextBox ID="txtSociales" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:Label ID="Label10" runat="server" CssClass="LabelMateria" Text="EDUCACION FISICA Y DEPORTES : " Width="400px"></asp:Label>
+                        <asp:TextBox ID="txtEdFisica" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:Label ID="Label11" runat="server" CssClass="LabelMateria" Text="EDUCACION MUSICAL : " Width="400px"></asp:Label>
+                        <asp:TextBox ID="txtEdMusical" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:Label ID="Label12" runat="server" CssClass="LabelMateria" Text="ARTES PLASTICAS Y VISUALES : " Width="400px"></asp:Label>
+                        <asp:TextBox ID="txtArtesPlasticas" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:Label ID="Label13" runat="server" CssClass="LabelMateria" Text="MATEMATICA : " Width="400px"></asp:Label>
+                        <asp:TextBox ID="txtMatematica" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:Label ID="Label14" runat="server" CssClass="LabelMateria" Text="TECNICA TECNOLOGICA : " Width="400px"></asp:Label>
+                        <asp:TextBox ID="txtTecTecnologica" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:Label ID="Label15" runat="server" CssClass="LabelMateria" Text="CIENCIAS NATURALES : " Width="400px"></asp:Label>
+                        <asp:TextBox ID="txtCienciasNaturales" runat="server"></asp:TextBox>
+                        <br />
+                        <asp:Label ID="Label17" runat="server" CssClass="LabelMateria" Text="VALORES, ESPIRITUALIDAD Y RELIGIONES : " ClientIDMode="Static" Width="400px"></asp:Label>
+                        <asp:TextBox ID="txtReligion" runat="server"></asp:TextBox>
+                    </div>
                 <br />
-                </center> 
+                <asp:Button ID="btnRegistrar" runat="server" Text="REGISTRAR" OnClick="btnRegistrar_Click" />
+                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
         </div>
     <script type="text/javascript">
                 function MessageBoxShow() {

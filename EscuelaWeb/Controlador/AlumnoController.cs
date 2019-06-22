@@ -73,5 +73,13 @@ namespace EscuelaWeb.Controlador
         {
             est.ModificarContrasenia(Pci ,Pcontrasenia, Pci);
         }
+        public void obtenerCi(Label lbl, string nombre)
+        {
+            lbl.Text = "CI :" + Convert.ToString(est.ScalarQueryObtenerCi(nombre));
+        }
+        public void obtenerNombreCompleto(Label lbl, int Pci)
+        {
+            lbl.Text = "BIENVENIDO "+est.ScalarQueryObtenerNombreCompleto(Pci);
+        }
     }
 }

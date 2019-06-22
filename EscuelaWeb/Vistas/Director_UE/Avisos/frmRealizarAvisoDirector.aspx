@@ -23,10 +23,10 @@
         <ul class ="menuCuenta">
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
-                  <%--<li><a href="#">Gestion de usuario</a></li>--%>
+                    <%--<li><a href="#">Gestion de usuario</a></li>--%>
                   <li><asp:LinkButton ID="lbtnCuenta" runat="server" OnClick="lbtnCuenta_Click">Cambiar contraseña</asp:LinkButton></li>
                   <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click" OnClientClick="return MessageBoxShow();">Salir</asp:LinkButton></li>
-                  <%--<li><a href="../index.aspx">Cerrar Sesion</a></li>--%>
+                      <%--<li><a href="../index.aspx">Cerrar Sesion</a></li>--%>
                 </ul>
             </li>
         </ul>
@@ -58,6 +58,8 @@
                 <asp:TextBox ID="txtTitulo" runat="server" Width="574px"></asp:TextBox>
                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion:"></asp:Label>
                 <asp:TextBox ID="txtDescripcion" runat="server" Height="94px" Width="609px"></asp:TextBox>
+                <br />
+                <asp:Button ID="btnRealizarAviso" runat="server" OnClick="btnRealizarAviso_Click" Text="PUBLICAR" />
             </div>
         </div>
         <script type="text/javascript">

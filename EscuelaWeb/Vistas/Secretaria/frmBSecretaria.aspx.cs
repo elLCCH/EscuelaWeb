@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EscuelaWeb.Controlador;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,10 +10,12 @@ namespace EscuelaWeb.Vistas.ingreso
 {
     public partial class frmBSecretaria : System.Web.UI.Page
     {
-        
+        AdministrativoController ObjAdministrativoController = new AdministrativoController();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            int ci_Int = Convert.ToInt32(Session["ID"]);
+            ObjAdministrativoController.ObtenerNombreCompleto(lblSaludo, ci_Int);
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)

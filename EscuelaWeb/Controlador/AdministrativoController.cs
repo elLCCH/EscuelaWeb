@@ -54,6 +54,11 @@ namespace EscuelaWeb.Controlador
             admin.ModificarContrasenia(Pci, Pcontrasenia, Pci);
         }
 
+        public void ObtenerNombreCompleto(Label lbl, int Pci)
+        {
+            lbl.Text = "BINVENIDO LIC. "+admin.ObtenerNombreCompleto(Pci);
+        }
+
     }
 
 }

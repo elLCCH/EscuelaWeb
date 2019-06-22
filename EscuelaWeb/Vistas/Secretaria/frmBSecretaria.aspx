@@ -24,10 +24,10 @@
         <ul class ="menuCuenta">
             <li><a href="#">Cuenta</a>
                 <ul class="subMenu">
-                  <%--<li><a href="#">Gestion de usuario</a></li>--%>
+                    <%--<li><a href="#">Gestion de usuario</a></li>--%>
                   <li><asp:LinkButton ID="lbtnCuenta" runat="server" OnClick="lbtnCuenta_Click">Cambiar contraseña</asp:LinkButton></li>
                   <li><asp:LinkButton ID="lbtnCerrarSesion" runat="server" OnClick="lbtnCerrarSesion_Click" OnClientClick="return MessageBoxShow();">Salir</asp:LinkButton></li>
-                  <%--<li><a href="../index.aspx">Cerrar Sesion</a></li>--%>
+                      <%--<li><a href="../index.aspx">Cerrar Sesion</a></li>--%>
                 </ul>
             </li>
         </ul>
@@ -59,19 +59,21 @@
 
         <div class="ParteDerecha">
             <div class ="Saludo">
-                <div style="font-size:40px; width:auto; text-align:center;">BIENVENIDO SECRETARIA</div>
+                <div style="font-size:40px; width:auto; text-align:center;">
+                    <asp:Label ID="lblSaludo" runat="server" Text="BIENVENIDO"></asp:Label>
+                </div>
             <div class="Bienvenido">
                 <center>
                     <div class="fecha">
                         <asp:Calendar ID="Calendario" runat="server" BackColor="White" BorderColor="Black" BorderStyle="Solid" CellSpacing="1" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="255px" NextPrevFormat="ShortMonth" Width="309px">
-                    <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
-                    <DayStyle BackColor="#CCCCCC" />
-                    <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
-                    <OtherMonthDayStyle ForeColor="#999999" />
-                    <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-                    <TitleStyle BackColor="#333399" BorderStyle="Solid" Font-Bold="True" Font-Size="12pt" ForeColor="White" Height="12pt" />
-                    <TodayDayStyle BackColor="#999999" ForeColor="White" />
-                </asp:Calendar>
+                            <DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" Height="8pt" />
+                            <DayStyle BackColor="#CCCCCC" />
+                            <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
+                            <OtherMonthDayStyle ForeColor="#999999" />
+                            <SelectedDayStyle BackColor="#333399" ForeColor="White" />
+                            <TitleStyle BackColor="#333399" BorderStyle="Solid" Font-Bold="True" Font-Size="12pt" ForeColor="White" Height="12pt" />
+                            <TodayDayStyle BackColor="#999999" ForeColor="White" />
+                        </asp:Calendar>
                         <asp:Label ID="RELOJLABEL" runat="server" Text="Label" ForeColor="White"></asp:Label>
                    </div>
                 </center>

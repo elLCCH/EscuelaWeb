@@ -94,6 +94,15 @@ namespace EscuelaWeb.Vistas {
         protected global::System.Web.UI.WebControls.LinkButton lbtnAvisos;
         
         /// <summary>
+        /// Control lblSaludo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSaludo;
+        
+        /// <summary>
         /// Control Calendario.
         /// </summary>
         /// <remarks>

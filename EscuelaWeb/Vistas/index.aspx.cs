@@ -17,7 +17,7 @@ namespace EscuelaWeb.Vistas
         {
             if(!IsPostBack)
             {
-                Label1.Text = "0";
+               
             }
         }
         protected void btnIniciar_Click(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace EscuelaWeb.Vistas
                         }
                     }
                 }
-                Session["ID"] = txtCuenta.Text;
+                Session["ID"] = "";
                 Response.Redirect("index.aspx");
             }
             //Response.Redirect("index.aspx");

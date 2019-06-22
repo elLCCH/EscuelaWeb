@@ -55,7 +55,9 @@
 
         <div class="ParteDerecha">
             <div class ="Saludo">
-                <div style="font-size:40px; width:auto; text-align:center;">BIENVENIDO DIRECTOR</div>
+                <div style="font-size:40px; width:auto; text-align:center;">
+                    <asp:Label ID="lblSaludo" runat="server" Text="BIENVENIDO"></asp:Label>
+                </div>
             <div class="Bienvenido">
                 <center>
                     <div class="fecha">

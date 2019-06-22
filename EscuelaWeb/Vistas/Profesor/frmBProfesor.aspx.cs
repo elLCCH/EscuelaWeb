@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EscuelaWeb.Controlador;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,14 +10,16 @@ namespace EscuelaWeb.Vistas
 {
     public partial class frmBProfesor : System.Web.UI.Page
     {
+        ProfesorController objProfesorController = new ProfesorController();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            int ci_Int = Convert.ToInt32(Session["ID"]);
+            objProfesorController.obtenerNombreCompleto(lblSaludo,ci_Int);
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
         {
-            Response.Redirect("frmBProfesor.aspx");
+            Response.Redirect("frmBProfesor.aspx"); 
         }
 
         protected void lbtnRegCalificaciones_Click(object sender, EventArgs e)

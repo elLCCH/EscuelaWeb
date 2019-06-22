@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EscuelaWeb.Controlador;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,8 +10,11 @@ namespace EscuelaWeb.Vistas
 {
     public partial class frmBInteresado : System.Web.UI.Page
     {
+        AlumnoController ObjAlumnoController = new AlumnoController();
         protected void Page_Load(object sender, EventArgs e)
         {
+            int ci_Int = Convert.ToInt32(Session["ID"]);
+            ObjAlumnoController.obtenerNombreCompleto(lblSaludo,ci_Int);
 
         }
 

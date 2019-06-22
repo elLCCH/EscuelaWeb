@@ -10,6 +10,33 @@
      <link rel="stylesheet" href="../../css/Interesado/BInteresado.css">
     <link rel="stylesheet" href="../../css/Allfondo.css"/>
     
+    <style type="text/css">
+
+
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    margin: 0px 45px 45px 45px;
+    width: 718px;
+    text-align: center;
+    /*border-collapse: collapse;*/
+    position: relative;
+    /*left:0%;*/
+    right:34px;
+    top: 7px;
+}
+
+
+td {
+    padding: 8px;
+    background: #e8edff;
+    border-bottom: 1px solid #fff;
+    color: #669;
+    border-top: 1px solid transparent;
+}
+
+    </style>
+    
 </head>
 <body>
 <!--ENCABEZADO-->
@@ -55,16 +82,72 @@
                 <h1 style="text-align:center;">LISTA DE AVISOS</h1>
 
                 <h3>AVISOS</h3>
-                <asp:GridView ID="dgvAvisos" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
-                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                    <SortedDescendingHeaderStyle BackColor="#242121" />
-                </asp:GridView>
+                <p>
+                    <asp:ListView ID="ListViewAvisos" runat="server" >
+                        <AlternatingItemTemplate>
+                            <li style="background-color: #FFF8DC;">titulo:
+                                <asp:Label ID="tituloLabel" runat="server" Text='<%# Eval("titulo") %>' />
+                                <br />
+                                contenido:
+                                <asp:Label ID="contenidoLabel" runat="server" Text='<%# Eval("contenido") %>' />
+                                <br />
+                            </li>
+                        </AlternatingItemTemplate>
+                        <EditItemTemplate>
+                            <li style="background-color: #008A8C;color: #FFFFFF;">titulo:
+                                <asp:TextBox ID="tituloTextBox" runat="server" Text='<%# Bind("titulo") %>' />
+                                <br />
+                                contenido:
+                                <asp:TextBox ID="contenidoTextBox" runat="server" Text='<%# Bind("contenido") %>' />
+                                <br />
+                                <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
+                                <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancelar" />
+                            </li>
+                        </EditItemTemplate>
+                        <EmptyDataTemplate>
+                            No se han devuelto datos.
+                        </EmptyDataTemplate>
+                        <InsertItemTemplate>
+                            <li style="">titulo:
+                                <asp:TextBox ID="tituloTextBox0" runat="server" Text='<%# Bind("titulo") %>' />
+                                <br />
+                                contenido:
+                                <asp:TextBox ID="contenidoTextBox0" runat="server" Text='<%# Bind("contenido") %>' />
+                                <br />
+                                <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
+                                <asp:Button ID="CancelButton0" runat="server" CommandName="Cancel" Text="Borrar" />
+                            </li>
+                        </InsertItemTemplate>
+                        <ItemSeparatorTemplate>
+                            <br />
+                        </ItemSeparatorTemplate>
+                        <ItemTemplate>
+                            <li style="background-color: #DCDCDC;color: #000000;">titulo:
+                                <asp:Label ID="tituloLabel0" runat="server" Text='<%# Eval("titulo") %>' />
+                                <br />
+                                contenido:
+                                <asp:Label ID="contenidoLabel0" runat="server" Text='<%# Eval("contenido") %>' />
+                                <br />
+                            </li>
+                        </ItemTemplate>
+                        <LayoutTemplate>
+                            <ul id="itemPlaceholderContainer" runat="server" style="font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                <li runat="server" id="itemPlaceholder" />
+                            </ul>
+                            <div style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;">
+                            </div>
+                        </LayoutTemplate>
+                        <SelectedItemTemplate>
+                            <li style="background-color: #008A8C;font-weight: bold;color: #FFFFFF;">titulo:
+                                <asp:Label ID="tituloLabel1" runat="server" Text='<%# Eval("titulo") %>' />
+                                <br />
+                                contenido:
+                                <asp:Label ID="contenidoLabel1" runat="server" Text='<%# Eval("contenido") %>' />
+                                <br />
+                            </li>
+                        </SelectedItemTemplate>
+                    </asp:ListView>
+                    
             </div>
         </div>
     <script type="text/javascript">

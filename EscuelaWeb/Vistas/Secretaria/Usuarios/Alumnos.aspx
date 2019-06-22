@@ -98,7 +98,7 @@
                         </asp:DropDownList>
                        
                        <br />
-                        <div Class="texto"><asp:Label ID="Label10" runat="server" Text="PARALELO:" CssClass="texto"></asp:Label></div>
+                        <div class="texto"><asp:Label ID="Label10" runat="server" Text="PARALELO:" CssClass="texto"></asp:Label></div>
                        <asp:DropDownList ID="cbParalelo" runat="server" CssClass="CajaTexto" >
                            <asp:ListItem>A</asp:ListItem>
                         </asp:DropDownList>
