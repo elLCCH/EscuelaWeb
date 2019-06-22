@@ -62,6 +62,10 @@
         <div class="ParteDerecha">
             
 
+            <asp:GridView ID="gvSegundoBim" runat="server">
+            </asp:GridView>
+            
+
         </div>
 </form>  
 </body>

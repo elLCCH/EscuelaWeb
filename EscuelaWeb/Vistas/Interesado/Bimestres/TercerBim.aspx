@@ -62,6 +62,10 @@
         <div class="ParteDerecha">
             
 
+            <asp:GridView ID="gvTercerBim" runat="server" OnSelectedIndexChanged="gvTercerBim_SelectedIndexChanged">
+            </asp:GridView>
+            
+
         </div>
 </form>  
 </body>
