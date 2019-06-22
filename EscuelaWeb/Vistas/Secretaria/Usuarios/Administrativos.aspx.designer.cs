@@ -310,24 +310,6 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones {
         protected global::System.Web.UI.WebControls.RadioButton rbModificar;
         
         /// <summary>
-        /// Control dgAdministrativos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgAdministrativos;
-        
-        /// <summary>
-        /// Control SqlDataSourceAdministrativo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceAdministrativo;
-        
-        /// <summary>
         /// Control txtBuscar.
         /// </summary>
         /// <remarks>
@@ -344,5 +326,23 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBuscar;
+        
+        /// <summary>
+        /// Control dgAdministrativos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView dgAdministrativos;
+        
+        /// <summary>
+        /// Control SqlDataSourceAdministrativo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceAdministrativo;
     }
 }

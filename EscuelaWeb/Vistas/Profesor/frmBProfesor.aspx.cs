@@ -11,7 +11,17 @@ namespace EscuelaWeb.Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (Convert.ToBoolean(Session["ID"]) == false)
+                {   //esta inactivo
+                    Response.Redirect("../index.aspx");
+                }
+            }
+            catch (Exception)
+            {
+                //esta activo
+            }
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)

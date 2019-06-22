@@ -259,6 +259,7 @@
     <Content Include="Vistas\Director_UE\frmCuentaDirector.aspx" />
     <Content Include="Vistas\index.aspx" />
     <Content Include="Vistas\Interesado\Bimestres\CuartoBim.aspx" />
+    <Content Include="Vistas\Interesado\Bimestres\frmImprimirCalificaciones.aspx" />
     <Content Include="Vistas\Interesado\Bimestres\PrimerBim.aspx" />
     <Content Include="Vistas\Interesado\Bimestres\SegundoBim.aspx" />
     <Content Include="Vistas\Interesado\Bimestres\TercerBim.aspx" />
@@ -389,6 +390,13 @@
     </Compile>
     <Compile Include="Vistas\Interesado\Bimestres\CuartoBim.aspx.designer.cs">
       <DependentUpon>CuartoBim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Interesado\Bimestres\frmImprimirCalificaciones.aspx.cs">
+      <DependentUpon>frmImprimirCalificaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\Interesado\Bimestres\frmImprimirCalificaciones.aspx.designer.cs">
+      <DependentUpon>frmImprimirCalificaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Interesado\Bimestres\PrimerBim.aspx.cs">
       <DependentUpon>PrimerBim.aspx</DependentUpon>

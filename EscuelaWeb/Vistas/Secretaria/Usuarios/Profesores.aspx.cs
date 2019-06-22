@@ -15,7 +15,17 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
         Profesorescontroller P = new Profesorescontroller();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (Convert.ToBoolean(Session["ID"]) == false)
+                {   //esta inactivo
+                    Response.Redirect("../../index.aspx");
+                }
+            }
+            catch (Exception)
+            {
+                //esta activo
+            }
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
@@ -64,7 +74,9 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
             CProf.Style["visibility"] = "visible";
             //lblIdCurso.Text = "";
             btnGuardar.Text = "REGISTRAR";
-            btnGuardar.OnClientClick = "return Agregacion();";
+            //btnGuardar.OnClientClick = "return Agregacion();";
+            SesionesController sc = new SesionesController();
+            txtCOntrasenia.Text=sc.GenerarPassword();
         }
 
         protected void dgProfesores_SelectedIndexChanged(object sender, EventArgs e)
@@ -96,40 +108,50 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            int curso = P.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
-            if (btnGuardar.Text == "REGISTRAR")
+            try
             {
-                //ES NUEVO ENTONCES INSERTAR
-                //insertamos y actualizamos tabla
-                P.insertar_Profesor(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, curso);
-                dgProfesores.DataSourceID = "SqlDataSourceProfesores";
-                dgProfesores.DataBind();
-                CProf.Style["visibility"] = "hidden";
-                limpiar();
-            }
-            else
-            {
-                if (rbModificar.Checked == true)
+                int curso = P.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
+                if (btnGuardar.Text == "REGISTRAR")
                 {
-                    //YA EXISTE ENTONCES MODIFICAR
-
-                    //int curso = cAlumno.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
-                    P.modificar_Profesor(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, curso);
+                    //ES NUEVO ENTONCES INSERTAR
+                    //insertamos y actualizamos tabla
+                    P.insertar_Profesor(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, curso);
                     dgProfesores.DataSourceID = "SqlDataSourceProfesores";
                     dgProfesores.DataBind();
-                    limpiar();
                     CProf.Style["visibility"] = "hidden";
+                    limpiar();
+                    Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('REGISTRO AGREGADO SATISFACTORIAMENTE');", true);
                 }
-                if (rbEliminar.Checked == true)
+                else
                 {
-                    P.eliminar_Profesor(Convert.ToInt32(txtci.Text));
+                    if (rbModificar.Checked == true)
+                    {
+                        //YA EXISTE ENTONCES MODIFICAR
 
-                    dgProfesores.DataBind();
-                    limpiar();
-                    CProf.Style["visibility"] = "hidden";
+                        //int curso = cAlumno.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
+                        P.modificar_Profesor(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, curso);
+                        dgProfesores.DataSourceID = "SqlDataSourceProfesores";
+                        dgProfesores.DataBind();
+                        limpiar();
+                        CProf.Style["visibility"] = "hidden";
+                    }
+                    if (rbEliminar.Checked == true)
+                    {
+                        P.eliminar_Profesor(Convert.ToInt32(txtci.Text));
 
+                        dgProfesores.DataBind();
+                        limpiar();
+                        CProf.Style["visibility"] = "hidden";
+
+                    }
                 }
             }
+            catch (Exception)
+            {
+
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('EL FORMATO DE LA FECHA NO ES CORRECTA');", true);
+            }
+            
         }
         private void limpiar()
         {

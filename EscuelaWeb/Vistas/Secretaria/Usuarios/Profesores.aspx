@@ -56,26 +56,26 @@
 
             <div style="font-size:40px; width:auto; text-align:center;">ADMINISTRATIVO</div>
                         <div Class="texto"><div Class="texto"><asp:Label ID="Label1" runat="server" Text="CI:" ></asp:Label></div></div>
-                        <asp:TextBox ID="txtci" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <asp:TextBox ID="txtci" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" TextMode="Number"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label7" runat="server" Text="NOMBRE:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtNombre" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <asp:TextBox ID="txtNombre" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label2" runat="server" Text="AP. PATERNO:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtApPaterno" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <asp:TextBox ID="txtApPaterno" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label3" runat="server" Text="AP. MATERNO:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtApMaterno" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <asp:TextBox ID="txtApMaterno" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label6" runat="server" Text="FECHA NAC.:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtFechNac" runat="server" CssClass="CajaTexto" TextMode="DateTime"></asp:TextBox>
+                        <asp:TextBox ID="txtFechNac" runat="server" CssClass="CajaTexto" TextMode="DateTime" Style="text-transform: uppercase"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label9" runat="server" Text="DIRECCION:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtDireccion" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <asp:TextBox ID="txtDireccion" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase"></asp:TextBox>
                         
                        <br />
                         <div Class="texto"><asp:Label ID="Label8" runat="server" Text="CELULAR:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtCelular" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <asp:TextBox ID="txtCelular" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" TextMode="Number"></asp:TextBox>
                        <br />
                         <div Class="texto"><asp:Label ID="Label4" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label></div>
                         <asp:TextBox ID="txtCOntrasenia" runat="server" CssClass="CajaTexto"></asp:TextBox>
@@ -158,7 +158,9 @@
                 
                    <asp:GridView ID="dgProfesores" runat="server" CellPadding="3" GridLines="None" Height="284px" Width="80%" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" DataKeyNames="Ci_Profesor" DataSourceID="SqlDataSourceProfesores" OnSelectedIndexChanged="dgProfesores_SelectedIndexChanged">
                        <Columns>
-                           <asp:CommandField ShowSelectButton="True" />
+                           <asp:CommandField ShowSelectButton="True" SelectText="SELECCIONAR" >
+                           <ItemStyle Font-Underline="True" ForeColor="#0099FF" />
+                           </asp:CommandField>
                            <asp:BoundField DataField="Ci_Profesor" HeaderText="Ci_Profesor" ReadOnly="True" SortExpression="Ci_Profesor" />
                            <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
                            <asp:BoundField DataField="ap_Paterno" HeaderText="ap_Paterno" SortExpression="ap_Paterno" />

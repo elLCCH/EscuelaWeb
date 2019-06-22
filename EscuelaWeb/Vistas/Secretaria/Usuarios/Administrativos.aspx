@@ -64,34 +64,34 @@
 
             <div style="font-size:40px; width:auto; text-align:center;">ADMINISTRATIVO</div>
                         <div Class="texto"><div Class="texto"><asp:Label ID="Label1" runat="server" Text="CI:" ></asp:Label></div></div>
-                        <asp:TextBox ID="txtci" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <asp:TextBox ID="txtci" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" TextMode="Number" AutoCompleteType="Disabled"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label7" runat="server" Text="NOMBRE:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtNombre" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <asp:TextBox ID="txtNombre" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" AutoCompleteType="Disabled"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label2" runat="server" Text="AP. PATERNO:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtApPaterno" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <asp:TextBox ID="txtApPaterno" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" AutoCompleteType="Disabled"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label3" runat="server" Text="AP. MATERNO:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtApMaterno" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <asp:TextBox ID="txtApMaterno" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" AutoCompleteType="Disabled"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label6" runat="server" Text="FECHA NAC.:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtFechNac" runat="server" CssClass="CajaTexto" TextMode="DateTime"></asp:TextBox>
+                        <asp:TextBox ID="txtFechNac" runat="server" CssClass="CajaTexto" TextMode="DateTime" AutoCompleteType="Disabled"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label9" runat="server" Text="DIRECCION:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtDireccion" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <asp:TextBox ID="txtDireccion" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" AutoCompleteType="Disabled"></asp:TextBox>
                         
                        <br />
                         <div Class="texto"><asp:Label ID="Label8" runat="server" Text="CELULAR:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtCelular" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <asp:TextBox ID="txtCelular" runat="server" CssClass="CajaTexto" TextMode="Number" AutoCompleteType="Disabled"></asp:TextBox>
                        <br />
                         <div Class="texto"><asp:Label ID="Label4" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtCOntrasenia" runat="server" CssClass="CajaTexto"></asp:TextBox>
+                        <asp:TextBox ID="txtCOntrasenia" runat="server" CssClass="CajaTexto" AutoCompleteType="Disabled"></asp:TextBox>
                        <br />
                         <div Class="texto"><asp:Label ID="Label5" runat="server" Text="OCUPACION:" CssClass="texto"></asp:Label></div>
                        <asp:DropDownList ID="cbOcupacion" runat="server" CssClass="CajaTexto">
-                           <asp:ListItem>Director</asp:ListItem>
-                           <asp:ListItem>Secretaria</asp:ListItem>
+                           <asp:ListItem>DIRECTOR</asp:ListItem>
+                           <asp:ListItem>SECRETARIO</asp:ListItem>
                         </asp:DropDownList>
                        
                         
@@ -149,19 +149,23 @@
                     <asp:Button ID="btnNuevo" runat="server" Text="NUEVO" CssClass="btnder" OnClick="btnNuevo_Click"/>
                     <asp:RadioButton ID="rbEliminar" runat="server" Text="Eliminar" GroupName="TIPO" Font-Size="15pt" />
                     <asp:RadioButton ID="rbModificar" runat="server" Checked="True" Text="Modificar" GroupName="TIPO" Font-Size="15pt" />
+                    <asp:TextBox ID="txtBuscar" runat="server"></asp:TextBox>
+                <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="BUSCAR" />
                 </div>
 
                 
                    <asp:GridView ID="dgAdministrativos" runat="server" CellPadding="3" GridLines="None" Height="284px" Width="80%" AutoGenerateColumns="False" AllowPaging="True" BackColor="White" BorderColor="White" BorderStyle="Ridge" BorderWidth="2px" CellSpacing="1" DataKeyNames="Ci_Administrativo" DataSourceID="SqlDataSourceAdministrativo" OnSelectedIndexChanged="dgAdministrativos_SelectedIndexChanged">
                        <Columns>
-                           <asp:CommandField SelectText="SELECCIONAR" ShowSelectButton="True" />
+                           <asp:CommandField SelectText="SELECCIONAR" ShowSelectButton="True" >
+                           <ItemStyle Font-Underline="True" ForeColor="#009933" />
+                           </asp:CommandField>
                            <asp:BoundField DataField="Ci_Administrativo" HeaderText="Ci_Administrativo" ReadOnly="True" SortExpression="Ci_Administrativo" />
                            <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
                            <asp:BoundField DataField="ap_Paterno" HeaderText="ap_Paterno" SortExpression="ap_Paterno" />
                            <asp:BoundField DataField="ap_Materno" HeaderText="ap_Materno" SortExpression="ap_Materno" />
-                           <asp:BoundField DataField="contrasenia" HeaderText="contrasenia" SortExpression="contrasenia" />
+                           <asp:BoundField DataField="contrasenia" HeaderText="contrasenia" SortExpression="contrasenia" ReadOnly="True"/>
                            <asp:BoundField DataField="celular" HeaderText="celular" SortExpression="celular" />
-                           <asp:BoundField DataField="FechaNac" HeaderText="FechaNac" SortExpression="FechaNac" />
+                           <asp:BoundField DataField="FechaNac" HeaderText="FechaNac" SortExpression="FechaNac" DataFormatString="{0:d}" HtmlEncode=false />
                            <asp:BoundField DataField="direccion" HeaderText="direccion" SortExpression="direccion" />
                            <asp:BoundField DataField="Ocupacion" HeaderText="Ocupacion" SortExpression="Ocupacion" />
                        </Columns>
@@ -176,8 +180,6 @@
                        <SortedDescendingHeaderStyle BackColor="#33276A" />
                    </asp:GridView>
                    <asp:SqlDataSource ID="SqlDataSourceAdministrativo" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT * FROM [Administrativo]"></asp:SqlDataSource>
-                <asp:TextBox ID="txtBuscar" runat="server"></asp:TextBox>
-                <asp:Button ID="btnBuscar" runat="server" OnClick="btnBuscar_Click" Text="BUSCAR" />
                </div>
         </div>
         <script type="text/javascript">

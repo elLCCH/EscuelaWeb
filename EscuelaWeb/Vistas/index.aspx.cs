@@ -15,10 +15,8 @@ namespace EscuelaWeb.Vistas
         AdministrativoController admin = new AdministrativoController();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
-            {
-                Label1.Text = "0";
-            }
+            Session["ID"] = "";
+            txtCuenta.Focus();
         }
         protected void btnIniciar_Click(object sender, EventArgs e)
         {
@@ -55,12 +53,11 @@ namespace EscuelaWeb.Vistas
                         }
                     }
                 }
-                Session["ID"] = txtCuenta.Text;
-                Response.Redirect("index.aspx");
-            }
-            //Response.Redirect("index.aspx");
-            
-
+                Session["ID"] = "";
+                //CAdmin.Style["visibility"] = "hidden";
+                txtContrasenia.Text = "";
+                txtCuenta.Text = "";
+            }          
         }
     }
 }

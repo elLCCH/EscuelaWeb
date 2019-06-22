@@ -11,8 +11,17 @@ namespace EscuelaWeb.Vistas.Director_UE
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            String Valor = Request.QueryString["ID"]; //obteniendo valor desde el otro form
-
+            try
+            {
+                if (Convert.ToBoolean(Session["ID"]) == false)
+                {   //esta inactivo
+                    Response.Redirect("../index.aspx");
+                }
+            }
+            catch (Exception)
+            {
+                //esta activo
+            }
         }
         protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
         {
