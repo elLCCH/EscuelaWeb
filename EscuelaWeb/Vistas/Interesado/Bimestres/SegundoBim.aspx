@@ -61,11 +61,29 @@
             </script>
         <div class="ParteDerecha">
             
-
-            <asp:GridView ID="gvSegundoBim" runat="server">
+            <center>
+            NOMBRE Y&nbsp; APELLIDO:&nbsp; <asp:Label ID="lblnombre" runat="server" Text=""></asp:Label>
+            &nbsp;&nbsp; <asp:Label ID="lblapellido" runat="server" Text=""></asp:Label>
+                <br />
+                CARNET DE IDENTIDAD:&nbsp;&nbsp; <asp:Label ID="lblCI" runat="server" Text="Label"></asp:Label>
+            <br />
+            GESTION:<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True">
+                <asp:ListItem>2019</asp:ListItem>
+                <asp:ListItem>2018</asp:ListItem>
+                <asp:ListItem>2017</asp:ListItem>
+            </asp:DropDownList>
+            <asp:GridView ID="gvSegundoBim" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" Width="514px">
+                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                <SortedDescendingHeaderStyle BackColor="#242121" />
             </asp:GridView>
-            
-
+                <asp:Button ID="btnImprimir" runat="server" Text="BOLETA DE CALIFICACIONES" OnClick="btnImprimir_Click" />
+            </center>
         </div>
 </form>  
 </body>

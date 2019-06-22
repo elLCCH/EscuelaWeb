@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using EscuelaWeb.Data.dsEscuelaTableAdapters;
 
 namespace EscuelaWeb.Vistas.Interesado.Bimestres
 {
@@ -35,7 +36,14 @@ namespace EscuelaWeb.Vistas.Interesado.Bimestres
                     adaptador.Fill(tabla);
                     gvCuartoBim.DataSource = tabla;
                     gvCuartoBim.DataBind();
+                    //RELLENANDO DATOS
 
+                    EstudianteTableAdapter est = new EstudianteTableAdapter();
+                    lblapellido.Text = est.obtenerApellidosEst(ci_estudiante);
+                    lblnombre.Text = est.obtenerNombreEst(ci_estudiante);
+                    lblCI.Text = Convert.ToString(Session["ID"]);
+
+                    Session["bim"] = "CUARTO BIMESTRE";
 
 
                 }
@@ -81,6 +89,11 @@ namespace EscuelaWeb.Vistas.Interesado.Bimestres
         protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
         {
             Response.Redirect("../../index.aspx");
+        }
+
+        protected void btnImprimir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmImprimirCalificaciones.aspx");
         }
     }
 }
