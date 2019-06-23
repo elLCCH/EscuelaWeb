@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace EscuelaWeb.Vistas.Interesado {
+namespace EscuelaWeb.Vistas.Interesado.Bimestres {
     
     
-    public partial class frmAvisosInteresado {
+    public partial class frmImprimirCalificaciones {
         
         /// <summary>
         /// Control form1.
@@ -22,84 +22,57 @@ namespace EscuelaWeb.Vistas.Interesado {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control lbtnCerrarSesion.
+        /// Control lblnombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnCerrarSesion;
+        protected global::System.Web.UI.WebControls.Label lblnombre;
         
         /// <summary>
-        /// Control lbtnInicio.
+        /// Control lblapellido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnInicio;
+        protected global::System.Web.UI.WebControls.Label lblapellido;
         
         /// <summary>
-        /// Control lbtnCalificaciones.
+        /// Control lblCI.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnCalificaciones;
+        protected global::System.Web.UI.WebControls.Label lblCI;
         
         /// <summary>
-        /// Control lbtnPrimerB.
+        /// Control DropDownList1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnPrimerB;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// Control lbtnSegundoB.
+        /// Control lblbimestre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnSegundoB;
+        protected global::System.Web.UI.WebControls.Label lblbimestre;
         
         /// <summary>
-        /// Control lbtnTerceroB.
+        /// Control gvPrimerBim.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnTerceroB;
-        
-        /// <summary>
-        /// Control lbtnCuartoB.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnCuartoB;
-        
-        /// <summary>
-        /// Control lbtnAvisos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbtnAvisos;
-        
-        /// <summary>
-        /// Control LVAvisos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView LVAvisos;
+        protected global::System.Web.UI.WebControls.GridView gvPrimerBim;
     }
 }

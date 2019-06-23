@@ -42,5 +42,10 @@ namespace EscuelaWeb.Controlador
         {
             lbl.Text = "BIENVENIDO PROF. "+ ObjProfesor.ScalarQueryObtenerNombreCompleto(Pci);
         }
+        public int obtenerId_curso(int pCiProfesor)
+        {
+            int IDcurso=Convert.ToInt32(ObjProfesor.obtenerId_cursoConCIprof(pCiProfesor));
+            return IDcurso;
+        }
     }
 }

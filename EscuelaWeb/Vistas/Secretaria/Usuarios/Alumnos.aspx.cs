@@ -16,6 +16,17 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            try
+            {
+                if (Convert.ToBoolean(Session["ID"]) == false)
+                {   //esta inactivo
+                    Response.Redirect("../../index.aspx");
+                }
+            }
+            catch (Exception)
+            {
+                //esta activo
+            }
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
@@ -70,47 +81,51 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            //obtenemos el curso
-            int curso = cAlumno.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
-            if (btnGuardar.Text=="REGISTRAR")
+            try
             {
-                //ES NUEVO ENTONCES INSERTAR
-                
-                //insertamos y actualizamos tabla
-                cAlumno.insertar_alumno(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, curso);
-                dgEstudiantes.DataSourceID = "SqlDataSourceAlumnos";
-                dgEstudiantes.DataBind();
-                CAlumnos.Style["visibility"] = "hidden";
-                limpiar();
-            }
-            else
-            {
-                if (rbModificar.Checked == true)
+                //obtenemos el curso
+                int curso = cAlumno.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
+                if (btnGuardar.Text == "REGISTRAR")
                 {
-                    //YA EXISTE ENTONCES MODIFICAR
+                    //ES NUEVO ENTONCES INSERTAR
 
-                    //int curso = cAlumno.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
-                    cAlumno.modificar(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, curso);
+                    //insertamos y actualizamos tabla
+                    cAlumno.insertar_alumno(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, curso);
                     dgEstudiantes.DataSourceID = "SqlDataSourceAlumnos";
                     dgEstudiantes.DataBind();
-                    limpiar();
                     CAlumnos.Style["visibility"] = "hidden";
+                    limpiar();
+                    Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('REGISTRO AGREGADO SATISFACTORIAMENTE');", true);
                 }
-                if (rbEliminar.Checked == true)
+                else
                 {
-                    cAlumno.eliminar(Convert.ToInt32(txtci.Text));
-                    dgEstudiantes.DataSourceID = "SqlDataSourceAlumnos";
-                    dgEstudiantes.DataBind();
-                    limpiar();
-                    CAlumnos.Style["visibility"] = "hidden";
+                    if (rbModificar.Checked == true)
+                    {
+                        //YA EXISTE ENTONCES MODIFICAR
 
+                        //int curso = cAlumno.SeleccionaIdCurso(cbCurso.Text, cbParalelo.Text);
+                        cAlumno.modificar(Convert.ToInt32(txtci.Text), txtNombre.Text, txtApPaterno.Text, txtApMaterno.Text, txtCOntrasenia.Text, Convert.ToInt32(txtCelular.Text), Convert.ToDateTime(txtFechNac.Text), txtDireccion.Text, curso);
+                        dgEstudiantes.DataSourceID = "SqlDataSourceAlumnos";
+                        dgEstudiantes.DataBind();
+                        limpiar();
+                        CAlumnos.Style["visibility"] = "hidden";
+                    }
+                    if (rbEliminar.Checked == true)
+                    {
+                        cAlumno.eliminar(Convert.ToInt32(txtci.Text));
+                        dgEstudiantes.DataSourceID = "SqlDataSourceAlumnos";
+                        dgEstudiantes.DataBind();
+                        limpiar();
+                        CAlumnos.Style["visibility"] = "hidden";
+
+                    }
                 }
             }
-            
+            catch (Exception)
+            {
 
-
-            
-
+                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('EL FORMATO DE LA FECHA NO ES CORRECTA');", true);
+            }
         }
         
         protected void dgEstudiantes_SelectedIndexChanged(object sender, EventArgs e)
@@ -154,24 +169,6 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
             cbParalelo.Text = "";
         }
 
-        //protected void btnBuscar_Click(object sender, EventArgs e)
-        //{
-        //    using (SqlConnection cnx = new SqlConnection("Data Source =.; Initial Catalog = dbEscuela; Integrated Security = True"))
-        //    {
-        //        dgEstudiantes.DataSourceID = "";
-        //        cnx.Open();
-
-        //        string query = "select * from Estudiante e, Curso c where (Nombre ='" + txtBusqueda.Text + "' or Ap_Paterno = '" + txtBusqueda.Text + "')";
-        //        SqlCommand cmd = new SqlCommand(query, cnx);
-        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //        DataTable dt = new DataTable();
-        //        da.Fill(dt);
-
-        //        dgEstudiantes.DataSource = dt;
-        //        dgEstudiantes.DataBind();
-        //    }
-        //}
-
         protected void txtBusqueda_TextChanged(object sender, EventArgs e)
         {    
         }
@@ -187,7 +184,9 @@ namespace EscuelaWeb.Vistas.Acciones.SecretarioAcciones
             CAlumnos.Style["visibility"] = "visible";
             //lblIdCurso.Text = "";
             btnGuardar.Text = "REGISTRAR";
-            btnGuardar.OnClientClick = "return Agregacion();";
+            //btnGuardar.OnClientClick = "return Agregacion();";
+            SesionesController sc = new SesionesController();
+            txtCOntrasenia.Text = sc.GenerarPassword();
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

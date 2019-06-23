@@ -83,7 +83,7 @@ td {
 
                 <h3>AVISOS</h3>
                 <p>
-                    <asp:ListView ID="ListViewAvisos" runat="server" >
+                    <asp:ListView ID="LVAvisos" runat="server" >
                         <AlternatingItemTemplate>
                             <li style="background-color: #FFF8DC;">titulo:
                                 <asp:Label ID="tituloLabel" runat="server" Text='<%# Eval("titulo") %>' />

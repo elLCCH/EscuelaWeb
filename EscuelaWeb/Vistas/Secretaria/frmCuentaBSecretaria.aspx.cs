@@ -13,8 +13,20 @@ namespace EscuelaWeb.Vistas.CuentaPerfil
         AdministrativoController admin = new AdministrativoController();
         protected void Page_Load(object sender, EventArgs e)
         {
-            int ci_Admin = Convert.ToInt32(Session["ID"]);
-            admin.MostrarCuentaAdministrativo(ci_Admin, txtNombre, txtApellidos);
+            try
+            {
+                if (Convert.ToBoolean(Session["ID"]) == false)
+                {   //esta inactivo
+                    Response.Redirect("../index.aspx");
+                }
+            }
+            catch (Exception)
+            {
+                //esta activo
+                int ci_Admin = Convert.ToInt32(Session["ID"]);
+                admin.MostrarCuentaAdministrativo(ci_Admin, txtNombre, txtApellidos);
+            }
+            
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)

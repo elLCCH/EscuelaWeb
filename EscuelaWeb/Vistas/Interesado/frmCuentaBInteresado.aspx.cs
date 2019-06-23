@@ -14,8 +14,19 @@ namespace EscuelaWeb.Vistas.Interesado
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            int ci_Int = Convert.ToInt32(Session["ID"]);
-            alumno.MostrarCuentaInteresado(ci_Int, txtNombre, txtApellidos);
+            try
+            {
+                if (Convert.ToBoolean(Session["ID"]) == false)
+                {   //esta inactivo
+                    Response.Redirect("../index.aspx");
+                }
+            }
+            catch (Exception)
+            {
+                //esta activo
+                int ci_Int = Convert.ToInt32(Session["ID"]);
+                alumno.MostrarCuentaInteresado(ci_Int, txtNombre, txtApellidos);
+            }
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)

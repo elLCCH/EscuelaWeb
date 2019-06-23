@@ -13,9 +13,21 @@ namespace EscuelaWeb.Vistas.Director_UE
         AdministrativoController ObjAdministrativoController = new AdministrativoController();
         protected void Page_Load(object sender, EventArgs e)
         {
-            ///String Valor = Request.QueryString["ID"]; //obteniendo valor desde el otro form
-            int ci_Int = Convert.ToInt32(Session["ID"]);
-            ObjAdministrativoController.ObtenerNombreCompleto(lblSaludo,ci_Int);
+            try
+            {
+                if (Convert.ToBoolean(Session["ID"]) == false)
+                {   //esta inactivo
+                    Response.Redirect("../index.aspx");
+                }
+            }
+            catch (Exception)
+            {
+                //esta activo
+                ///String Valor = Request.QueryString["ID"]; //obteniendo valor desde el otro form
+                int ci_Int = Convert.ToInt32(Session["ID"]);
+                ObjAdministrativoController.ObtenerNombreCompleto(lblSaludo, ci_Int);
+            }
+            
         }
         protected void lbtnCerrarSesion_Click(object sender, EventArgs e)
         {
