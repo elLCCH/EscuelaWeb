@@ -76,39 +76,21 @@ namespace EscuelaWeb.Vistas.Director_UE {
         protected global::System.Web.UI.WebControls.LinkButton lbtnVerAvisos;
         
         /// <summary>
-        /// Control lblcod.
+        /// Control ListView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblcod;
+        protected global::System.Web.UI.WebControls.ListView ListView1;
         
         /// <summary>
-        /// Control bntEliminar.
+        /// Control SqlDataSource1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bntEliminar;
-        
-        /// <summary>
-        /// Control dgvAvisos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView dgvAvisos;
-        
-        /// <summary>
-        /// Control SqlDataSourceAvisosDirector.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceAvisosDirector;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
     }
 }

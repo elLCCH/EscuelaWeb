@@ -38,5 +38,9 @@ namespace EscuelaWeb.Controlador
         {
             ObjProfesor.ModificarContrasenia(Pci, Pcontrasenia, Pci);
         }
+        public void obtenerNombreCompleto(Label lbl,int Pci)
+        {
+            lbl.Text = "BIENVENIDO PROF. "+ ObjProfesor.ScalarQueryObtenerNombreCompleto(Pci);
+        }
     }
 }

@@ -10,20 +10,10 @@ namespace EscuelaWeb.Vistas.Director_UE
 {
     public partial class frmRealizarAvisoDirector : System.Web.UI.Page
     {
-        AvisosDirectorController ADir = new AvisosDirectorController();
+        AvisosController objAvisos = new AvisosController();
         protected void Page_Load(object sender, EventArgs e)
         {
-            try
-            {
-                if (Convert.ToBoolean(Session["ID"]) == false)
-                {   //esta inactivo
-                    Response.Redirect("../../index.aspx");
-                }
-            }
-            catch (Exception)
-            {
-                //esta activo
-            }
+
         }
         protected void lbtnRealizarAvisos_Click(object sender, EventArgs e)
         {
@@ -50,10 +40,12 @@ namespace EscuelaWeb.Vistas.Director_UE
             Response.Redirect("../frmBDirector.aspx");
         }
 
-        protected void btnPublicar_Click(object sender, EventArgs e)
+        protected void btnRealizarAviso_Click(object sender, EventArgs e)
         {
-            //ADir.publicarAvisoDirector(txtTitulo.Text, txtDescripcion, CIProf, CIAdmin);
-            ADir.publicarAvisoDirector(txtTitulo.Text, txtDescripcion.Text,0, 3);
+            int _ci_director = Convert.ToInt32(Session["ID"]);
+            objAvisos.PublicarAvisoDirector(txtTitulo.Text, txtDescripcion.Text, _ci_director);
+            txtTitulo.Text = "";
+            txtDescripcion.Text = "";
         }
     }
 }

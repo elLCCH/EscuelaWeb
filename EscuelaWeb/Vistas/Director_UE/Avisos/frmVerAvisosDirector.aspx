@@ -9,6 +9,32 @@
     <title>Bienvenido Director</title>
     <link rel="stylesheet" href="../../../css/BDirector.css"/>
     <link rel="stylesheet" href="../../../css/Allfondo.css"/>
+    <style type="text/css">
+
+
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    margin: 0px 45px 45px 45px;
+    width: 718px;
+    text-align: center;
+    /*border-collapse: collapse;*/
+    position: relative;
+    /*left:0%;*/
+    right:34px;
+    top: 7px;
+}
+
+
+td {
+    padding: 8px;
+    background: #e8edff;
+    border-bottom: 1px solid #fff;
+    color: #669;
+    border-top: 1px solid transparent;
+}
+
+    </style>
 </head>
 <body>
     <!--ENCABEZADO-->
@@ -54,31 +80,90 @@
             <div class="RealizarAviso">
                 <h1 style="text-align:center;">LISTA DE AVISOS</h1>
 
-                <h3>AVISOS<asp:Label ID="lblcod" runat="server"></asp:Label>
-                    <asp:Button ID="bntEliminar" runat="server" OnClick="bntEliminar_Click" Text="Button" />
-                </h3>
-                <asp:GridView ID="dgvAvisos" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" AllowPaging="True" AutoGenerateColumns="False" DataKeyNames="id_Avisos" DataSourceID="SqlDataSourceAvisosDirector" OnSelectedIndexChanged="dgvAvisos_SelectedIndexChanged">
-                    <Columns>
-                        <asp:CommandField SelectText="Selecionar" ShowSelectButton="True" />
-                        <asp:BoundField DataField="id_Avisos" HeaderText="id_Avisos" InsertVisible="False" ReadOnly="True" SortExpression="id_Avisos" />
-                        <asp:BoundField DataField="titulo" HeaderText="titulo" SortExpression="titulo" />
-                        <asp:BoundField DataField="contenido" HeaderText="contenido" SortExpression="contenido" />
-                    </Columns>
-                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                    <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                    <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                    <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                    <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                    <SortedDescendingHeaderStyle BackColor="#242121" />
-                </asp:GridView>
-                <asp:SqlDataSource ID="SqlDataSourceAvisosDirector" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" DeleteCommand="DELETE FROM Avisos
-WHERE        (id_Avisos = @Original_id_Avisos)" SelectCommand="SELECT [id_Avisos], [titulo], [contenido] FROM [Avisos]">
-                    <DeleteParameters>
-                        <asp:Parameter Name="Original_id_Avisos" />
-                    </DeleteParameters>
-                </asp:SqlDataSource>
+                <h3>AVISOS</h3>
+                 <div>
+                     <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
+                         <AlternatingItemTemplate>
+                             <li style="background-color: #FFF8DC;">TITULO:
+                                 <asp:Label ID="TITULOLabel" runat="server" Text='<%# Eval("TITULO") %>' />
+                                 <br />
+                                 CONTENIDO:
+                                 <asp:Label ID="CONTENIDOLabel" runat="server" Text='<%# Eval("CONTENIDO") %>' />
+                                 <br />
+                                 PUBLICADO POR:
+                                 <asp:Label ID="PUBLICADO_PORLabel" runat="server" Text='<%# Eval("[PUBLICADO POR]") %>' />
+                                 <br />
+                             </li>
+                         </AlternatingItemTemplate>
+                         <EditItemTemplate>
+                             <li style="background-color: #008A8C;color: #FFFFFF;">TITULO:
+                                 <asp:TextBox ID="TITULOTextBox" runat="server" Text='<%# Bind("TITULO") %>' />
+                                 <br />
+                                 CONTENIDO:
+                                 <asp:TextBox ID="CONTENIDOTextBox" runat="server" Text='<%# Bind("CONTENIDO") %>' />
+                                 <br />
+                                 PUBLICADO POR:
+                                 <asp:TextBox ID="PUBLICADO_PORTextBox" runat="server" Text='<%# Bind("[PUBLICADO POR]") %>' />
+                                 <br />
+                                 <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
+                                 <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancelar" />
+                             </li>
+                         </EditItemTemplate>
+                         <EmptyDataTemplate>
+                             No se han devuelto datos.
+                         </EmptyDataTemplate>
+                         <InsertItemTemplate>
+                             <li style="">TITULO:
+                                 <asp:TextBox ID="TITULOTextBox" runat="server" Text='<%# Bind("TITULO") %>' />
+                                 <br />
+                                 CONTENIDO:
+                                 <asp:TextBox ID="CONTENIDOTextBox" runat="server" Text='<%# Bind("CONTENIDO") %>' />
+                                 <br />
+                                 PUBLICADO POR:
+                                 <asp:TextBox ID="PUBLICADO_PORTextBox" runat="server" Text='<%# Bind("[PUBLICADO POR]") %>' />
+                                 <br />
+                                 <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
+                                 <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
+                             </li>
+                         </InsertItemTemplate>
+                         <ItemSeparatorTemplate>
+                             <br />
+                         </ItemSeparatorTemplate>
+                         <ItemTemplate>
+                             <li style="background-color: #DCDCDC;color: #000000;">TITULO:
+                                 <asp:Label ID="TITULOLabel" runat="server" Text='<%# Eval("TITULO") %>' />
+                                 <br />
+                                 CONTENIDO:
+                                 <asp:Label ID="CONTENIDOLabel" runat="server" Text='<%# Eval("CONTENIDO") %>' />
+                                 <br />
+                                 PUBLICADO POR:
+                                 <asp:Label ID="PUBLICADO_PORLabel" runat="server" Text='<%# Eval("[PUBLICADO POR]") %>' />
+                                 <br />
+                             </li>
+                         </ItemTemplate>
+                         <LayoutTemplate>
+                             <ul id="itemPlaceholderContainer" runat="server" style="font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                 <li runat="server" id="itemPlaceholder" />
+                             </ul>
+                             <div style="text-align: center;background-color: #CCCCCC;font-family: Verdana, Arial, Helvetica, sans-serif;color: #000000;">
+                             </div>
+                         </LayoutTemplate>
+                         <SelectedItemTemplate>
+                             <li style="background-color: #008A8C;font-weight: bold;color: #FFFFFF;">TITULO:
+                                 <asp:Label ID="TITULOLabel" runat="server" Text='<%# Eval("TITULO") %>' />
+                                 <br />
+                                 CONTENIDO:
+                                 <asp:Label ID="CONTENIDOLabel" runat="server" Text='<%# Eval("CONTENIDO") %>' />
+                                 <br />
+                                 PUBLICADO POR:
+                                 <asp:Label ID="PUBLICADO_PORLabel" runat="server" Text='<%# Eval("[PUBLICADO POR]") %>' />
+                                 <br />
+                             </li>
+                         </SelectedItemTemplate>
+                     </asp:ListView>
+                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT  titulo AS TITULO, contenido AS CONTENIDO,CONCAT ( (SELECT CONCAT(nombre,' ', ap_Paterno,' ',ap_Materno) FROM Profesor WHERE Ci_Profesor=CONCAT(a.Ci_Profesor,a.Ci_Administrativo)) , (SELECT CONCAT(nombre,' ', ap_Paterno,' ',ap_Materno) FROM Administrativo WHERE Ci_Administrativo=CONCAT(a.Ci_Profesor,a.Ci_Administrativo))) AS 'PUBLICADO POR'
+FROM  Avisos a "></asp:SqlDataSource>
+                 </div>
             </div>
         </div>
         <script type="text/javascript">

@@ -53,12 +53,13 @@
         <!--PARTE   DERECHA DEL MENU IZQ-->
         <div class="ParteDerecha">
             <div class="RealizarAviso">
-                <h1 style="text-align:center; top: -16px;">REALIZAR AVISO</h1>
+                <h1 style="text-align:center;">Realizar Aviso</h1>
                 <asp:Label ID="lblTitlulo" runat="server" Text="Titulo:"></asp:Label>
                 <asp:TextBox ID="txtTitulo" runat="server" Width="574px"></asp:TextBox>
                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion:"></asp:Label>
                 <asp:TextBox ID="txtDescripcion" runat="server" Height="94px" Width="609px"></asp:TextBox>
-                <asp:Button ID="btnPublicar" runat="server" OnClick="btnPublicar_Click" Text="Publicar" />
+                <br />
+                <asp:Button ID="btnRealizarAviso" runat="server" OnClick="btnRealizarAviso_Click" Text="PUBLICAR" />
             </div>
         </div>
         <script type="text/javascript">

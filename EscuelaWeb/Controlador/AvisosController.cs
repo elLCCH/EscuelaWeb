@@ -14,14 +14,21 @@ namespace EscuelaWeb.Controlador
         {
             ObjAviso.Insert(Ptitulo,Pcontenido,Pci,null);
         }
+        public void PublicarAvisoDirector(string Ptitulo, string Pcontenido, int Pci)
+        {
+            ObjAviso.Insert(Ptitulo,Pcontenido,null,Pci);
+        }
         public void modificarAvisoProfesor(string Ptitulo, string Pcontenido, int PCiProf, int pCiAdmin, int pIDAviso)
         {
             ObjAviso.Update(Ptitulo, Pcontenido, PCiProf, pCiAdmin, pIDAviso);
         }
-        public void modificarAvisoProfesor(int pIDAviso)
+        public void eliminarAvisoProfesor(int pIDAviso)
         {
             ObjAviso.Delete(pIDAviso);
         }
-
+        public int ObtenerCiProfesorCurso(int ci_Est)
+        {
+            return ((int)ObjAviso.ScalarQueryObtenerCiProfesorCurso(ci_Est));
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace EscuelaWeb.Vistas.Profesor.Avisos
     public partial class frmRealizarAvisoMiCursoProfesor : System.Web.UI.Page
     {
         AvisosController objAvisosController = new AvisosController();
-        public int _ciProfesor = 500600;
+        
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -54,7 +54,8 @@ namespace EscuelaWeb.Vistas.Profesor.Avisos
 
         protected void btnRegistrarAviso_Click(object sender, EventArgs e)
         {
-            objAvisosController.PublicarAvisoProfesor(txtTitulo.Text,txtDescripcion.Text,_ciProfesor);
+            int _ci_profesor = Convert.ToInt32(Session["ID"]);
+            objAvisosController.PublicarAvisoProfesor(txtTitulo.Text,txtDescripcion.Text,_ci_profesor);
             txtTitulo.Text = "";
             txtDescripcion.Text = "";
         }
