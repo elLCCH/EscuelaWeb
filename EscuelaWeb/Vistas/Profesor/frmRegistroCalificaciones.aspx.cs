@@ -8,9 +8,8 @@ namespace EscuelaWeb.Vistas.Profesor
 {
     public partial class frmRegistroCalificaciones : System.Web.UI.Page
     {
-        AvisosController objAvisosController = new AvisosController();
         AlumnoController ObjAlumnoController = new AlumnoController();
-        public int _ciProfesor = 3555914, _idAviso;
+        CalificacionesController ObjCalificacionesController = new CalificacionesController();
         public string _titulo, _descripcion;
         //Parameter pTi = new Parameter();
 
@@ -63,75 +62,54 @@ namespace EscuelaWeb.Vistas.Profesor
             Response.Redirect("../index.aspx");
         }
 
-        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
-        {
-            //objAvisosController.modificar(,);
-            //GridView1.EditIndex = e.NewEditIndex;
-        }
-
-        protected void bntSiguiente_Click(object sender, EventArgs e)
-        {
-        }
-
-        protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
-            int ci_Int = Convert.ToInt32(Session["ID"]);
-            objAvisosController.modificarAvisoProfesor(Label5.Text,Label6.Text,ci_Int,0,Convert.ToInt32(lblCarnet.Text));
-        }
-
-        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
-        {
-            /*Label7.Text = (GridView1.SelectedRow.Cells[1].Text);
-            Label5.Text = GridView1.SelectedRow.Cells[2].Text;
-            Label6.Text = GridView1.SelectedRow.Cells[3].Text;*/
-            
-        }
-
-
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        protected void btnAceptar_Click(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
+            string bim = HallarBimestre();
+            int anio = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
+            if (bim != "")
             {
-                lblNombreAlumno.Text = "ESTUDIANTE :" + ddlAnio.SelectedItem.Text;
-                ObjAlumnoController.obtenerCi(lblCarnet, ddlAnio.SelectedItem.Text);
+                if (txtArtesPlasticas.Text != "" ||txtCienciasNaturales.Text != "" ||
+                    txtEdFisica.Text != "" || txtEdMusical.Text != "" ||
+                    txtLenguaje.Text != "" || txtMatematica.Text != "" ||
+                    txtReligion.Text != "" || txtSociales.Text != "" || txtTecTecnologica.Text != "")
+                {
+                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text),anio,HallarBimestre(),1,Convert.ToDouble(txtMatematica.Text));
+                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 2, Convert.ToDouble(txtTecTecnologica.Text));
+                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 3, Convert.ToDouble(txtLenguaje.Text));
+                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 4, Convert.ToDouble(txtSociales.Text));
+                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 5, Convert.ToDouble(txtEdFisica.Text));
+                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 6, Convert.ToDouble(txtEdMusical.Text));
+                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 7, Convert.ToDouble(txtArtesPlasticas.Text));
+                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 8, Convert.ToDouble(txtCienciasNaturales.Text));
+                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 9, Convert.ToDouble(txtReligion.Text));
+                }
             }
             
         }
-
-        protected void ddlAnio_SelectedIndexChanged(object sender, EventArgs e)
+        protected string HallarBimestre()
         {
-            Response.Redirect("frmRegistroCalificaciones.aspx");
-            _valor = ddlAnio.SelectedItem.Text;
-            Label6.Text = _valor;
-            btnRegistrar.Click += new EventHandler(btnRegistrar_Click);
+            DateTime hoy = DateTime.Today;
+            string bimestre = "";
+            DateTime Bim11 = Convert.ToDateTime("05/02"), Bim12 = Convert.ToDateTime("16/04");
+            DateTime Bim21 = Convert.ToDateTime("17/04"), Bim22 = Convert.ToDateTime("28/06");
+            DateTime Bim31 = Convert.ToDateTime("15/07"), Bim32 = Convert.ToDateTime("20/09");
+            DateTime Bim41 = Convert.ToDateTime("23/09"), Bim42 = Convert.ToDateTime("30/11");
+            if (DateTime.Compare(hoy, Bim11) > 0 && DateTime.Compare(hoy, Bim12) < 0)
+                bimestre = "PRIMER BIMESTRE";
+            if (DateTime.Compare(hoy, Bim21) > 0 && DateTime.Compare(hoy, Bim22) < 0)
+                bimestre = "SEGUNDO BIMESTRE";
+            if (DateTime.Compare(hoy, Bim31) > 0 && DateTime.Compare(hoy, Bim32) < 0)
+                bimestre = "TERCER BIMESTRE";
+            if (DateTime.Compare(hoy, Bim41) > 0 && DateTime.Compare(hoy, Bim42) < 0)
+                bimestre = "CUARTO BIMESTRE";
+            return bimestre;
         }
-
-        protected void GridView1_RowUpdated(object sender, GridViewUpdatedEventArgs e)
+        protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            /*Label lblId = (Label)GridView1.Rows[e.RowIndex].FindControl("lblId");
-            TextBox txtName = (TextBox)GridView1.Rows[e.RowIndex].FindControl("txtName");
-            CheckBox chkActive =
-              (CheckBox)GridView1.Rows[e.RowIndex].FindControl("chkActive");
-            DropDownList cmbType =
-              (DropDownList)GridView1.Rows[e.RowIndex].FindControl("cmbType");
-            DropDownList ddlSex =
-              (DropDownList)GridView1.Rows[e.RowIndex].FindControl("ddlSex");
-            objAvisosController.modificar();
-            GridView1.EditIndex = -1;*/
+            
+            lblNombreAlumno.Text = "ESTUDIANTE :" + ddlAnio.SelectedItem.Text;
+            ObjAlumnoController.obtenerCi(lblCarnet, ddlAnio.SelectedItem.Text);
         }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           // Label5.Text = GridView1.SelectedRow.Cells[2].Text;
-            //Label6.Text = GridView1.SelectedRow.Cells[3].Text;
-            //Label7.Text = (GridView1.SelectedRow.Cells[1].Text);
-        }
-
         
     }
 }

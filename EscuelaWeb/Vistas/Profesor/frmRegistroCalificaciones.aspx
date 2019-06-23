@@ -65,7 +65,7 @@
                     <asp:Label ID="Label4" runat="server" Text="Introduzca la Calificacion" CssClass="separacion"></asp:Label>
                 </div>
                 <div>
-                <asp:DropDownList ID="ddlAnio" runat="server" CssClass="separacion" OnSelectedIndexChanged="ddlAnio_SelectedIndexChanged"></asp:DropDownList>
+                <asp:DropDownList ID="ddlAnio" runat="server" CssClass="separacion"></asp:DropDownList>
                     <asp:Button ID="btnAceptar" runat="server" OnClick="btnAceptar_Click" Text="ACEPTAR" />
                     <asp:SqlDataSource ID="SqlDataSourceCiEstudiantes" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT [Ci_Estudiante] FROM [Estudiante]"></asp:SqlDataSource>
                     <br />
@@ -75,7 +75,7 @@
         <asp:Label ID="lblCarnet" runat="server" Text="CI :"></asp:Label>
         
                 </div>
-            <div class ="CuadroMaterias">
+            <div class ="CuadroMaterias" style =" background-color = #35120">
             
                 <br />
                     <div style="width: 940px">
