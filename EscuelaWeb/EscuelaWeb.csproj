@@ -301,6 +301,7 @@
     <Compile Include="Controlador\AdministrativoController.cs" />
     <Compile Include="Controlador\AlumnoController.cs" />
     <Compile Include="Controlador\AvisosController.cs" />
+    <Compile Include="Controlador\CalificacionesController.cs" />
     <Compile Include="Controlador\ProfesorController.cs" />
     <Compile Include="Controlador\Profesorescontroller.cs" />
     <Compile Include="Controlador\SesionesController.cs" />
