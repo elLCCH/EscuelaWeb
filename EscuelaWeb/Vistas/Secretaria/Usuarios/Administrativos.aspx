@@ -64,26 +64,26 @@
 
             <div style="font-size:40px; width:auto; text-align:center;">ADMINISTRATIVO</div>
                         <div Class="texto"><div Class="texto"><asp:Label ID="Label1" runat="server" Text="CI:" ></asp:Label></div></div>
-                        <asp:TextBox ID="txtci" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" TextMode="Number" AutoCompleteType="Disabled"></asp:TextBox>
+                        <asp:TextBox ID="txtci" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" TextMode="Number" AutoCompleteType="Disabled" MaxLength="12"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label7" runat="server" Text="NOMBRE:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtNombre" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" AutoCompleteType="Disabled"></asp:TextBox>
+                        <asp:TextBox ID="txtNombre" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" AutoCompleteType="Disabled" MaxLength="20"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label2" runat="server" Text="AP. PATERNO:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtApPaterno" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" AutoCompleteType="Disabled"></asp:TextBox>
+                        <asp:TextBox ID="txtApPaterno" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" AutoCompleteType="Disabled" MaxLength="20"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label3" runat="server" Text="AP. MATERNO:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtApMaterno" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" AutoCompleteType="Disabled"></asp:TextBox>
+                        <asp:TextBox ID="txtApMaterno" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" AutoCompleteType="Disabled" MaxLength="20"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label6" runat="server" Text="FECHA NAC.:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtFechNac" runat="server" CssClass="CajaTexto" TextMode="DateTime" AutoCompleteType="Disabled"></asp:TextBox>
+                        <asp:TextBox ID="txtFechNac" runat="server" CssClass="CajaTexto" TextMode="DateTime" AutoCompleteType="Disabled" MaxLength="10"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label9" runat="server" Text="DIRECCION:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtDireccion" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" AutoCompleteType="Disabled"></asp:TextBox>
+                        <asp:TextBox ID="txtDireccion" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" AutoCompleteType="Disabled" MaxLength="50"></asp:TextBox>
                         
                        <br />
                         <div Class="texto"><asp:Label ID="Label8" runat="server" Text="CELULAR:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtCelular" runat="server" CssClass="CajaTexto" TextMode="Number" AutoCompleteType="Disabled"></asp:TextBox>
+                        <asp:TextBox ID="txtCelular" runat="server" CssClass="CajaTexto" TextMode="Number" AutoCompleteType="Disabled" MaxLength="8"></asp:TextBox>
                        <br />
                         <div Class="texto"><asp:Label ID="Label4" runat="server" Text="CONTRASEÑA:" CssClass="texto"></asp:Label></div>
                         <asp:TextBox ID="txtCOntrasenia" runat="server" CssClass="CajaTexto" AutoCompleteType="Disabled"></asp:TextBox>

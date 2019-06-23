@@ -53,12 +53,12 @@ namespace EscuelaWeb.Vistas.Director_UE
 
         protected void dgvAvisos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblcod.Text = dgvAvisos.SelectedRow.Cells[0].ToString();
+           // lblcod.Text = dgvAvisos.SelectedRow.Cells[0].ToString();
         }
 
         protected void bntEliminar_Click(object sender, EventArgs e)
         {
-            avDir.eliminarAviso(Convert.ToInt32(lblcod.Text));
+            //avDir.eliminarAviso(Convert.ToInt32(lblcod.Text));
         }
     }
 }
