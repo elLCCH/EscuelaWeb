@@ -11,7 +11,7 @@ namespace EscuelaWeb.Vistas.Profesor
         AlumnoController ObjAlumnoController = new AlumnoController();
         CalificacionesController ObjCalificacionesController = new CalificacionesController();
         public string _titulo, _descripcion;
-        //Parameter pTi = new Parameter();
+        public bool _esNuevo = false;
 
         public static string _valor { get; set; } = string.Empty;
 
@@ -20,7 +20,8 @@ namespace EscuelaWeb.Vistas.Profesor
         protected void Page_Load(object sender, EventArgs e)
         {
            // if (!IsPostBack)
-            {
+           //CARGAR DROPDOWNLIST
+           
                 conexion.Open();
                 SqlCommand comando = new SqlCommand("SELECT  Nombre +' '+Ap_Paterno +' '+Ap_Materno AS DATOS FROM Estudiante WHERE Id_Curso = @param", conexion);
                 comando.Parameters.AddWithValue("@param", 1);
@@ -34,7 +35,22 @@ namespace EscuelaWeb.Vistas.Profesor
                 ddlAnio.DataValueField = "DATOS";
                 ddlAnio.DataSource = tabla;
                 ddlAnio.DataBind();
-            }
+            conexion.Close();
+            /*
+            //CARGAR LISTVIEW
+            conexion.Open();
+            SqlCommand com = new SqlCommand("SELECT Ci_Estudiante,bimestre,[1],[2],[3],[4],[5],[6],[7],[8],[9] FROM Calificaciones PIVOT ( MIN(calificacion) FOR Id_Materia IN ([1],[2],[3],[4],[5],[6],[7],[8],[9])) AS PivotTable WHERE bimestre = 'PRIMER BIMESTRE'", conexion);
+            //com.Parameters.AddWithValue("@parametro", "PRIMER BIMESTRE");
+            SqlDataAdapter ad = new SqlDataAdapter(com);
+            ad.SelectCommand = com;
+            DataTable tbl = new DataTable();
+            ad.Fill(tbl);
+
+
+            //ddlAnio.DataTextField = "DATOS";
+            //ddlAnio.DataValueField = "DATOS";
+            GridViewCalificaciones.DataSource = tbl;
+            GridViewCalificaciones.DataBind(); */
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
@@ -66,7 +82,7 @@ namespace EscuelaWeb.Vistas.Profesor
         {
             string bim = HallarBimestre();
             int anio = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
-            if (bim != "")
+            if (bim != "" && _esNuevo == true)
             {
                 if (txtArtesPlasticas.Text != "" ||txtCienciasNaturales.Text != "" ||
                     txtEdFisica.Text != "" || txtEdMusical.Text != "" ||
@@ -84,7 +100,20 @@ namespace EscuelaWeb.Vistas.Profesor
                     ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 9, Convert.ToDouble(txtReligion.Text));
                 }
             }
-            
+            if (bim != "" && _esNuevo == false)
+            {
+                ObjCalificacionesController.ModificarCalificaion(Convert.ToDouble(txtMatematica.Text), Convert.ToInt32(lblCarnet.Text),1);
+                ObjCalificacionesController.ModificarCalificaion(Convert.ToDouble(txtTecTecnologica.Text), Convert.ToInt32(lblCarnet.Text), 2);
+                ObjCalificacionesController.ModificarCalificaion(Convert.ToDouble(txtLenguaje.Text), Convert.ToInt32(lblCarnet.Text), 3);
+                ObjCalificacionesController.ModificarCalificaion(Convert.ToDouble(txtSociales.Text), Convert.ToInt32(lblCarnet.Text), 4);
+                ObjCalificacionesController.ModificarCalificaion(Convert.ToDouble(txtEdFisica.Text), Convert.ToInt32(lblCarnet.Text), 5);
+                ObjCalificacionesController.ModificarCalificaion(Convert.ToDouble(txtEdMusical.Text), Convert.ToInt32(lblCarnet.Text), 6);
+                ObjCalificacionesController.ModificarCalificaion(Convert.ToDouble(txtArtesPlasticas.Text), Convert.ToInt32(lblCarnet.Text), 7);
+                ObjCalificacionesController.ModificarCalificaion(Convert.ToDouble(txtCienciasNaturales.Text), Convert.ToInt32(lblCarnet.Text), 8);
+                ObjCalificacionesController.ModificarCalificaion(Convert.ToDouble(txtReligion.Text), Convert.ToInt32(lblCarnet.Text), 9);
+            }
+
+
         }
         protected string HallarBimestre()
         {
@@ -104,9 +133,26 @@ namespace EscuelaWeb.Vistas.Profesor
                 bimestre = "CUARTO BIMESTRE";
             return bimestre;
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _esNuevo = false;
+            ObjAlumnoController.obtenerNombreCompleto(lblNombreAlumno,Convert.ToInt32(GridViewMostrar.SelectedRow.Cells[1].Text));
+            lblCarnet.Text = GridViewMostrar.SelectedRow.Cells[1].Text;
+            txtMatematica.Text = GridViewMostrar.SelectedRow.Cells[3].Text;
+            txtTecTecnologica.Text = GridViewMostrar.SelectedRow.Cells[4].Text;
+            txtLenguaje.Text = GridViewMostrar.SelectedRow.Cells[5].Text;
+            txtSociales.Text = GridViewMostrar.SelectedRow.Cells[6].Text;
+            txtEdFisica.Text = GridViewMostrar.SelectedRow.Cells[7].Text;
+            txtEdMusical.Text = GridViewMostrar.SelectedRow.Cells[8].Text;
+            txtArtesPlasticas.Text = GridViewMostrar.SelectedRow.Cells[9].Text;
+            txtCienciasNaturales.Text = GridViewMostrar.SelectedRow.Cells[10].Text;
+            txtReligion.Text = GridViewMostrar.SelectedRow.Cells[11].Text;
+        }
+
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            
+            _esNuevo = true;
             lblNombreAlumno.Text = "ESTUDIANTE :" + ddlAnio.SelectedItem.Text;
             ObjAlumnoController.obtenerCi(lblCarnet, ddlAnio.SelectedItem.Text);
         }

@@ -13,5 +13,9 @@ namespace EscuelaWeb.Controlador
         {
             objCalificaciones.Insert(PciEst,Panio,Pbimestre,PIdMateria,Pcalificacion);
         }
+        public void ModificarCalificaion(double PCalificaion, int pCi, int PIdMateria)
+        {
+            objCalificaciones.Update(PCalificaion,pCi,PIdMateria);
+        }
     }
 }

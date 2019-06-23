@@ -250,7 +250,7 @@ WHERE        (Nombre + ' ' + Ap_Paterno + ' ' + Ap_Materno = @param)</CommandTex
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="dbEscuelaConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryObtenerNombreCompleto" Modifier="Public" Name="ScalarQueryObtenerNombreCompleto" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="ScalarQueryObtenerNombreCompleto">
+              <DbSource ConnectionRef="dbEscuelaConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryObtenerNombreCompleto" Modifier="Public" Name="ScalarQueryObtenerNombreCompleto" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="ScalarQueryObtenerNombreCompleto">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Nombre + ' ' + Ap_Paterno + ' ' + Ap_Materno AS Expr1 FROM Estudiante WHERE (Ci_Estudiante = @Param)</CommandText>
@@ -260,7 +260,7 @@ WHERE        (Nombre + ' ' + Ap_Paterno + ' ' + Ap_Materno = @param)</CommandTex
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="dbEscuelaConnectionString (Web.config)" DbObjectName="dbEscuela.dbo.Curso" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SeleccionIdCurso" Modifier="Public" Name="SeleccionIdCurso" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="SeleccionIdCurso">
+              <DbSource ConnectionRef="dbEscuelaConnectionString (Web.config)" DbObjectName="dbEscuela.dbo.Curso" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SeleccionIdCurso" Modifier="Public" Name="SeleccionIdCurso" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="SeleccionIdCurso">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT     Id_Curso
@@ -648,7 +648,7 @@ WHERE        (Ci_Profesor = @ci_profesorP)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="dbEscuelaConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryObtenerNombreCompleto" Modifier="Public" Name="ScalarQueryObtenerNombreCompleto" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="ScalarQueryObtenerNombreCompleto">
+              <DbSource ConnectionRef="dbEscuelaConnectionString (Web.config)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="ScalarQueryObtenerNombreCompleto" Modifier="Public" Name="ScalarQueryObtenerNombreCompleto" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="ScalarQueryObtenerNombreCompleto">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT nombre + ' ' + ap_Materno + ' ' + ap_Paterno AS Expr1 FROM Profesor WHERE (Ci_Profesor = @Param)</CommandText>
@@ -658,7 +658,7 @@ WHERE        (Ci_Profesor = @ci_profesorP)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="dbEscuelaConnectionString (Web.config)" DbObjectName="dbEscuela.dbo.Curso" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SeleccionIdCurso" Modifier="Public" Name="SeleccionIdCurso" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="SeleccionIdCurso">
+              <DbSource ConnectionRef="dbEscuelaConnectionString (Web.config)" DbObjectName="dbEscuela.dbo.Curso" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SeleccionIdCurso" Modifier="Public" Name="SeleccionIdCurso" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="SeleccionIdCurso">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT     Id_Curso
@@ -695,6 +695,18 @@ FROM        Calificaciones</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       Calificaciones
+SET                calificacion = @ParamCalificacion
+WHERE        (Ci_Estudiante = @ParamCi) AND (Id_Materia = @ParamMateria)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="ParamCalificacion" ColumnName="calificacion" DataSourceName="dbEscuela.dbo.Calificaciones" DataTypeServer="float" DbType="Double" Direction="Input" ParameterName="@ParamCalificacion" Precision="0" ProviderType="Float" Scale="0" Size="8" SourceColumn="calificacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ParamCi" ColumnName="Ci_Estudiante" DataSourceName="dbEscuela.dbo.Calificaciones" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ParamCi" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Ci_Estudiante" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ParamMateria" ColumnName="Id_Materia" DataSourceName="dbEscuela.dbo.Calificaciones" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ParamMateria" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id_Materia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
               </DbSource>
             </MainSource>
             <Mappings>
@@ -714,7 +726,7 @@ FROM        Calificaciones</CommandText>
   <xs:element name="dsEscuela" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsEscuela" msprop:Generator_UserDSName="dsEscuela">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Avisos" msprop:Generator_TableClassName="AvisosDataTable" msprop:Generator_TableVarName="tableAvisos" msprop:Generator_RowChangedName="AvisosRowChanged" msprop:Generator_TablePropName="Avisos" msprop:Generator_RowDeletingName="AvisosRowDeleting" msprop:Generator_RowChangingName="AvisosRowChanging" msprop:Generator_RowEvHandlerName="AvisosRowChangeEventHandler" msprop:Generator_RowDeletedName="AvisosRowDeleted" msprop:Generator_RowClassName="AvisosRow" msprop:Generator_UserTableName="Avisos" msprop:Generator_RowEvArgName="AvisosRowChangeEvent">
+        <xs:element name="Avisos" msprop:Generator_TableClassName="AvisosDataTable" msprop:Generator_TableVarName="tableAvisos" msprop:Generator_TablePropName="Avisos" msprop:Generator_RowDeletingName="AvisosRowDeleting" msprop:Generator_RowChangingName="AvisosRowChanging" msprop:Generator_RowEvHandlerName="AvisosRowChangeEventHandler" msprop:Generator_RowDeletedName="AvisosRowDeleted" msprop:Generator_UserTableName="Avisos" msprop:Generator_RowChangedName="AvisosRowChanged" msprop:Generator_RowEvArgName="AvisosRowChangeEvent" msprop:Generator_RowClassName="AvisosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_Avisos" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_Avisos" msprop:Generator_ColumnPropNameInRow="id_Avisos" msprop:Generator_ColumnPropNameInTable="id_AvisosColumn" msprop:Generator_UserColumnName="id_Avisos" type="xs:int" />
@@ -737,7 +749,7 @@ FROM        Calificaciones</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Estudiante" msprop:Generator_TableClassName="EstudianteDataTable" msprop:Generator_TableVarName="tableEstudiante" msprop:Generator_RowChangedName="EstudianteRowChanged" msprop:Generator_TablePropName="Estudiante" msprop:Generator_RowDeletingName="EstudianteRowDeleting" msprop:Generator_RowChangingName="EstudianteRowChanging" msprop:Generator_RowEvHandlerName="EstudianteRowChangeEventHandler" msprop:Generator_RowDeletedName="EstudianteRowDeleted" msprop:Generator_RowClassName="EstudianteRow" msprop:Generator_UserTableName="Estudiante" msprop:Generator_RowEvArgName="EstudianteRowChangeEvent">
+        <xs:element name="Estudiante" msprop:Generator_TableClassName="EstudianteDataTable" msprop:Generator_TableVarName="tableEstudiante" msprop:Generator_TablePropName="Estudiante" msprop:Generator_RowDeletingName="EstudianteRowDeleting" msprop:Generator_RowChangingName="EstudianteRowChanging" msprop:Generator_RowEvHandlerName="EstudianteRowChangeEventHandler" msprop:Generator_RowDeletedName="EstudianteRowDeleted" msprop:Generator_UserTableName="Estudiante" msprop:Generator_RowChangedName="EstudianteRowChanged" msprop:Generator_RowEvArgName="EstudianteRowChangeEvent" msprop:Generator_RowClassName="EstudianteRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Ci_Estudiante" msprop:Generator_ColumnVarNameInTable="columnCi_Estudiante" msprop:Generator_ColumnPropNameInRow="Ci_Estudiante" msprop:Generator_ColumnPropNameInTable="Ci_EstudianteColumn" msprop:Generator_UserColumnName="Ci_Estudiante" type="xs:int" />
@@ -782,7 +794,7 @@ FROM        Calificaciones</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Materia" msprop:Generator_TableClassName="MateriaDataTable" msprop:Generator_TableVarName="tableMateria" msprop:Generator_RowChangedName="MateriaRowChanged" msprop:Generator_TablePropName="Materia" msprop:Generator_RowDeletingName="MateriaRowDeleting" msprop:Generator_RowChangingName="MateriaRowChanging" msprop:Generator_RowEvHandlerName="MateriaRowChangeEventHandler" msprop:Generator_RowDeletedName="MateriaRowDeleted" msprop:Generator_RowClassName="MateriaRow" msprop:Generator_UserTableName="Materia" msprop:Generator_RowEvArgName="MateriaRowChangeEvent">
+        <xs:element name="Materia" msprop:Generator_TableClassName="MateriaDataTable" msprop:Generator_TableVarName="tableMateria" msprop:Generator_TablePropName="Materia" msprop:Generator_RowDeletingName="MateriaRowDeleting" msprop:Generator_RowChangingName="MateriaRowChanging" msprop:Generator_RowEvHandlerName="MateriaRowChangeEventHandler" msprop:Generator_RowDeletedName="MateriaRowDeleted" msprop:Generator_UserTableName="Materia" msprop:Generator_RowChangedName="MateriaRowChanged" msprop:Generator_RowEvArgName="MateriaRowChangeEvent" msprop:Generator_RowClassName="MateriaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_Materia" msprop:Generator_ColumnVarNameInTable="columnId_Materia" msprop:Generator_ColumnPropNameInRow="Id_Materia" msprop:Generator_ColumnPropNameInTable="Id_MateriaColumn" msprop:Generator_UserColumnName="Id_Materia" type="xs:int" />
@@ -803,7 +815,7 @@ FROM        Calificaciones</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Administrativo" msprop:Generator_TableClassName="AdministrativoDataTable" msprop:Generator_TableVarName="tableAdministrativo" msprop:Generator_RowChangedName="AdministrativoRowChanged" msprop:Generator_TablePropName="Administrativo" msprop:Generator_RowDeletingName="AdministrativoRowDeleting" msprop:Generator_RowChangingName="AdministrativoRowChanging" msprop:Generator_RowEvHandlerName="AdministrativoRowChangeEventHandler" msprop:Generator_RowDeletedName="AdministrativoRowDeleted" msprop:Generator_RowClassName="AdministrativoRow" msprop:Generator_UserTableName="Administrativo" msprop:Generator_RowEvArgName="AdministrativoRowChangeEvent">
+        <xs:element name="Administrativo" msprop:Generator_TableClassName="AdministrativoDataTable" msprop:Generator_TableVarName="tableAdministrativo" msprop:Generator_TablePropName="Administrativo" msprop:Generator_RowDeletingName="AdministrativoRowDeleting" msprop:Generator_RowChangingName="AdministrativoRowChanging" msprop:Generator_RowEvHandlerName="AdministrativoRowChangeEventHandler" msprop:Generator_RowDeletedName="AdministrativoRowDeleted" msprop:Generator_UserTableName="Administrativo" msprop:Generator_RowChangedName="AdministrativoRowChanged" msprop:Generator_RowEvArgName="AdministrativoRowChangeEvent" msprop:Generator_RowClassName="AdministrativoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Ci_Administrativo" msprop:Generator_ColumnVarNameInTable="columnCi_Administrativo" msprop:Generator_ColumnPropNameInRow="Ci_Administrativo" msprop:Generator_ColumnPropNameInTable="Ci_AdministrativoColumn" msprop:Generator_UserColumnName="Ci_Administrativo" type="xs:int" />
@@ -854,7 +866,7 @@ FROM        Calificaciones</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Curso" msprop:Generator_TableClassName="CursoDataTable" msprop:Generator_TableVarName="tableCurso" msprop:Generator_TablePropName="Curso" msprop:Generator_RowDeletingName="CursoRowDeleting" msprop:Generator_RowChangingName="CursoRowChanging" msprop:Generator_RowEvHandlerName="CursoRowChangeEventHandler" msprop:Generator_RowDeletedName="CursoRowDeleted" msprop:Generator_UserTableName="Curso" msprop:Generator_RowChangedName="CursoRowChanged" msprop:Generator_RowEvArgName="CursoRowChangeEvent" msprop:Generator_RowClassName="CursoRow">
+        <xs:element name="Curso" msprop:Generator_TableClassName="CursoDataTable" msprop:Generator_TableVarName="tableCurso" msprop:Generator_RowChangedName="CursoRowChanged" msprop:Generator_TablePropName="Curso" msprop:Generator_RowDeletingName="CursoRowDeleting" msprop:Generator_RowChangingName="CursoRowChanging" msprop:Generator_RowEvHandlerName="CursoRowChangeEventHandler" msprop:Generator_RowDeletedName="CursoRowDeleted" msprop:Generator_RowClassName="CursoRow" msprop:Generator_UserTableName="Curso" msprop:Generator_RowEvArgName="CursoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id_Curso" msprop:Generator_ColumnVarNameInTable="columnId_Curso" msprop:Generator_ColumnPropNameInRow="Id_Curso" msprop:Generator_ColumnPropNameInTable="Id_CursoColumn" msprop:Generator_UserColumnName="Id_Curso" type="xs:int" />
@@ -875,7 +887,7 @@ FROM        Calificaciones</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Profesor" msprop:Generator_TableClassName="ProfesorDataTable" msprop:Generator_TableVarName="tableProfesor" msprop:Generator_TablePropName="Profesor" msprop:Generator_RowDeletingName="ProfesorRowDeleting" msprop:Generator_RowChangingName="ProfesorRowChanging" msprop:Generator_RowEvHandlerName="ProfesorRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfesorRowDeleted" msprop:Generator_UserTableName="Profesor" msprop:Generator_RowChangedName="ProfesorRowChanged" msprop:Generator_RowEvArgName="ProfesorRowChangeEvent" msprop:Generator_RowClassName="ProfesorRow">
+        <xs:element name="Profesor" msprop:Generator_TableClassName="ProfesorDataTable" msprop:Generator_TableVarName="tableProfesor" msprop:Generator_RowChangedName="ProfesorRowChanged" msprop:Generator_TablePropName="Profesor" msprop:Generator_RowDeletingName="ProfesorRowDeleting" msprop:Generator_RowChangingName="ProfesorRowChanging" msprop:Generator_RowEvHandlerName="ProfesorRowChangeEventHandler" msprop:Generator_RowDeletedName="ProfesorRowDeleted" msprop:Generator_RowClassName="ProfesorRow" msprop:Generator_UserTableName="Profesor" msprop:Generator_RowEvArgName="ProfesorRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Ci_Profesor" msprop:Generator_ColumnVarNameInTable="columnCi_Profesor" msprop:Generator_ColumnPropNameInRow="Ci_Profesor" msprop:Generator_ColumnPropNameInTable="Ci_ProfesorColumn" msprop:Generator_UserColumnName="Ci_Profesor" type="xs:int" />
@@ -920,7 +932,7 @@ FROM        Calificaciones</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Calificaciones" msprop:Generator_TableClassName="CalificacionesDataTable" msprop:Generator_TableVarName="tableCalificaciones" msprop:Generator_TablePropName="Calificaciones" msprop:Generator_RowDeletingName="CalificacionesRowDeleting" msprop:Generator_RowChangingName="CalificacionesRowChanging" msprop:Generator_RowEvHandlerName="CalificacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="CalificacionesRowDeleted" msprop:Generator_UserTableName="Calificaciones" msprop:Generator_RowChangedName="CalificacionesRowChanged" msprop:Generator_RowEvArgName="CalificacionesRowChangeEvent" msprop:Generator_RowClassName="CalificacionesRow">
+        <xs:element name="Calificaciones" msprop:Generator_TableClassName="CalificacionesDataTable" msprop:Generator_TableVarName="tableCalificaciones" msprop:Generator_RowChangedName="CalificacionesRowChanged" msprop:Generator_TablePropName="Calificaciones" msprop:Generator_RowDeletingName="CalificacionesRowDeleting" msprop:Generator_RowChangingName="CalificacionesRowChanging" msprop:Generator_RowEvHandlerName="CalificacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="CalificacionesRowDeleted" msprop:Generator_RowClassName="CalificacionesRow" msprop:Generator_UserTableName="Calificaciones" msprop:Generator_RowEvArgName="CalificacionesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Ci_Estudiante" msprop:Generator_ColumnVarNameInTable="columnCi_Estudiante" msprop:Generator_ColumnPropNameInRow="Ci_Estudiante" msprop:Generator_ColumnPropNameInTable="Ci_EstudianteColumn" msprop:Generator_UserColumnName="Ci_Estudiante" type="xs:int" />
@@ -966,12 +978,12 @@ FROM        Calificaciones</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="fk_Admin" msdata:parent="Administrativo" msdata:child="Avisos" msdata:parentkey="Ci_Administrativo" msdata:childkey="Ci_Administrativo" msprop:Generator_UserChildTable="Avisos" msprop:Generator_ChildPropName="GetAvisosRows" msprop:Generator_UserRelationName="fk_Admin" msprop:Generator_ParentPropName="AdministrativoRow" msprop:Generator_RelationVarName="relationfk_Admin" msprop:Generator_UserParentTable="Administrativo" />
-      <msdata:Relationship name="fk_CursoEstudiante" msdata:parent="Curso" msdata:child="Estudiante" msdata:parentkey="Id_Curso" msdata:childkey="Id_Curso" msprop:Generator_UserChildTable="Estudiante" msprop:Generator_ChildPropName="GetEstudianteRows" msprop:Generator_UserRelationName="fk_CursoEstudiante" msprop:Generator_RelationVarName="relationfk_CursoEstudiante" msprop:Generator_UserParentTable="Curso" msprop:Generator_ParentPropName="CursoRow" />
-      <msdata:Relationship name="fk_Prof1" msdata:parent="Profesor" msdata:child="Avisos" msdata:parentkey="Ci_Profesor" msdata:childkey="Ci_Profesor" msprop:Generator_UserChildTable="Avisos" msprop:Generator_ChildPropName="GetAvisosRows" msprop:Generator_UserRelationName="fk_Prof1" msprop:Generator_RelationVarName="relationfk_Prof1" msprop:Generator_UserParentTable="Profesor" msprop:Generator_ParentPropName="ProfesorRow" />
-      <msdata:Relationship name="fk_Cursos" msdata:parent="Curso" msdata:child="Profesor" msdata:parentkey="Id_Curso" msdata:childkey="Id_Curso" msprop:Generator_UserChildTable="Profesor" msprop:Generator_ChildPropName="GetProfesorRows" msprop:Generator_UserRelationName="fk_Cursos" msprop:Generator_ParentPropName="CursoRow" msprop:Generator_RelationVarName="relationfk_Cursos" msprop:Generator_UserParentTable="Curso" />
-      <msdata:Relationship name="fk_EstudianteCalif" msdata:parent="Estudiante" msdata:child="Calificaciones" msdata:parentkey="Ci_Estudiante" msdata:childkey="Ci_Estudiante" msprop:Generator_UserChildTable="Calificaciones" msprop:Generator_ChildPropName="GetCalificacionesRows" msprop:Generator_UserRelationName="fk_EstudianteCalif" msprop:Generator_ParentPropName="EstudianteRow" msprop:Generator_RelationVarName="relationfk_EstudianteCalif" msprop:Generator_UserParentTable="Estudiante" />
-      <msdata:Relationship name="fk_IdMateria" msdata:parent="Materia" msdata:child="Calificaciones" msdata:parentkey="Id_Materia" msdata:childkey="Id_Materia" msprop:Generator_UserChildTable="Calificaciones" msprop:Generator_ChildPropName="GetCalificacionesRows" msprop:Generator_UserRelationName="fk_IdMateria" msprop:Generator_ParentPropName="MateriaRow" msprop:Generator_RelationVarName="relationfk_IdMateria" msprop:Generator_UserParentTable="Materia" />
+      <msdata:Relationship name="fk_Admin" msdata:parent="Administrativo" msdata:child="Avisos" msdata:parentkey="Ci_Administrativo" msdata:childkey="Ci_Administrativo" msprop:Generator_UserChildTable="Avisos" msprop:Generator_ChildPropName="GetAvisosRows" msprop:Generator_UserRelationName="fk_Admin" msprop:Generator_RelationVarName="relationfk_Admin" msprop:Generator_UserParentTable="Administrativo" msprop:Generator_ParentPropName="AdministrativoRow" />
+      <msdata:Relationship name="fk_CursoEstudiante" msdata:parent="Curso" msdata:child="Estudiante" msdata:parentkey="Id_Curso" msdata:childkey="Id_Curso" msprop:Generator_UserChildTable="Estudiante" msprop:Generator_ChildPropName="GetEstudianteRows" msprop:Generator_UserRelationName="fk_CursoEstudiante" msprop:Generator_ParentPropName="CursoRow" msprop:Generator_RelationVarName="relationfk_CursoEstudiante" msprop:Generator_UserParentTable="Curso" />
+      <msdata:Relationship name="fk_Prof1" msdata:parent="Profesor" msdata:child="Avisos" msdata:parentkey="Ci_Profesor" msdata:childkey="Ci_Profesor" msprop:Generator_UserChildTable="Avisos" msprop:Generator_ChildPropName="GetAvisosRows" msprop:Generator_UserRelationName="fk_Prof1" msprop:Generator_ParentPropName="ProfesorRow" msprop:Generator_RelationVarName="relationfk_Prof1" msprop:Generator_UserParentTable="Profesor" />
+      <msdata:Relationship name="fk_Cursos" msdata:parent="Curso" msdata:child="Profesor" msdata:parentkey="Id_Curso" msdata:childkey="Id_Curso" msprop:Generator_UserChildTable="Profesor" msprop:Generator_ChildPropName="GetProfesorRows" msprop:Generator_UserRelationName="fk_Cursos" msprop:Generator_RelationVarName="relationfk_Cursos" msprop:Generator_UserParentTable="Curso" msprop:Generator_ParentPropName="CursoRow" />
+      <msdata:Relationship name="fk_EstudianteCalif" msdata:parent="Estudiante" msdata:child="Calificaciones" msdata:parentkey="Ci_Estudiante" msdata:childkey="Ci_Estudiante" msprop:Generator_UserChildTable="Calificaciones" msprop:Generator_ChildPropName="GetCalificacionesRows" msprop:Generator_UserRelationName="fk_EstudianteCalif" msprop:Generator_RelationVarName="relationfk_EstudianteCalif" msprop:Generator_UserParentTable="Estudiante" msprop:Generator_ParentPropName="EstudianteRow" />
+      <msdata:Relationship name="fk_IdMateria" msdata:parent="Materia" msdata:child="Calificaciones" msdata:parentkey="Id_Materia" msdata:childkey="Id_Materia" msprop:Generator_UserChildTable="Calificaciones" msprop:Generator_ChildPropName="GetCalificacionesRows" msprop:Generator_UserRelationName="fk_IdMateria" msprop:Generator_RelationVarName="relationfk_IdMateria" msprop:Generator_UserParentTable="Materia" msprop:Generator_ParentPropName="MateriaRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

@@ -157,6 +157,15 @@ namespace EscuelaWeb.Vistas.Profesor {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceCiEstudiantes;
         
         /// <summary>
+        /// Control Label7.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label7;
+        
+        /// <summary>
         /// Control lblNombreAlumno.
         /// </summary>
         /// <remarks>
@@ -164,6 +173,15 @@ namespace EscuelaWeb.Vistas.Profesor {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNombreAlumno;
+        
+        /// <summary>
+        /// Control Label16.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label16;
         
         /// <summary>
         /// Control lblCarnet.
@@ -346,12 +364,21 @@ namespace EscuelaWeb.Vistas.Profesor {
         protected global::System.Web.UI.WebControls.Button btnRegistrar;
         
         /// <summary>
-        /// Control GridView1.
+        /// Control GridViewMostrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView GridViewMostrar;
+        
+        /// <summary>
+        /// Control SqlDataSourceMaterias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSourceMaterias;
     }
 }
