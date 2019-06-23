@@ -75,7 +75,7 @@
                         <asp:TextBox ID="txtApMaterno" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" MaxLength="15" AutoCompleteType="Disabled"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label6" runat="server" Text="FECHA NAC.:" CssClass="texto"></asp:Label></div>
-                        <asp:TextBox ID="txtFechNac" runat="server" CssClass="CajaTexto" TextMode="DateTime" MaxLength="8" AutoCompleteType="Disabled"></asp:TextBox>
+                        <asp:TextBox ID="txtFechNac" runat="server" CssClass="CajaTexto" TextMode="DateTime" MaxLength="10" AutoCompleteType="Disabled"></asp:TextBox>
                         <br />
                         <div Class="texto"><asp:Label ID="Label9" runat="server" Text="DIRECCION:" CssClass="texto"></asp:Label></div>
                         <asp:TextBox ID="txtDireccion" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" MaxLength="50" AutoCompleteType="Disabled"></asp:TextBox>

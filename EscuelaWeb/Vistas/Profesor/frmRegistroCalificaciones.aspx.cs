@@ -19,10 +19,11 @@ namespace EscuelaWeb.Vistas.Profesor
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           // if (!IsPostBack)
+            if (!IsPostBack) //si se abre por primera vez hacer
             {
+                //LIS ACA HAY QUE OBTENER EL Id_Curso del profesor... para que seleccione todos sus estudiantes del profe (en este caso lo puse = 6)
                 conexion.Open();
-                SqlCommand comando = new SqlCommand("SELECT  Nombre +' '+Ap_Paterno +' '+Ap_Materno AS DATOS FROM Estudiante WHERE Id_Curso = @param", conexion);
+                SqlCommand comando = new SqlCommand("SELECT  Nombre +' '+Ap_Paterno +' '+Ap_Materno AS DATOS FROM Estudiante WHERE Id_Curso = 6", conexion);
                 comando.Parameters.AddWithValue("@param", 1);
                 SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                 adaptador.SelectCommand = comando;
@@ -104,12 +105,17 @@ namespace EscuelaWeb.Vistas.Profesor
                 bimestre = "CUARTO BIMESTRE";
             return bimestre;
         }
+
+        protected void ddlAnio_TextChanged(object sender, EventArgs e)
+        {
+            Session["name"] = ddlAnio.SelectedItem.Text;
+            lblCarnet.Text=ObjAlumnoController.obtenerCi(Convert.ToString(Session["name"]));
+        }
+
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            
-            lblNombreAlumno.Text = "ESTUDIANTE :" + ddlAnio.SelectedItem.Text;
-            ObjAlumnoController.obtenerCi(lblCarnet, ddlAnio.SelectedItem.Text);
+            lblNombreAlumno.Text = Convert.ToString(Session["name"]);
         }
-        
+
     }
 }
