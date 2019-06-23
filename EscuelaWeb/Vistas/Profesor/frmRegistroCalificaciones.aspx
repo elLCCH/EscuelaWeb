@@ -97,6 +97,29 @@
                     </div>
                 <br />
                 <asp:Button ID="btnRegistrar" runat="server" Text="REGISTRAR" OnClick="btnRegistrar_Click"/>
+                
+<asp:GridView ID="GridViewMostrar" runat="server" AutoGenerateColumns="False" AutoGenerateSelectButton="True" DataSourceID="SqlDataSourceMaterias" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                    <Columns>
+                        <asp:BoundField DataField="Ci_Estudiante" HeaderText="Ci_Estudiante" SortExpression="Ci_Estudiante" />
+                        <asp:BoundField DataField="bimestre" HeaderText="bimestre" SortExpression="bimestre" />
+                        <asp:BoundField DataField="MATEMATICA" HeaderText="MATEMATICA" ReadOnly="True" SortExpression="MATEMATICA" />
+                        <asp:BoundField DataField="TECNICA TECNOLOGICA" HeaderText="TECNICA TECNOLOGICA" ReadOnly="True" SortExpression="TECNICA TECNOLOGICA" />
+                        <asp:BoundField DataField="COMUNICACION Y LENGUAJE" HeaderText="COMUNICACION Y LENGUAJE" ReadOnly="True" SortExpression="COMUNICACION Y LENGUAJE" />
+                        <asp:BoundField DataField="CIENCIAS SOCALES" HeaderText="CIENCIAS SOCALES" ReadOnly="True" SortExpression="CIENCIAS SOCALES" />
+                        <asp:BoundField DataField="EDUCACION FISICA Y DEPORTES" HeaderText="EDUCACION FISICA Y DEPORTES" ReadOnly="True" SortExpression="EDUCACION FISICA Y DEPORTES" />
+                        <asp:BoundField DataField="EDUCACION MUSICAL" HeaderText="EDUCACION MUSICAL" ReadOnly="True" SortExpression="EDUCACION MUSICAL" />
+                        <asp:BoundField DataField="ARTES PLASTICAS Y VISUALES" HeaderText="ARTES PLASTICAS Y VISUALES" ReadOnly="True" SortExpression="ARTES PLASTICAS Y VISUALES" />
+                        <asp:BoundField DataField="CIENCIAS NATURALES" HeaderText="CIENCIAS NATURALES" ReadOnly="True" SortExpression="CIENCIAS NATURALES" />
+                        <asp:BoundField DataField="VALORES, ESPIRITUALIDAD Y RELIGIONES" HeaderText="VALORES, ESPIRITUALIDAD Y RELIGIONES" ReadOnly="True" SortExpression="VALORES, ESPIRITUALIDAD Y RELIGIONES" />
+                    </Columns>
+                </asp:GridView>
+                <asp:SqlDataSource ID="SqlDataSourceMaterias" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT Ci_Estudiante,bimestre,[1] AS MATEMATICA ,[2] AS 'TECNICA TECNOLOGICA',[3] AS 'COMUNICACION Y LENGUAJE',
+      [4] AS 'CIENCIAS SOCALES',[5] AS 'EDUCACION FISICA Y DEPORTES',[6] AS 'EDUCACION MUSICAL',
+	  [7] AS 'ARTES PLASTICAS Y VISUALES',[8] AS 'CIENCIAS NATURALES',[9] AS 'VALORES, ESPIRITUALIDAD Y RELIGIONES' 
+FROM Calificaciones PIVOT ( MIN(calificacion) FOR Id_Materia IN ([1],[2],[3],[4],[5],[6],[7],[8],[9])) AS PivotTable 
+WHERE bimestre = 'PRIMER BIMESTRE'
+"></asp:SqlDataSource>
+
         </div></div>
             </div>
     <script type="text/javascript">

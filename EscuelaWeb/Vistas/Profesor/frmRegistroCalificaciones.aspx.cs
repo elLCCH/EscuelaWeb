@@ -12,7 +12,7 @@ namespace EscuelaWeb.Vistas.Profesor
         CalificacionesController ObjCalificacionesController = new CalificacionesController();
         public string _titulo, _descripcion;
         //Parameter pTi = new Parameter();
-
+        public bool _esNuevo = false;
         public static string _valor { get; set; } = string.Empty;
 
         SqlConnection conexion = new SqlConnection("server=.;DataBase=dbEscuela;Integrated Security=True");
@@ -69,23 +69,39 @@ namespace EscuelaWeb.Vistas.Profesor
             int anio = Convert.ToInt32(DateTime.Now.ToString("yyyy"));
             if (bim != "")
             {
-                if (txtArtesPlasticas.Text != "" ||txtCienciasNaturales.Text != "" ||
-                    txtEdFisica.Text != "" || txtEdMusical.Text != "" ||
-                    txtLenguaje.Text != "" || txtMatematica.Text != "" ||
-                    txtReligion.Text != "" || txtSociales.Text != "" || txtTecTecnologica.Text != "")
+                if (bim != "" && _esNuevo == true)
                 {
-                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text),anio,HallarBimestre(),1,Convert.ToDouble(txtMatematica.Text));
-                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 2, Convert.ToDouble(txtTecTecnologica.Text));
-                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 3, Convert.ToDouble(txtLenguaje.Text));
-                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 4, Convert.ToDouble(txtSociales.Text));
-                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 5, Convert.ToDouble(txtEdFisica.Text));
-                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 6, Convert.ToDouble(txtEdMusical.Text));
-                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 7, Convert.ToDouble(txtArtesPlasticas.Text));
-                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 8, Convert.ToDouble(txtCienciasNaturales.Text));
-                    ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 9, Convert.ToDouble(txtReligion.Text));
+                    if (txtArtesPlasticas.Text != "" || txtCienciasNaturales.Text != "" ||
+                        txtEdFisica.Text != "" || txtEdMusical.Text != "" ||
+                        txtLenguaje.Text != "" || txtMatematica.Text != "" ||
+                        txtReligion.Text != "" || txtSociales.Text != "" || txtTecTecnologica.Text != "")
+                    {
+                        ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 1, Convert.ToDouble(txtMatematica.Text));
+                        ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 2, Convert.ToDouble(txtTecTecnologica.Text));
+                        ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 3, Convert.ToDouble(txtLenguaje.Text));
+                        ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 4, Convert.ToDouble(txtSociales.Text));
+                        ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 5, Convert.ToDouble(txtEdFisica.Text));
+                        ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 6, Convert.ToDouble(txtEdMusical.Text));
+                        ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 7, Convert.ToDouble(txtArtesPlasticas.Text));
+                        ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 8, Convert.ToDouble(txtCienciasNaturales.Text));
+                        ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 9, Convert.ToDouble(txtReligion.Text));
+                    }
                 }
+                if (bim != "" && _esNuevo == false)
+                {
+                    ObjCalificacionesController.ModificarCalificacion(Convert.ToDouble(txtMatematica.Text),     Convert.ToInt32(lblCarnet.Text), 1);
+                    ObjCalificacionesController.ModificarCalificacion(Convert.ToDouble(txtTecTecnologica.Text), Convert.ToInt32(lblCarnet.Text), 2);
+                    ObjCalificacionesController.ModificarCalificacion(Convert.ToDouble(txtLenguaje.Text),       Convert.ToInt32(lblCarnet.Text), 3);
+                    ObjCalificacionesController.ModificarCalificacion(Convert.ToDouble(txtSociales.Text),       Convert.ToInt32(lblCarnet.Text), 4);
+                    ObjCalificacionesController.ModificarCalificacion(Convert.ToDouble(txtEdFisica.Text),       Convert.ToInt32(lblCarnet.Text), 5);
+                    ObjCalificacionesController.ModificarCalificacion(Convert.ToDouble(txtEdMusical.Text),      Convert.ToInt32(lblCarnet.Text), 6);
+                    ObjCalificacionesController.ModificarCalificacion(Convert.ToDouble(txtArtesPlasticas.Text), Convert.ToInt32(lblCarnet.Text), 7);
+                    ObjCalificacionesController.ModificarCalificacion(Convert.ToDouble(txtCienciasNaturales.Text), Convert.ToInt32(lblCarnet.Text), 8);
+                    ObjCalificacionesController.ModificarCalificacion(Convert.ToDouble(txtReligion.Text),       Convert.ToInt32(lblCarnet.Text), 9);
+                }
+
             }
-            
+
         }
         protected string HallarBimestre()
         {
@@ -110,6 +126,11 @@ namespace EscuelaWeb.Vistas.Profesor
         {
             Session["name"] = ddlAnio.SelectedItem.Text;
             lblCarnet.Text=ObjAlumnoController.obtenerCi(Convert.ToString(Session["name"]));
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
