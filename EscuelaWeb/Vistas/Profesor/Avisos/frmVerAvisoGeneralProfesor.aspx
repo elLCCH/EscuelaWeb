@@ -127,9 +127,8 @@
                             </li>
                         </SelectedItemTemplate>
                     </asp:ListView>
-                    <asp:SqlDataSource ID="SqlDataSourceAvisosProfesor" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT  a.titulo AS TITULO, a.contenido AS CONTENIDO, CONCAT('LIC. ', adm.nombre,' ', adm.ap_Paterno,' ',adm.ap_Materno) AS 'PUBLICADO POR'
-FROM  Avisos a, Administrativo adm
-WHERE a.Ci_Administrativo = adm.Ci_Administrativo"></asp:SqlDataSource>
+                    <asp:SqlDataSource ID="SqlDataSourceAvisosProfesor" runat="server" ConnectionString="<%$ ConnectionStrings:dbEscuelaConnectionString %>" SelectCommand="SELECT  titulo AS TITULO, contenido AS CONTENIDO,CONCAT ( (SELECT CONCAT(nombre,' ', ap_Paterno,' ',ap_Materno) FROM Profesor WHERE Ci_Profesor=CONCAT(a.Ci_Profesor,a.Ci_Administrativo)) , (SELECT CONCAT(nombre,' ', ap_Paterno,' ',ap_Materno) FROM Administrativo WHERE Ci_Administrativo=CONCAT(a.Ci_Profesor,a.Ci_Administrativo))) AS 'PUBLICADO POR'
+FROM  Avisos a "></asp:SqlDataSource>
                 </div>
             </div>
         </div>

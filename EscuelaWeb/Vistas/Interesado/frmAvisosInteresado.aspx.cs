@@ -29,7 +29,7 @@ namespace EscuelaWeb.Vistas.Interesado
                 int ciProfesor = ObjAvisosController.ObtenerCiProfesorCurso(_ci_interesado);
                 SqlConnection conexion = new SqlConnection("server=.;DataBase=dbEscuela;Integrated Security=True");
                 conexion.Open();
-                SqlCommand comando = new SqlCommand("SELECT titulo,contenido FROM Avisos a WHERE a.Ci_Profesor = @param OR a.Ci_Profesor IS NULL", conexion);
+                SqlCommand comando = new SqlCommand("SELECT titulo,contenido FROM Avisos a WHERE a.Ci_Profesor = @param", conexion);
                 comando.Parameters.AddWithValue("@param", ciProfesor);
                 SqlDataAdapter adaptador = new SqlDataAdapter(comando);
                 adaptador.SelectCommand = comando;
