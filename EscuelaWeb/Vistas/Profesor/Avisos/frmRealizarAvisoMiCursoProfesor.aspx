@@ -43,7 +43,7 @@
     </div>     
         <!--PARTE   DERECHA DEL MENU IZQ-->
         <div class="ParteDerecha">
-            <asp:Button ID="btnNuevoAviso" runat="server" Text="NUEVO AVISO" OnClick="Button1_Click" />
+            <asp:Button ID="btnNuevoAviso" runat="server" Text="NUEVO AVISO"  />
             <asp:GridView ID="GridViewAvisos" runat="server"></asp:GridView>
             <div class="RealizarAviso" id="GAvisos" runat="server">
                 <h1 style="text-align:center;">Realizar Aviso</h1>
