@@ -294,7 +294,7 @@ table {
     /*border-collapse: collapse;*/
     position: relative;
     /*left:0%;*/
-    right:34px;
+    right:31px;
     top: 7px;
 }
 
@@ -303,7 +303,7 @@ th {
     font-size: 13px;
     font-weight: normal;
     padding: 8px;
-    background: #b9c9fe;
+    background: #ffffff;
     border-top: 4px #aabcfe;
     border-bottom: 1px #fff;
     color: #039;
@@ -318,7 +318,7 @@ td {
 }
 
 tr:hover td {
-    background: #d0dafd;
+    background: #E9E9E9;
     color: #339;
 }
 
@@ -364,8 +364,10 @@ tr:hover td {
     margin-right:40px;
     margin-left:50px;
 }
-.datosParaCalificaciones{
-    text-align:center;
+.datosParaCalificaciones {
+    text-align: center;
+    background-color: #b9c9fe;
+    width: 1000px;
 }
 #btnRegistrar{
     float:right;
@@ -374,7 +376,7 @@ tr:hover td {
     font-size:15px;
 }
 .notasDeCalificacion {
-    background-color: #b1a0a0;
+    background-color: #b9c9fe;
     padding: 15px;
     right: 20%;
 }

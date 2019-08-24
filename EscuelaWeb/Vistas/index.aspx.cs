@@ -57,6 +57,7 @@ namespace EscuelaWeb.Vistas
                 //CAdmin.Style["visibility"] = "hidden";
                 txtContrasenia.Text = "";
                 txtCuenta.Text = "";
+                lblError.Visible = true;
             }          
         }
     }

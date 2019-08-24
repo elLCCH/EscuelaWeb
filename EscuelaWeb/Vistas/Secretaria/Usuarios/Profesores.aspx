@@ -54,7 +54,7 @@
         <div class="CRUD_ALUMNOS" id="CProf" runat="server">
 
 
-            <div style="font-size:40px; width:auto; text-align:center;">ADMINISTRATIVO</div>
+            <div style="font-size:40px; width:auto; text-align:center;">PROFESOR</div>
                         <div Class="texto"><div Class="texto"><asp:Label ID="Label1" runat="server" Text="CI:" ></asp:Label></div></div>
                         <asp:TextBox ID="txtci" runat="server" CssClass="CajaTexto" Style="text-transform: uppercase" TextMode="Number" AutoCompleteType="Disabled"></asp:TextBox>
                         <br />

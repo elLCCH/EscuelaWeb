@@ -36,10 +36,12 @@
                 <img class="imgPassword" src="../img/lock.png" alt=""/>                           
                 <asp:TextBox ID="txtContrasenia" runat="server" CssClass="textPassword" placeholder="Introduzca su contraseña" TextMode="Password"></asp:TextBox>
                 </div>
-                <div class="checkbox" style="margin-left: 15px; left: 0px;">
+                <div class="checkbox" style="margin-left: 15px; left: 0px; float:left;">
                     <label style="color:#3174C1">
                     <asp:CheckBox ID="cbValidar" runat="server" Text="Validar los datos"></asp:CheckBox>
+                    <br />
                     </label>
+                    <asp:Label ID="lblError" runat="server" Text="Cuenta o Contraseña Incorrectos" ForeColor="Red" Visible="False"></asp:Label>
                 </div>
                 <asp:Button ID="btnIniciar" runat="server" Text="Iniciar Sesion" CssClass="boton" Font-Size="100%" OnClick="btnIniciar_Click"></asp:Button>
             </form>

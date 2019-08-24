@@ -11,8 +11,8 @@ namespace EscuelaWeb.Vistas.Profesor
         AlumnoController ObjAlumnoController = new AlumnoController();
         CalificacionesController ObjCalificacionesController = new CalificacionesController();
         ProfesorController prof = new ProfesorController();
+        CursoController ObjcursoController = new CursoController();
         public string _titulo, _descripcion;
-        //Parameter pTi = new Parameter();
         public bool _esNuevo = false;
         public static string _valor { get; set; } = string.Empty;
 
@@ -37,6 +37,29 @@ namespace EscuelaWeb.Vistas.Profesor
                 ddlAnio.DataSource = tabla;
                 ddlAnio.DataBind();
             }
+            cargarCalificaiones();
+        }
+
+        protected void cargarCalificaiones()
+        {
+            //conexion.Open();
+            string bim = HallarBimestre();
+            int suCurso = prof.obtenerId_curso(Convert.ToInt32(Session["ID"]));
+            lblCurso.Text = ObjcursoController.ObtenerNombreCurso(suCurso);
+            lblBimestre.Text = bim;
+
+            SqlCommand comando = new SqlCommand("" +
+            "SELECT p.Ci_Estudiante,e.Nombre+' '+e.Ap_Paterno+' '+e.Ap_Materno AS 'NOMBRE COMPLETO',[1] AS 'MAT' ,[2] AS 'TEC', [3] AS 'LEN',[4] AS 'C. SOC',[5] AS 'ED FIS',[6] AS 'ED MUS', [7] AS 'APLV',[8] AS 'C. NAT',[9] AS 'REL' " +
+            "FROM Calificaciones PIVOT(MIN(calificacion) FOR Id_Materia IN([1],[2],[3],[4],[5],[6],[7],[8],[9])) AS p INNER JOIN Estudiante AS e ON p.Ci_Estudiante = e.Ci_Estudiante WHERE bimestre = @ParamBim AND e.Id_Curso = @ParamCurso", conexion);
+            comando.Parameters.AddWithValue("@ParamBim", bim);
+            comando.Parameters.AddWithValue("@ParamCurso", suCurso);
+            SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+            adaptador.SelectCommand = comando;
+            DataTable tabla = new DataTable();
+            adaptador.Fill(tabla);
+
+            GridViewMostrar.DataSource = tabla;
+            GridViewMostrar.DataBind();
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
@@ -86,6 +109,8 @@ namespace EscuelaWeb.Vistas.Profesor
                         ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 7, Convert.ToDouble(txtArtesPlasticas.Text));
                         ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 8, Convert.ToDouble(txtCienciasNaturales.Text));
                         ObjCalificacionesController.InsertarCalificacion(Convert.ToInt32(lblCarnet.Text), anio, HallarBimestre(), 9, Convert.ToDouble(txtReligion.Text));
+                        limpiar();
+
                     }
                 }
                 if (bim != "" && Convert.ToBoolean(Session["_esNuevo"]) == false)
@@ -99,11 +124,14 @@ namespace EscuelaWeb.Vistas.Profesor
                     ObjCalificacionesController.ModificarCalificacion(Convert.ToDouble(txtArtesPlasticas.Text), Convert.ToInt32(lblCarnet.Text), 7);
                     ObjCalificacionesController.ModificarCalificacion(Convert.ToDouble(txtCienciasNaturales.Text), Convert.ToInt32(lblCarnet.Text), 8);
                     ObjCalificacionesController.ModificarCalificacion(Convert.ToDouble(txtReligion.Text),       Convert.ToInt32(lblCarnet.Text), 9);
+                    limpiar();
+                    btnRegistrar.Text = "REGISTRAR";
+                    btnCancelar.Visible = false;
                 }
-                cargarDatos();
+                cargarCalificaiones();
                 limpiar();
-                
-                
+                btnRegistrar.OnClientClick = "Registrado();";
+
             }
 
         }
@@ -114,7 +142,7 @@ namespace EscuelaWeb.Vistas.Profesor
             DateTime Bim11 = Convert.ToDateTime("05/02"), Bim12 = Convert.ToDateTime("16/04");
             DateTime Bim21 = Convert.ToDateTime("17/04"), Bim22 = Convert.ToDateTime("28/06");
             DateTime Bim31 = Convert.ToDateTime("15/07"), Bim32 = Convert.ToDateTime("20/09");
-            DateTime Bim41 = Convert.ToDateTime("23/09"), Bim42 = Convert.ToDateTime("30/11");
+            DateTime Bim41 = Convert.ToDateTime("21/09"), Bim42 = Convert.ToDateTime("30/11");
             if (DateTime.Compare(hoy, Bim11) > 0 && DateTime.Compare(hoy, Bim12) < 0)
                 bimestre = "PRIMER BIMESTRE";
             if (DateTime.Compare(hoy, Bim21) > 0 && DateTime.Compare(hoy, Bim22) < 0)
@@ -130,7 +158,8 @@ namespace EscuelaWeb.Vistas.Profesor
         {
             Session["name"] = ddlAnio.SelectedItem.Text;
             lblCarnet.Text=ObjAlumnoController.obtenerCi(Convert.ToString(Session["name"]));
-            cargarDatos();
+            lblNombreAlumno.Text = ddlAnio.SelectedItem.Text;
+            //cargarDatos();
         }
         public void cargarDatos()
         {
@@ -152,7 +181,8 @@ namespace EscuelaWeb.Vistas.Profesor
         {
             //_esNuevo = false;
             Session["_esNuevo"] = false;
-            ObjAlumnoController.obtenerNombreCompleto(lblNombreAlumno, Convert.ToInt32(GridViewMostrar.SelectedRow.Cells[1].Text));
+            lblNombreAlumno.Text = GridViewMostrar.SelectedRow.Cells[2].Text;
+            //ObjAlumnoController.obtenerNombreCompleto(lblNombreAlumno, Convert.ToInt32(GridViewMostrar.SelectedRow.Cells[1].Text));
             lblCarnet.Text = GridViewMostrar.SelectedRow.Cells[1].Text;
             txtMatematica.Text = GridViewMostrar.SelectedRow.Cells[3].Text;
             txtTecTecnologica.Text = GridViewMostrar.SelectedRow.Cells[4].Text;
@@ -163,10 +193,18 @@ namespace EscuelaWeb.Vistas.Profesor
             txtArtesPlasticas.Text = GridViewMostrar.SelectedRow.Cells[9].Text;
             txtCienciasNaturales.Text = GridViewMostrar.SelectedRow.Cells[10].Text;
             txtReligion.Text = GridViewMostrar.SelectedRow.Cells[11].Text;
-            
+            btnCancelar.Visible = true;
+            btnRegistrar.Text = "ACTUALIZAR";
+            btnRegistrar.OnClientClick = "Modificado();";
         }
 
-        
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+            btnRegistrar.Text = "REGISTRAR";
+            btnCancelar.Visible = false;
+        }
+
         public void limpiar()
         {
             txtArtesPlasticas.Text = "";

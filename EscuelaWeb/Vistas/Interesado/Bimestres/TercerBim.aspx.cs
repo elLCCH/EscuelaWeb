@@ -29,7 +29,7 @@ namespace EscuelaWeb.Vistas.Interesado.Bimestres
                 try
                 {
                     conexion.Open();
-                    SqlCommand comando = new SqlCommand("select m.Nom_Materia, c.calificacion from Calificaciones c,Materia m where c.Id_Materia = m.Id_Materia and Ci_Estudiante= '" + ci_estudiante + "' and bimestre='TERCERO BIMESTRE'", conexion);//aca tu consulta
+                    SqlCommand comando = new SqlCommand("select m.Nom_Materia, c.calificacion from Calificaciones c,Materia m where c.Id_Materia = m.Id_Materia and Ci_Estudiante= '" + ci_estudiante + "' and bimestre='TERCER BIMESTRE'", conexion);//aca tu consulta
                     SqlDataAdapter adaptador = new SqlDataAdapter();
                     adaptador.SelectCommand = comando;
                     DataTable tabla = new DataTable();
