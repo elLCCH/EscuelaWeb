@@ -159,6 +159,7 @@ namespace EscuelaWeb.Vistas.Profesor
             Session["name"] = ddlAnio.SelectedItem.Text;
             lblCarnet.Text=ObjAlumnoController.obtenerCi(Convert.ToString(Session["name"]));
             lblNombreAlumno.Text = ddlAnio.SelectedItem.Text;
+            Session["_esNuevo"] = true;
             //cargarDatos();
         }
         public void cargarDatos()
