@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,7 +11,17 @@ namespace EscuelaWeb.Vistas.Profesor.Avisos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            try
+            {
+                if (Convert.ToBoolean(Session["ID"]) == false)
+                {   //esta inactivo
+                    Response.Redirect("../../index.aspx");
+                }
+            }
+            catch (Exception)
+            {
+                //esta activo
+            }
         }
 
         protected void lbtnInicio_Click(object sender, EventArgs e)
